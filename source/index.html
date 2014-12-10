@@ -360,6 +360,26 @@
 
           <footer>
 
+            <!-- POST-META -->
+
+            <ul class="post-meta">
+
+              {block:Date}
+
+                <li><a href="{Permalink}"><time datetime="{Timestamp}"><span class="month">{Month}</span> <span class="day">{DayOfMonth}</span>, <span class="year">{Year}</span></time></a></li>
+
+              {/block:Date}
+
+              {block:NoteCount}
+
+                <li><a href="{Permalink}">{NoteCountWithLabel}</a></li>
+
+              {/block:NoteCount}
+
+            </ul>
+
+            <!-- TAGS -->
+
             {block:HasTags}
 
               <ul class="tags">
