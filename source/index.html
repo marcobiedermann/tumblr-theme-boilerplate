@@ -144,7 +144,7 @@
 
     <div class="container">
 
-      <!-- SEARCH -->
+      <!-- SEARCH-PAGE -->
 
       {block:SearchPage}
 
@@ -165,6 +165,22 @@
         </div>
 
       {/block:NoSearchResults}
+
+      <!-- TAG-PAGE -->
+
+      {block:TagPage}
+
+        <h2>{Tag}</h2>
+
+      {/block:TagPage}
+
+      <!-- DAY-PAGE -->
+
+      {block:DayPage}
+
+        {Year}.{MonthNumberWithZero}.{DayOfMonthWithZero}
+
+      {/block:DayPage}
 
       <!-- POSTS -->
 
@@ -461,7 +477,7 @@
 
               {block:Date}
 
-                <li><a href="{Permalink}"><time datetime="{Timestamp}"><span class="month">{Month}</span> <span class="day">{DayOfMonth}</span>, <span class="year">{Year}</span></time></a></li>
+                <li><a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/"><time datetime="{Timestamp}"><span class="month">{Month}</span> <span class="day">{DayOfMonth}</span>, <span class="year">{Year}</span></time></a></li>
 
               {/block:Date}
 
@@ -507,7 +523,7 @@
 
             {block:PreviousPage}
 
-              <li><a href="{PreviousPage}" class="prev">{lang:Prev}</a></li>
+              <li class="prev"><a href="{PreviousPage}">{lang:Prev}</a></li>
 
             {/block:PreviousPage}
 
@@ -515,7 +531,7 @@
 
               {block:CurrentPage}
 
-                <li><span class="active">{PageNumber}</span></li>
+                <li class="active">{PageNumber}</li>
 
               {/block:CurrentPage}
 
@@ -529,7 +545,7 @@
 
             {block:NextPage}
 
-              <li><a href="{NextPage}" class="next">{lang:Next}</a></li>
+              <li class="next"><a href="{NextPage}">{lang:Next}</a></li>
 
             {/block:NextPage}
 
@@ -547,7 +563,7 @@
 
             {block:PreviousPost}
 
-              <li><a href="{PreviousPost}" class="prev">Previous Post</a></li>
+              <li class="prev"><a href="{PreviousPost}">Previous Post</a></li>
 
             {/block:PreviousPost}
 
@@ -555,7 +571,7 @@
 
             {block:NextPost}
 
-              <li><a href="{NextPost}" class="next">Next Post</a></li>
+              <li class="next"><a href="{NextPost}">Next Post</a></li>
 
             {/block:NextPost}
 
@@ -564,6 +580,32 @@
         {/block:PermalinkPagination}
 
       {/block:PermalinkPage}
+
+      {block:DayPage}
+
+        {block:DayPagination}
+
+          <ul class="pagination">
+
+            {block:PreviousDayPage}
+
+              <li class="prev"><a href="{PreviousDayPage}">Previous Day</a></li>
+
+            {/block:PreviousDayPage}
+
+            <li><a href="{BlogURL}">{lang:Home}</a></li>
+
+            {block:NextDayPage}
+
+              <li class="next"><a href="{NextDayPage}">Next Day</a></li>
+
+            {/block:NextDayPage}
+
+          </ul>
+
+        {/block:DayPagination}
+
+      {/block:DayPage}
 
     </div>
 
