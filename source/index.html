@@ -20,7 +20,31 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>{Title}</title>
+  <title>
+
+  {block:IndexPage}
+
+    {Title} | {PlaintextDescription}
+
+  {/block:IndexPage}
+
+  {block:PermalinkPage}
+
+    {block:PostSummary}
+
+      {Title} | {PlaintextPostSummary}
+
+    {/block:PostSummary}
+
+  {block:PermalinkPage}
+
+  {block:SearchPage}
+
+    {Title} | {lang:Search results for SearchQuery}
+
+  {/block:SearchPage}
+
+  </title>
 
   {block:Description}
 
