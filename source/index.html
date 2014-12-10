@@ -61,7 +61,43 @@
 
     <div class="container">
 
-      HEADER
+      <nav class="nav">
+
+        <ul>
+
+          <li><a href="/">{lang:Home}</a></li>
+
+          {block:HasPages}
+
+            {block:Pages}
+
+              <li><a href="{URL}">{Label}</a></li>
+
+            {/block:Pages}
+
+          {/block:HasPages}
+
+          <li><a href="/random">Random</a></li>
+
+          <li><a href="/archive">{lang:Archive}</a></li>
+
+          {block:AskEnabled}
+
+            <li><a href="/ask">{AskLabel}</a></li>
+
+          {/block:AskEnabled}
+
+          <li><a href="{RSS}">RSS</a></li>
+
+          {block:SubmissionsEnabled}
+
+            <li><a href="/submit">{SubmitLabel}</a></li>
+
+          {/block:SubmissionsEnabled}
+
+        </ul>
+
+      </nav>
 
     </div>
 
