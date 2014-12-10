@@ -35,6 +35,12 @@
 
   <meta name="theme-color" content="#fff">
 
+  <style>
+
+    {CustomCSS}
+
+  </style>
+
   <link rel="shortcut icon" href="{Favicon}">
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
 
@@ -61,7 +67,7 @@
 
     <div class="container">
 
-      <nav class="nav">
+      <nav class="nav nav-horizontal">
 
         <ul>
 
@@ -111,7 +117,7 @@
 
       {block:Posts}
 
-        <article id="{PostID}" class="post post-{PostType} {TagsAsClasses}">
+        <article id="{PostID}" class="post post-{PostType}">
 
           <!-- POST-TEXT -->
 
@@ -435,6 +441,8 @@
         </article>
 
       {/block:Posts}
+
+      <!-- ## COMMENTS -->
 
       <!-- PAGINATION -->
 
