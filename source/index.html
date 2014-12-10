@@ -107,7 +107,7 @@
 
           {/block:HasPages}
 
-          <li><a href="/random">Random</a></li>
+          <li><a href="/random">{lang:Random post}</a></li>
 
           <li><a href="/archive">{lang:Archive}</a></li>
 
@@ -160,7 +160,7 @@
 
         <div class="search-results">
 
-          <h2>Sorry, nothing found for &ldquo;{SearchQuery}&rdquo;.</h2>
+          <h2>{lang:No results for SearchQuery}.</h2>
 
         </div>
 
@@ -432,8 +432,7 @@
 
               {block:ExternalAudio}
 
-                <p><a href="{ExternalAudioURL}">Download this
-                audio clip.</a></p>
+                <p><a href="{ExternalAudioURL}">{lang:Download this track}</a></p>
 
               {/block:ExternalAudio}
 
@@ -558,7 +557,7 @@
 
             {block:PreviousPage}
 
-              <li class="prev"><a href="{PreviousPage}">{lang:Prev}</a></li>
+              <li class="prev"><a href="{PreviousPage}">{lang:Previous page}</a></li>
 
             {/block:PreviousPage}
 
@@ -580,7 +579,7 @@
 
             {block:NextPage}
 
-              <li class="next"><a href="{NextPage}">{lang:Next}</a></li>
+              <li class="next"><a href="{NextPage}">{lang:Next page}</a></li>
 
             {/block:NextPage}
 
@@ -598,7 +597,7 @@
 
             {block:PreviousPost}
 
-              <li class="prev"><a href="{PreviousPost}">Previous Post</a></li>
+              <li class="prev"><a href="{PreviousPost}">{lang:Previous post}</a></li>
 
             {/block:PreviousPost}
 
@@ -606,7 +605,7 @@
 
             {block:NextPost}
 
-              <li class="next"><a href="{NextPost}">Next Post</a></li>
+              <li class="next"><a href="{NextPost}">{lang:Next post}</a></li>
 
             {/block:NextPost}
 
@@ -624,7 +623,7 @@
 
             {block:PreviousDayPage}
 
-              <li class="prev"><a href="{PreviousDayPage}">Previous Day</a></li>
+              <li class="prev"><a href="{PreviousDayPage}">{lang:Previous day}</a></li>
 
             {/block:PreviousDayPage}
 
@@ -632,7 +631,7 @@
 
             {block:NextDayPage}
 
-              <li class="next"><a href="{NextDayPage}">Next Day</a></li>
+              <li class="next"><a href="{NextDayPage}">{lang:Next day}</a></li>
 
             {/block:NextDayPage}
 
