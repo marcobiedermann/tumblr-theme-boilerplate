@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="
+  {block:Dutch}nl{/block:Dutch}
+  {block:English}en{/block:English}
+  {block:French}fr{/block:French}
+  {block:German}de{/block:German}
+  {block:Italian}it{/block:Italian}
+  {block:Japanese}ja{/block:Japanese}
+  {block:Korean}ko{/block:Korean}
+  {block:Polish}pl{/block:Polish}
+  {block:PortugueseBR}pt-br{/block:PortugueseBR}
+  {block:PortuguesePT}pt{/block:PortuguesePT}
+  {block:Russian}ru{/block:Russian}
+  {block:Spanish}es{/block:Spanish}
+  {block:Turkish}tr{/block:Turkish}
+">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>{Title}</title>
+
+  {block:Description}
+
+    <meta name="description" content="{MetaDescription}">
+
+  {/block:Description}
+
+  <meta name="apple-mobile-web-app-title" content="{Title}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+
+  <!-- ## THEME COLOR -->
+
+  <meta name="theme-color" content="#fff">
+
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+  {block:PermalinkPage}
+
+    {block:Posts}
+
+      {block:Date}
+
+        <link rel="canonical" href="{Permalink}">
+        <link rel="shortlink" href="{ShortURL}">
+
+      {/block:Date}
+
+    {/block:Posts}
+
+  {/block:PermalinkPage}
+
+</head>
+
+<body>
+
+  <header class="header">
+
+    <div class="container">
+
+      HEADER
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <div class="container">
+
+      <!-- POSTS -->
+
+      {block:Posts}
+
+        <article id="{PostID}" class="post post-{PostType} {TagsAsClasses}">
+
+          <!-- POST-TEXT -->
+
+          {block:Text}
+
+            <header>
+
+              {block:Title}<h2 class="post-title"><a href="{Permalink}" title="{lang:Link post} {Title}">{Title}</a></h2>{/block:Title}
+
+            </header>
+
+            <main>
+
+              {Body}
+
+            </main>
+
+          {/block:Text}
+
+          <!-- POST-PHOTO -->
+
+          {block:Photo}
+
+            <main>
+
+              <figure>
+
+                {block:IndexPage}
+
+                  <a href="{Permalink}" title="{lang:Link post} {PhotoAlt}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"></a>
+
+                {/block:IndexPage}
+
+                {block:PermalinkPage}
+
+                  {LinkOpenTag}
+
+                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">
+
+                  {LinkCloseTag}
+
+                {/block:PermalinkPage}
+
+                {block:Caption}
+
+                  <figcaption class="caption">{Caption}</figcaption>
+
+                {/block:Caption}
+
+              </figure>
+
+              <!-- ## Render Exif Data -->
+
+            </main>
+
+          {/block:Photo}
+
+          <!-- POST-PHOTOSET -->
+
+          {block:Photoset}
+
+            <main>
+
+              {Photoset}
+
+              {block:Caption}
+
+                {Caption}
+
+              {/block:Caption}
+
+            </main>
+
+          {/block:Photoset}
+
+          <!-- POST-QUOTE -->
+
+          {block:Quote}
+
+            <main>
+
+              <blockquote class="blockquote-{Length}">
+
+                {Quote}
+
+                {block:Source}
+
+                  <cite>{Source}</cite>
+
+                {/block:Source}
+
+              </blockquote>
+
+            </main>
+
+          {/block:Quote}
+
+          <!-- POST-LINK -->
+
+          {block:Link}
+
+            <header>
+
+              <h2 class="post-title"><a href="{URL}" {Target}>{Name}</a></h2>
+
+            </header>
+
+            <main>
+
+              {block:Thumbnail}
+
+                {Thumbnail}
+
+              {/block:Thumbnail}
+
+              {block:Description}
+
+                {Description}
+
+              {/block:Description}
+
+            </main>
+
+          {/block:Link}
+
+          <!-- POST-CHAT -->
+
+          {block:Chat}
+
+            <header>
+
+              {block:Title}
+
+                <h2 class="post-title"><a href="{Permalink}">{Title}</a></h2>
+
+              {/block:Title}
+
+            </header>
+
+            <main>
+
+              <ul class="chat">
+
+                {block:Lines}
+
+                  <li class="{Alt}">
+
+                    {block:Label}
+
+                      <span class="label">{Label}</span>
+
+                    {/block:Label}
+
+                    {Line}
+
+                  </li>
+
+                {/block:Lines}
+
+              </ul>
+
+            </main>
+
+          {/block:Chat}
+
+          <!-- POST-AUDIO -->
+
+          {block:Audio}
+
+            <main>
+
+              {block:AudioPlayer}
+
+                {AudioPlayerGrey}
+
+              {/block:AudioPlayer}
+
+              {block:AudioEmbed}
+
+                {AudioEmbed-640}
+
+              {/block:AudioEmbed}
+
+              {block:ExternalAudio}
+
+                <p><a href="{ExternalAudioURL}">Download this
+                audio clip.</a></p>
+
+              {/block:ExternalAudio}
+
+              {block:PlayCount}
+
+                <p>{PlayCountWithLabel}</p>
+
+              {/block:PlayCount}
+
+              {block:Caption}
+
+                {Caption}
+
+              {/block:Caption}
+
+              <!-- ## Artist, Album, TrackName -->
+
+            </main>
+
+          {/block:Audio}
+
+          <!-- POST-VIDEO -->
+
+          {block:Video}
+
+            <main>
+
+              {Video-700}
+
+              {block:Caption}
+
+                {Caption}
+
+              {/block:Caption}
+
+            </main>
+
+          {/block:Video}
+
+          <!-- POST-ANSWER -->
+
+          {block:Answer}
+
+            <main>
+
+              <h3>{Asker} asked:</h3>
+
+              {Question}
+
+            {/block:Answer}
+
+            {block:Answerer}
+
+              <h3>{Answerer} asked:</h3>
+
+              {Answer}
+
+            </main>
+
+          {/block:Answerer}
+
+          <!-- POST-FOOTER -->
+
+          <footer>
+
+            {block:HasTags}
+
+              <ul class="tags">
+
+                {block:Tags}
+
+                  <li><a href="{TagURL}">{Tag}</a></li>
+
+                {block:Tags}
+
+              </ul>
+
+            {/block:HasTags}
+
+          </footer>
+
+        </article>
+
+      {/block:Posts}
+
+      <!-- PAGINATION -->
+
+      {block:IndexPage}
+
+        {block:Pagination}
+
+          <ul class="pagination">
+
+            {block:PreviousPage}
+
+              <li><a href="{PreviousPage}" class="prev">{lang:Prev}</a></li>
+
+            {/block:PreviousPage}
+
+            {block:JumpPagination length="5"}
+
+              {block:CurrentPage}
+
+                <li><span class="active">{PageNumber}</span></li>
+
+              {/block:CurrentPage}
+
+              {block:JumpPage}
+
+                <li><a href="{URL}">{PageNumber}</a></li>
+
+              {/block:JumpPage}
+
+            {/block:JumpPagination}
+
+            {block:NextPage}
+
+              <li><a href="{NextPage}" class="next">{lang:Next}</a></li>
+
+            {/block:NextPage}
+
+          </ul>
+
+        {/block:Pagination}
+
+      {/block:IndexPage}
+
+      {block:PermalinkPage}
+
+        {block:PermalinkPagination}
+
+          <ul class="pagination">
+
+            {block:PreviousPost}
+
+              <li><a href="{PreviousPost}" class="prev">Previous Post</a></li>
+
+            {/block:PreviousPost}
+
+            <li><a href="{BlogURL}">{lang:Home}</a></li>
+
+            {block:NextPost}
+
+              <li><a href="{NextPost}" class="next">Next Post</a></li>
+
+            {/block:NextPost}
+
+          </ul>
+
+        {/block:PermalinkPagination}
+
+      {/block:PermalinkPage}
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+
+    <div class="container">
+
+      FOOTER
+
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
