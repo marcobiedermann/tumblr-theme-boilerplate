@@ -1,0 +1,28 @@
+{
+  "name": "theme-name",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Marco Biedermann",
+  "license": "BSD-2-Clause",
+  "repository": "https://github.com/marcobiedermann/tumblr-theme-template.git",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-autoprefixer": "~1.0.1",
+    "grunt-combine-media-queries": "~1.0.19",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-contrib-copy": "~0.7.0",
+    "grunt-contrib-csslint": "~0.3.1",
+    "grunt-contrib-cssmin": "~0.10.0",
+    "grunt-contrib-htmlmin": "~0.3.0",
+    "grunt-contrib-imagemin": "~0.9.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-sass": "0.8.1",
+    "grunt-contrib-uglify": "~0.6.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-scss-lint": "^0.3.4",
+    "grunt-svgmin": "~0.4.0",
+    "grunt-svgstore": "0.4.0",
+    "grunt-usemin": "~2.1.1"
+  }
+}

@@ -1,0 +1,41 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.log
+*.map
+*.orig
+*.rej
+*.swo
+*.swp
+*.vi
+*.zip
+*~
+
+# OS or Editor folders
+*.esproj
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+.Spotlight-V100
+.Trashes
+._*
+.cache
+.idea
+.project
+.settings
+.tmproj
+Desktop.ini
+Thumb.db
+Thumbs.db
+nbproject
+
+# Folders to ignore
+.sass-cache
+bower_components
+build
+node_modules
+
+# Theme Files
+
+source/css/styles.css
+source/js/main.js
