@@ -129,6 +129,13 @@
 
       </nav>
 
+      <form action="/search" method="get" class="search">
+
+        <input type="search" name="q" value="{SearchQuery}" placeholder="{lang:Search}…">
+        <input type="submit" value="{lang:Search}">
+
+      </form>
+
     </div>
 
   </header>
@@ -136,6 +143,28 @@
   <main class="main">
 
     <div class="container">
+
+      <!-- SEARCH -->
+
+      {block:SearchPage}
+
+        <div class="search-results">
+
+          <h2>{SearchQuery} <span>({SearchResultCount})</span></h2>
+
+        </div>
+
+      {/block:SearchPage}
+
+      {block:NoSearchResults}
+
+        <div class="search-results">
+
+          <h2>Sorry, nothing found for &ldquo;{SearchQuery}&rdquo;.</h2>
+
+        </div>
+
+      {/block:NoSearchResults}
 
       <!-- POSTS -->
 
