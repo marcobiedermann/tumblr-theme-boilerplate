@@ -83,7 +83,25 @@
 
             <header>
 
-              {block:Title}<h2 class="post-title"><a href="{Permalink}" title="{lang:Link post} {Title}">{Title}</a></h2>{/block:Title}
+              {block:IndexPage}
+
+                {block:Title}
+
+                  <h2 class="post-title"><a href="{Permalink}" title="{lang:Link post} {Title}">{Title}</a></h2>
+
+                {/block:Title}
+
+              {/block:IndexPage}
+
+              {block:PermalinkPage}
+
+              {block:Title}
+
+                <h1 class="post-title">{Title}</h1>
+
+              {/block:Title}
+
+            {/block:PermalinkPage}
 
             </header>
 
@@ -207,11 +225,25 @@
 
             <header>
 
-              {block:Title}
+              {block:IndexPage}
 
-                <h2 class="post-title"><a href="{Permalink}">{Title}</a></h2>
+                {block:Title}
 
-              {/block:Title}
+                  <h2 class="post-title"><a href="{Permalink}">{Title}</a></h2>
+
+                {/block:Title}
+
+              {/block:IndexPage}
+
+              {block:PermalinkPage}
+
+                {block:Title}
+
+                  <h1 class="post-title">{Title}</h1>
+
+                {/block:Title}
+
+              {/block:PermalinkPage}
 
             </header>
 
