@@ -580,11 +580,15 @@
 
               {/block:Date}
 
-              {block:NoteCount}
+              {block:IndexPage}
 
-                <li><a href="{Permalink}">{NoteCountWithLabel}</a></li>
+                {block:NoteCount}
 
-              {/block:NoteCount}
+                  <li><a href="{Permalink}">{NoteCountWithLabel}</a></li>
+
+                {/block:NoteCount}
+
+              {/block:IndexPage}
 
             </ul>
 
@@ -627,6 +631,22 @@
         </article>
 
       {/block:Posts}
+
+      <!-- NOTES -->
+
+      {block:PostNotes}
+
+        {block:NoteCount}
+
+          {NoteCountWithLabel}
+
+        {/block:NoteCount}
+
+        {PostNotes-64}
+
+        {PostNotes}
+
+      {/block:PostNotes}
 
       <!-- ## COMMENTS -->
 
