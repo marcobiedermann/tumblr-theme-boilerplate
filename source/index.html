@@ -254,11 +254,47 @@
 
                 {/block:PermalinkPage}
 
-                {block:Caption}
+                <figcaption class="caption">
 
-                  <figcaption class="caption">{Caption}</figcaption>
+                  {block:Caption}
 
-                {/block:Caption}
+                    {Caption}
+
+                  {/block:Caption}
+
+                  {block:PermalinkPage}
+
+                    {block:Exif}
+
+                      {block:Camera}
+
+                        {Camera}
+
+                      {/block:Camera}
+
+                      {block:Aperture}
+
+                        {Aperture}
+
+                      {/block:Aperture}
+
+                      {block:Exposure}
+
+                        {Exposure}
+
+                      {/block:Exposure}
+
+                      {block:FocalLength}
+
+                        {FocalLength}
+
+                      {/block:FocalLength}
+
+                    {/block:Exif}
+
+                  {/block:PermalinkPage}
+
+                </figcaption>
 
               </figure>
 
