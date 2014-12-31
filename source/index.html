@@ -93,11 +93,11 @@
 
 <body>
 
-  <header class="header">
+  <header class="header" role="banner">
 
     <div class="container">
 
-      <nav class="nav nav-horizontal">
+      <nav class="nav nav-horizontal" role="navigation">
 
         <ul>
 
@@ -135,7 +135,7 @@
 
       </nav>
 
-      <form action="/search" method="get" class="search">
+      <form action="/search" method="get" class="search" role="search">
 
         <input type="search" name="q" value="{SearchQuery}" placeholder="{lang:Search}…">
         <input type="submit" value="{lang:Search}">
@@ -146,7 +146,7 @@
 
   </header>
 
-  <main class="main">
+  <main class="main" role="main">
 
     <div class="container">
 
@@ -194,7 +194,7 @@
 
         {block:Posts}
 
-          <article id="post-{PostID}" class="post post-{PostType} {block:Odd}post-odd{/block:Odd}{block:Even}post-even{/block:Even}">
+          <article id="post-{PostID}" class="post post-{PostType} {block:Odd}post-odd{/block:Odd}{block:Even}post-even{/block:Even}" role="article">
 
             <!-- POST-TEXT -->
 
@@ -760,7 +760,7 @@
 
   </main>
 
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
 
     <div class="container">
 
