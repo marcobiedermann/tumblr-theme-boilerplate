@@ -22,6 +22,8 @@
   <meta name="if:Infinite Scrolling" content="0">
   <meta name="if:GoogleAnalytics" content="0">
   <meta name="text:GoogleAnalyticsID" content="UA-XXXXXXXX-X">
+  <meta name="if:GoogleSiteVerification" content="0">
+  <meta name="text:GoogleSiteVerification" content="Google Verification Key">
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,6 +59,12 @@
     <meta name="description" content="{MetaDescription}">
 
   {/block:Description}
+
+  {block:GoogleSiteVerification}
+
+    <meta name="google-site-verification" content="{text:GoogleSiteVerification}">
+
+  {/block:GoogleSiteVerification}
 
   <meta name="apple-mobile-web-app-title" content="{Title}">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
