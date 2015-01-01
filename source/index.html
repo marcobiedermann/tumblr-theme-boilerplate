@@ -24,6 +24,25 @@
   <meta name="text:GoogleAnalyticsID" content="UA-XXXXXXXX-X">
   <meta name="if:GoogleSiteVerification" content="0">
   <meta name="text:GoogleSiteVerification" content="Google Verification Key">
+  <meta name="if:Show Social" content="1">
+  <meta name="text:Disqus Shortname" content="">
+  <meta name="text:Email" content="">
+  <meta name="text:Behance" content="">
+  <meta name="text:Codepen" content="">
+  <meta name="text:Dribbble" content="">
+  <meta name="text:Facebook" content="">
+  <meta name="text:Flickr" content="">
+  <meta name="text:Github" content="">
+  <meta name="text:Google Plus" content="">
+  <meta name="text:Instagram" content="">
+  <meta name="text:LinkedIn" content="">
+  <meta name="text:Pinterest" content="">
+  <meta name="text:Reddit" content="">
+  <meta name="text:Soundcloud" content="">
+  <meta name="text:Twitter" content="">
+  <meta name="text:Vimeo" content="">
+  <meta name="text:Xing" content="">
+  <meta name="text:YouTube" content="">
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -780,6 +799,86 @@
     <div class="container">
 
       <p>Copyright {CopyrightYears} | <a href="{BlogURL}" title="{Title}">{Title}</a></p>
+
+      {block:ifShowSocial}
+
+        <ul class="social">
+
+          {block:ifShowRSS}
+          <li><a href="{RSS}">RSS</a></li>
+          {/block:ifShowRSS}
+
+          {block:ifEmail}
+          <li><a href="mailto:{text:Email}">Email</a></li>
+          {/block:ifEmail}
+
+          {block:ifBehance}
+          <li><a href="//behance.net/{text:Behance}" target="_blank">Behance</a></li>
+          {/block:ifBehance}
+
+          {block:ifCodepen}
+          <li><a href="//codepen.io/{text:Codepen}" target="_blank">Codepen</a></li>
+          {/block:ifCodepen}
+
+          {block:ifDribbble}
+          <li><a href="//dribbble.com/{text:Dribbble}" target="_blank">dribbble</a></li>
+          {/block:ifDribbble}
+
+          {block:ifFacebook}
+          <li><a href="//facebook.com/{text:Facebook}" target="_blank">Facebook</a></li>
+          {/block:ifFacebook}
+
+          {block:ifFlickr}
+          <li><a href="{text:Flickr}" target="_blank">Flickr</a></li>
+          {/block:ifFlickr}
+
+          {block:ifGithub}
+          <li><a href="//github.com/{text:Github}" target="_blank">GitHub</a></li>
+          {/block:ifGithub}
+
+          {block:ifGooglePlus}
+          <li><a href="//plus.google.com/u/0/{text:Google Plus}" target="_blank">Google+</a></li>
+          {/block:ifGooglePlus}
+
+          {block:ifInstagram}
+          <li><a href="//instagram.com/{text:Instagram}" target="_blank">Instagram</a></li>
+          {/block:ifInstagram}
+
+          {block:ifLinkedIn}
+          <li><a href="//linkedin.com/in/{text:LinkedIn}" target="_blank">LinkedIn</a></li>
+          {/block:ifLinkedIn}
+
+          {block:ifPinterest}
+          <li><a href="//pinterest.com/{text:Pinterest}" target="_blank">Pinterest</a></li>
+          {/block:ifPinterest}
+
+          {block:ifReddit}
+          <li><a href="//reddit.com/user/{text:Reddit}" target="_blank">Reddit</a></li>
+          {/block:ifReddit}
+
+          {block:ifSoundcloud}
+          <li><a href="//soundcloud.com/{text:Soundcloud}" target="_blank">Soundcloud</a></li>
+          {/block:ifSoundcloud}
+
+          {block:ifTwitter}
+          <li><a href="//twitter.com/{text:Twitter}" target="_blank">Twitter</a></li>
+          {/block:ifTwitter}
+
+          {block:ifVimeo}
+          <li><a href="//vimeo.com/{text:Vimeo}" target="_blank">Vimeo</a></li>
+          {/block:ifVimeo}
+
+          {block:ifXing}
+          <li><a href="//xing.com/profile/{text:Xing}" target="_blank">Xing</a></li>
+          {/block:ifXing}
+
+          {block:ifYouTube}
+          <li><a href="//youtube.com/user/{text:YouTube}" target="_blank">YouTube</a></li>
+          {/block:ifYouTube}
+
+        </ul>
+
+      {/block:ifShowSocial}
 
     </div>
 
