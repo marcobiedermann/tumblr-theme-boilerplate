@@ -1,22 +1,77 @@
 # Tumblr Theme Template
 
 ## Features:
-* Browser Support: IE9+, Google Chrome, Mozilla Firefox, Safari, Opera
-* Responsive / Fluid Design: Smart Phone, Tablet and Desktop
-* mobile First Design.
-* valid HTML5, CSS3 & Javascript
-* SEO friendly, best practices
-* Screen reader accesibility: WAI-Ara tags
-* Print Sheet
-* Supports all 9 post types (text, photo, panorama, photoset, blockquote, link, chat, audio and video)
-* Highly customizable: 40 Settings
-* Google Analytics integration
-* Disqus commenting integration
-* Twitter integration
-* Social icons (Twitter, Facebook, Google+, Dribbble, GitHub, Codepen, Pinterest, Email...)
+
+* Supports all 8 post types
+  * audio
+  * blockquote
+  * chat
+  * link
+  * photo
+  * photoset
+  * text
+  * video
+* Highly customizable: XX Settings
 * Easy to install
-* Free updates
-* Different Pages (Index, Search results, tags, date, post)
+* Different Pages
+  * Index Page
+  * Search results Paage
+  * Tags Page
+  * Date Page
+  * Single Post Page
 * Full Localization (English, German, French, Korean, Japanese, Italian, Spanish, Duch, Polish, Russian, Portuguese PT, Portuguese BR)
 * Internal and External Video and Audio support
+* Cross Platform & Browser Support
+  * Internet Explorer (IE8+)
+  * Google Chrome
+  * Mozilla Firefox
+  * Safari
+  * Opera
+* Responsive / Fluid Design: Smart Phone, Tablet and Desktop
+* mobile First Design.
+* Retina ready
+* valid HTML5, CSS3 & Javascript
+* Infinite Scolling
+* Submissions & Ask ready
+* SEO friendly, best practices
+* Google Fonts
+* Google Analytics integration
+* Google Site Verification integration for Google Webmasters
+* Screen reader accesibility: WAI-Ara tags
 * Keyboard navigation between Posts and pages
+* Like & Reblog buttons
+* Share post on Facebook, Twitter, Google+, Pinterest, LinkedIn & Email
+* Social icons (Behance, Codepen, dribbble, Email, Facebook, Flickr, GitHub, Google+, Instagram, LinkedIn, Pinterest, Reddit, RSS, Skype, SoundCloud, Twitter, Vimeo, Xing, YouTube)
+* Free updates
+
+Note: Images, Audio Files and Videos are not included in project files
+
+
+## TODO
+* Print Sheet
+* DISQUS commenting integration
+* Twitter Stream integration
+* dribbbble Stream integration
+* Flickr Stream integration
+* Instagram Stream integration
+* MailChimp Newsletter integration
+* Photoset Slider
+* Ajax Search
+* Sidebar
+
+## Files
+* HTML File
+* CSS File
+* 3 differnent color scheme presets
+* Screenshots
+
+## Credits
+* [Google Fonts](http://www.google.com/fonts)
+* [Disqus](http://disqus.com)
+* [HTML5 Shiv](https://github.com/aFarkas/html5shiv)
+* [Unsplash](https://unsplash.com/)
+
+## Changelog
+
+## Support
+If you have any issues with our theme please email us. In most cases we will respond within 24 hours.
