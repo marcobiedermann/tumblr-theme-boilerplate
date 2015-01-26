@@ -182,9 +182,6 @@ module.exports = function (grunt) {
     },
 
     watch: {
-      options: {
-        livereload: true
-      },
 
       css: {
         files: ['<%= config.source %>/css/**/*.css'],
