@@ -32,7 +32,7 @@ nbproject
 # Folders to ignore
 .sass-cache
 bower_components
-build
+dist
 node_modules
 
 # Theme Files

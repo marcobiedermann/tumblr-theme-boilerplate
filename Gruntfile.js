@@ -143,7 +143,7 @@ module.exports = function (grunt) {
         expand: true,
         cwd: '<%= config.source %>',
         dest: '<%= config.build %>',
-        src: '**/*.html'
+        src: '*.html'
       }
     },
 
