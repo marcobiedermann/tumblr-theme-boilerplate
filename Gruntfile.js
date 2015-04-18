@@ -15,6 +15,20 @@ module.exports = function (grunt) {
       tmp: '.tmp'
     },
 
+    assemble: {
+      options: {
+        layout: 'default.html',
+        layoutdir: '<%= config.source %>/templates/layouts',
+        partials: '<%= config.source %>/templates/partials/**/*.html'
+      },
+      files: {
+        expand: true,
+        cwd: '<%= config.source %>/templates/pages',
+        dest: '<%= config.source %>',
+        src: '**/*.html'
+      }
+    },
+
     autoprefixer: {
       options: {
         browsers: ['last 3 versions']
@@ -199,6 +213,11 @@ module.exports = function (grunt) {
         files: ['Gruntfile.js']
       },
 
+      html: {
+        files: ['<%= config.source %>/templates/**/*.html'],
+        tasks: ['assemble']
+      },
+
       img: {
         files: ['<%= config.source %>/img/**/*.{gif,jpeg,jpg,png}'],
         tasks: []
@@ -225,6 +244,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'sass',
+    'assemble',
     'watch'
   ]);
 
@@ -240,6 +260,7 @@ module.exports = function (grunt) {
     'autoprefixer',
     'cmq',
     'cssmin',
+    'assemble',
     'processhtml',
     'concat',
     'uglify',
