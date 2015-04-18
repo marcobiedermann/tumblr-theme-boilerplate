@@ -69,13 +69,6 @@ module.exports = function (grunt) {
       }
     },
 
-    csslint: {
-      options: {
-        csslintrc: '.csslintrc'
-      },
-      files: ['<%= config.source %>/css/**/*.css']
-    },
-
     cssmin: {
       files: {
         expand: true,
@@ -232,7 +225,6 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['sass', 'watch']);
   grunt.registerTask('test', [
     'sass',
-    'csslint',
     'jshint'
   ]);
 
