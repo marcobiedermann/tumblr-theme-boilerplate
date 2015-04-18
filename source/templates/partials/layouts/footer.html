@@ -1,0 +1,93 @@
+<footer class="footer" role="contentinfo">
+
+  <div class="container">
+
+    <p>Copyright {CopyrightYears} | <a href="{BlogURL}" title="{Title}">{Title}</a></p>
+
+    {block:ifShowSocial}
+
+      <ul class="social">
+
+        {block:ifShowRSS}
+        <li><a href="{RSS}">RSS</a></li>
+        {/block:ifShowRSS}
+
+        {block:ifEmail}
+        <li><a href="mailto:{text:Email}" alt="{lang:Send email}">Email</a></li>
+        {/block:ifEmail}
+
+        {block:ifBehance}
+        <li><a href="//behance.net/{text:Behance}" alt="Behance profile" target="_blank">Behance</a></li>
+        {/block:ifBehance}
+
+        {block:ifCodepen}
+        <li><a href="//codepen.io/{text:Codepen}" alt="Codepen Profile" target="_blank">Codepen</a></li>
+        {/block:ifCodepen}
+
+        {block:ifDribbble}
+        <li><a href="//dribbble.com/{text:Dribbble}" alt="dribbble Profile" target="_blank">dribbble</a></li>
+        {/block:ifDribbble}
+
+        {block:ifFacebook}
+        <li><a href="//facebook.com/{text:Facebook}" alt="Facebook Profile" target="_blank">Facebook</a></li>
+        {/block:ifFacebook}
+
+        {block:ifFlickr}
+        <li><a href="{text:Flickr}" alt="Flickr Profile" target="_blank">Flickr</a></li>
+        {/block:ifFlickr}
+
+        {block:ifGithub}
+        <li><a href="//github.com/{text:Github}" alt="GitHub Profile" target="_blank">GitHub</a></li>
+        {/block:ifGithub}
+
+        {block:ifGooglePlus}
+        <li><a href="//plus.google.com/u/0/{text:Google Plus}" alt="Google Plus Profile" target="_blank">Google+</a></li>
+        {/block:ifGooglePlus}
+
+        {block:ifInstagram}
+        <li><a href="//instagram.com/{text:Instagram}" alt="Instagram Profile" target="_blank">Instagram</a></li>
+        {/block:ifInstagram}
+
+        {block:ifLinkedIn}
+        <li><a href="//linkedin.com/in/{text:LinkedIn}" alt="LinkedIn Profile" target="_blank">LinkedIn</a></li>
+        {/block:ifLinkedIn}
+
+        {block:ifPinterest}
+        <li><a href="//pinterest.com/{text:Pinterest}" alt="Pinterest Profile" target="_blank">Pinterest</a></li>
+        {/block:ifPinterest}
+
+        {block:ifReddit}
+        <li><a href="//reddit.com/user/{text:Reddit}" alt="Reddit Profile" target="_blank">Reddit</a></li>
+        {/block:ifReddit}
+
+        {block:ifSkype}
+        <li><a href="skype:{text:Skype}?userinfo" alt="Skype Profile" target="_blank">Skype</a></li>
+        {/block:ifSkype}
+
+        {block:ifSoundcloud}
+        <li><a href="//soundcloud.com/{text:Soundcloud}" alt="SoundCloud Profile" target="_blank">Soundcloud</a></li>
+        {/block:ifSoundcloud}
+
+        {block:ifTwitter}
+        <li><a href="//twitter.com/{text:Twitter}" alt="Twitter Profile" target="_blank">Twitter</a></li>
+        {/block:ifTwitter}
+
+        {block:ifVimeo}
+        <li><a href="//vimeo.com/{text:Vimeo}" alt="Vimeo Profile" target="_blank">Vimeo</a></li>
+        {/block:ifVimeo}
+
+        {block:ifXing}
+        <li><a href="//xing.com/profile/{text:Xing}" alt="Xing Profile" target="_blank">Xing</a></li>
+        {/block:ifXing}
+
+        {block:ifYouTube}
+        <li><a href="//youtube.com/user/{text:YouTube}" alt="YouTube Profile" target="_blank">YouTube</a></li>
+        {/block:ifYouTube}
+
+      </ul>
+
+    {/block:ifShowSocial}
+
+  </div>
+
+</footer>
