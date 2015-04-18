@@ -1,0 +1,93 @@
+{block:Posts}
+
+  <div class="autopagerize_page_element">
+
+    <article id="post-{PostID}" class="post post-{PostType} {block:Odd}post-odd{/block:Odd}{block:Even}post-even{/block:Even}" role="article">
+
+      {{> answer }}
+      {{> audio }}
+      {{> chat }}
+      {{> link }}
+      {{> panorama }}
+      {{> photo }}
+      {{> photoset }}
+      {{> quote }}
+      {{> text }}
+      {{> video }}
+
+      <!-- POST-FOOTER -->
+
+      <footer>
+
+        <!-- POST-META -->
+
+        <ul class="post-meta">
+
+          {block:Date}
+
+            <li><a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/"><time datetime="{Timestamp}"><span class="month">{Month}</span> <span class="day">{DayOfMonth}</span>, <span class="year">{Year}</span></time></a></li>
+
+          {/block:Date}
+
+            {block:IndexPage}
+
+            {block:NoteCount}
+
+              <li><a href="{Permalink}">{NoteCountWithLabel}</a></li>
+
+            {/block:NoteCount}
+
+            {block:IfDisqusShortname}
+
+              <li><a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a></li>
+
+            {/block:IfDisqusShortname}
+
+          {/block:IndexPage}
+
+        </ul>
+
+        <ul class="share">
+
+          <li>{LikeButton color="grey" size="14"}</li>
+          <li>{ReblogButton color="grey" size="14"}</li>
+          <li>Share
+
+            <ul>
+
+              <li><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></li>
+              <li><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></li>
+              <li><a href="https://plus.google.com/share?url={Permalink}" target="_blank">Google+</a></li>
+              <li><a href="http://www.linkedin.com/shareArticle?mini=true&url={Permalink}{block:Title}&title={PlaintextTitle}{/block:Title}{block:PostSummary}&summary={PlaintextPostSummary}{/block:PostSummary}">LinkedIn</a></li>
+              <li><a href="http://pinterest.com/pin/create/button/?url={Permalink}&media={PhotoURL-HighRes}&description=" target="_blank">Pinterest</a></li>
+              <li><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}" alt="{lang:Send email}">E-Mail</a></li>
+
+            </ul>
+
+          </li>
+
+        </ul>
+
+        <!-- TAGS -->
+
+        {block:HasTags}
+
+          <ul class="tags">
+
+            {block:Tags}
+
+              <li><a href="{TagURL}">{Tag}</a></li>
+
+            {block:Tags}
+
+          </ul>
+
+        {/block:HasTags}
+
+      </footer>
+
+    </article>
+
+  </div>
+
+{/block:Posts}

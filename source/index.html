@@ -210,8 +210,6 @@
 
       
 
-<!-- SEARCH-PAGE -->
-
 {block:SearchPage}
 
   <div class="search-results">
@@ -248,11 +246,9 @@
 
 {/block:DayPage}
 
-<!-- POSTS -->
+{block:Posts}
 
-<div class = "autopagerize_page_element" >
-
-  {block:Posts}
+  <div class="autopagerize_page_element">
 
     <article id="post-{PostID}" class="post post-{PostType} {block:Odd}post-odd{/block:Odd}{block:Even}post-even{/block:Even}" role="article">
 
@@ -676,12 +672,9 @@
 
     </article>
 
-  {/block:Posts}
+  </div>
 
-</div>
-
-<!-- NOTES -->
-
+{/block:Posts}
 {block:PostNotes}
 
   {block:NoteCount}
@@ -695,9 +688,6 @@
   {PostNotes}
 
 {/block:PostNotes}
-
-<!-- ## COMMENTS -->
-
 {block:PermalinkPage}
 
   {block:IfDisqusShortname}
@@ -709,9 +699,6 @@
   {/block:IfDisqusShortname}
 
 {/block:PermalinkPage}
-
-<!-- PAGINATION -->
-
 {block:IfNotInfiniteScrolling}
 
   {block:IndexPage}

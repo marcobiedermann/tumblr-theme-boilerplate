@@ -1,0 +1,95 @@
+{block:IfNotInfiniteScrolling}
+
+  {block:IndexPage}
+
+    {block:Pagination}
+
+      <ul class="pagination">
+
+        {block:PreviousPage}
+
+          <li class="prev"><a id="prev" href="{PreviousPage}">{lang:Previous page}</a></li>
+
+        {/block:PreviousPage}
+
+        {block:JumpPagination length="5"}
+
+          {block:CurrentPage}
+
+            <li class="active">{PageNumber}</li>
+
+          {/block:CurrentPage}
+
+          {block:JumpPage}
+
+            <li><a href="{URL}">{PageNumber}</a></li>
+
+          {/block:JumpPage}
+
+        {/block:JumpPagination}
+
+        {block:NextPage}
+
+          <li class="next"><a id="next" href="{NextPage}">{lang:Next page}</a></li>
+
+        {/block:NextPage}
+
+      </ul>
+
+    {/block:Pagination}
+
+  {/block:IndexPage}
+
+{/block:IfNotInfiniteScrolling}
+
+{block:PermalinkPage}
+
+  {block:PermalinkPagination}
+
+    <ul class="pagination">
+
+      {block:PreviousPost}
+
+        <li class="prev"><a id="prev" href="{PreviousPost}">{lang:Previous post}</a></li>
+
+      {/block:PreviousPost}
+
+      <li><a href="{BlogURL}">{lang:Home}</a></li>
+
+      {block:NextPost}
+
+        <li class="next"><a id="next" href="{NextPost}">{lang:Next post}</a></li>
+
+      {/block:NextPost}
+
+    </ul>
+
+  {/block:PermalinkPagination}
+
+{/block:PermalinkPage}
+
+{block:DayPage}
+
+  {block:DayPagination}
+
+    <ul class="pagination">
+
+      {block:PreviousDayPage}
+
+        <li class="prev"><a id="prev" href="{PreviousDayPage}">{lang:Previous day}</a></li>
+
+      {/block:PreviousDayPage}
+
+      <li><a href="{BlogURL}">{lang:Home}</a></li>
+
+      {block:NextDayPage}
+
+        <li class="next"><a id="next" href="{NextDayPage}">{lang:Next day}</a></li>
+
+      {/block:NextDayPage}
+
+    </ul>
+
+  {/block:DayPagination}
+
+{/block:DayPage}
