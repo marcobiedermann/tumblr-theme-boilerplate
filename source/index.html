@@ -40,6 +40,7 @@
   <meta name="text:LinkedIn" content="">
   <meta name="text:Pinterest" content="">
   <meta name="text:Reddit" content="">
+  <meta name="text:Skype" content="">
   <meta name="text:Soundcloud" content="">
   <meta name="text:Twitter" content="">
   <meta name="text:Vimeo" content="">
@@ -66,7 +67,7 @@
   <meta name="color:Header" content="#777">
   <meta name="color:HeaderBackground" content="#fafafa">
   <meta name="color:Footer" content="#fafafa">
-  <meta name="color:FooterBackground" content="#777">
+  <meta name="color:FooterBackground" content="#282828">
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -181,8 +182,6 @@
             <li><a href="/ask">{AskLabel}</a></li>
 
           {/block:AskEnabled}
-
-          <li><a href="{RSS}">RSS</a></li>
 
           {block:SubmissionsEnabled}
 
@@ -645,13 +644,19 @@
 
                 {/block:Date}
 
-                {block:IndexPage}
+                  {block:IndexPage}
 
                   {block:NoteCount}
 
                     <li><a href="{Permalink}">{NoteCountWithLabel}</a></li>
 
                   {/block:NoteCount}
+
+                  {block:IfDisqusShortname}
+
+                    <li><a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a></li>
+
+                  {/block:IfDisqusShortname}
 
                 {/block:IndexPage}
 
@@ -720,6 +725,18 @@
 
       <!-- ## COMMENTS -->
 
+      {block:PermalinkPage}
+
+        {block:IfDisqusShortname}
+
+          <div id="disqus_thread"></div>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+        {/block:IfDisqusShortname}
+
+      {/block:PermalinkPage}
+
       <!-- PAGINATION -->
 
       {block:IfNotInfiniteScrolling}
@@ -732,7 +749,7 @@
 
               {block:PreviousPage}
 
-                <li class="prev"><a href="{PreviousPage}">{lang:Previous page}</a></li>
+                <li class="prev"><a id="prev" href="{PreviousPage}">{lang:Previous page}</a></li>
 
               {/block:PreviousPage}
 
@@ -754,7 +771,7 @@
 
               {block:NextPage}
 
-                <li class="next"><a href="{NextPage}">{lang:Next page}</a></li>
+                <li class="next"><a id="next" href="{NextPage}">{lang:Next page}</a></li>
 
               {/block:NextPage}
 
@@ -774,7 +791,7 @@
 
             {block:PreviousPost}
 
-              <li class="prev"><a href="{PreviousPost}">{lang:Previous post}</a></li>
+              <li class="prev"><a id="prev" href="{PreviousPost}">{lang:Previous post}</a></li>
 
             {/block:PreviousPost}
 
@@ -782,7 +799,7 @@
 
             {block:NextPost}
 
-              <li class="next"><a href="{NextPost}">{lang:Next post}</a></li>
+              <li class="next"><a id="next" href="{NextPost}">{lang:Next post}</a></li>
 
             {/block:NextPost}
 
@@ -800,7 +817,7 @@
 
             {block:PreviousDayPage}
 
-              <li class="prev"><a href="{PreviousDayPage}">{lang:Previous day}</a></li>
+              <li class="prev"><a id="prev" href="{PreviousDayPage}">{lang:Previous day}</a></li>
 
             {/block:PreviousDayPage}
 
@@ -808,7 +825,7 @@
 
             {block:NextDayPage}
 
-              <li class="next"><a href="{NextDayPage}">{lang:Next day}</a></li>
+              <li class="next"><a id="next" href="{NextDayPage}">{lang:Next day}</a></li>
 
             {/block:NextDayPage}
 
@@ -884,6 +901,10 @@
           <li><a href="//reddit.com/user/{text:Reddit}" alt="Reddit Profile" target="_blank">Reddit</a></li>
           {/block:ifReddit}
 
+          {block:ifSkype}
+          <li><a href="skype:{text:Skype}?userinfo" alt="Skype Profile" target="_blank">Skype</a></li>
+          {/block:ifSkype}
+
           {block:ifSoundcloud}
           <li><a href="//soundcloud.com/{text:Soundcloud}" alt="SoundCloud Profile" target="_blank">Soundcloud</a></li>
           {/block:ifSoundcloud}
@@ -935,6 +956,41 @@
   </script>
 
   {/block:IfGoogleAnalytics}
+
+  {block:IfDisqusShortname}
+
+    <script>
+
+      {block:PermalinkPage}
+
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = '{text:Disqus Shortname}'; // Required - Replace <example> with your forum shortname
+        var disqus_url = '{Permalink}';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+
+      {/block:PermalinkPage}
+
+      {block:IndexPage}
+
+        var disqus_shortname = '{text:Disqus Shortname}';
+
+        (function () {
+          var s = document.createElement('script'); s.async = true;
+          s.type = 'text/javascript';
+          s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+
+      {/block:IndexPage}
+
+    </script>
+  {/block:IfDisqusShortname}
 
 </body>
 
