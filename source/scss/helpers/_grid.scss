@@ -1,0 +1,6 @@
+.container {
+  @include clear();
+  margin: 0 auto;
+  max-width: 796px;
+  width: 90%;
+}

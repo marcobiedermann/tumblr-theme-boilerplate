@@ -1,0 +1,58 @@
+// Typography
+
+$font-family: unquote('{font:Body}');
+$font-family-fallback: unquote('{select:FontBody}');
+$font-size: unquote('{text:FontSize}');
+$font-weight: unquote('{text:FontWeight}');
+
+$line-height: unquote('{text:LineHeight}');
+
+$font-family-headings: inherit;
+$font-size-h1: 2.5em;
+$font-size-h2: 2em;
+$font-size-h3: 1.5em;
+$font-size-h4: 1em;
+$font-size-h5: .875em;
+$font-size-h6: .75em;
+$font-weight-headings: 700;
+
+$font-size-headings: (
+  $font-size-h1,
+  $font-size-h2,
+  $font-size-h3,
+  $font-size-h4,
+  $font-size-h5,
+  $font-size-h6
+);
+
+$font-family-code: monospace;
+
+// Visual
+
+$amount: 10%;
+
+// Layout
+
+$margin-elements-bottom: 3em;
+
+// Layers
+
+$z-index-submenu: 999;
+
+// Grid
+
+$grid-columns: 12;
+$grid-gutter: 20px;
+$grid-gutter-large: 30px;
+$grid-container: 960px;
+$grid-container-large: 1200px;
+$grid-container-tablet: 744px;
+
+$media-large: 1200px;
+$media-tablet: 767px;
+$media-desktop: 979px;
+$media-mobile: 480px;
+
+// Paths
+
+$path-img: '../img';

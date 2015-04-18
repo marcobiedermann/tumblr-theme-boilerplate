@@ -1,0 +1,25 @@
+nav {
+
+  ul {
+    @include clear();
+    @include list-unstyled();
+  }
+
+  a {
+    display: block;
+  }
+
+}
+
+.nav-horizontal {
+
+  ul {
+    margin: 0 -.25em;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 .25em;
+  }
+
+}

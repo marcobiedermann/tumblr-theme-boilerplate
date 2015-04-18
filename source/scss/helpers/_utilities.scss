@@ -1,0 +1,28 @@
+// Positioning
+
+.center-block {
+  display: block;
+  margin: 0 auto;
+}
+
+// Typography
+
+.lower {
+  text-transform: lowercase;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// Visual
+
+.invisible {
+  left: -9999px;
+  position: absolute;
+  top: -9999px;
+}

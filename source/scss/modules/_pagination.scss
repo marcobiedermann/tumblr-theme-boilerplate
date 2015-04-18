@@ -1,0 +1,30 @@
+.pagination {
+  @include list-unstyled();
+  margin: 0 -.25em;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    margin: 0 .25em;
+  }
+
+  a,
+  span {
+    border: 1px solid $color-border;
+    border-radius: 4px;
+    padding: .25em .75em;
+  }
+
+  .active {
+
+  }
+
+  .prev {
+
+  }
+
+  .next {
+
+  }
+
+}

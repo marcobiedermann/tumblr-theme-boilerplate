@@ -1,0 +1,298 @@
+* {
+  box-sizing: border-box;
+
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+
+}
+
+@include placeholder {
+  color: $color-border;
+  font-style: italic;
+}
+
+-moz-::selection,
+::selection {
+  background: $color;
+  color: $color-bg;
+  text-shadow: none;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-size: 100%;
+  height: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: $color-bg;
+  color: $color;
+  font: $font-weight #{$font-size}/#{$line-height} $font-family, $font-family-fallback;
+  margin: 0;
+  min-height: 100%;
+  position: relative;
+}
+
+article,
+aside,
+details,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+a {
+  background-color: transparent;
+  border: 0;
+  color: $color-link;
+  text-decoration: none;
+
+  &:active,
+  &:focus,
+  &:hover,
+  &:visited {
+    border: 0;
+    outline: 0;
+  }
+
+  &:hover {
+    color: $color-link-hover;
+  }
+
+}
+
+address,
+em,
+dfn {
+  font-style: italic;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+blockquote {
+  border-left: 3px solid $color-border;
+  font-style: italic;
+  margin: 0;
+  padding-left: 1em;
+
+  cite {
+
+    &:before {
+      content: '- ';
+    }
+
+  }
+
+}
+
+button {
+  -webkit-appearance: button;
+  border: 1px solid transparent;
+  border-radius: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  margin: 0;
+  outline-color: $color-link;
+  overflow: visible;
+  text-transform: none;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+button[disabled] {
+  cursor: default;
+}
+
+optgroup {
+  color: inherit;
+  font: inherit;
+  font-weight: bold;
+  margin: 0;
+}
+
+code,
+kdb,
+pre,
+samp {
+  font-family: $font-family-code;
+  font-size: 1em;
+}
+
+embed,
+iframe,
+object {
+  border: 0;
+  max-width: 100%;
+  outline: 0;
+}
+
+fieldset {
+  border: 1px solid $color-border;
+  margin: 0;
+  padding: .5em;
+}
+
+figure,
+figcaption,
+header,
+section {
+  margin: 0;
+}
+
+footer {
+  margin: 0;
+  padding: 0;
+}
+
+%headings {
+  color: $color-headings;
+  font-family: $font-family-headings, $font-family-fallback;
+  font-weight: $font-weight-headings;
+}
+
+@for $i from 1 through length($font-size-headings) {
+
+  h#{$i} {
+    @extend %headings;
+    font-size: nth($font-size-headings, $i);
+    line-height: 1em + (1 / (nth($font-size-headings, $i) / .5em));
+    margin: 0 0 1em / (nth($font-size-headings, $i) / .5em) 0;
+
+    a {
+      color: $color-headings;
+    }
+
+  }
+
+}
+
+img {
+  border: 0;
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: auto;
+}
+
+hr {
+  background-color: $color-border;
+  border: 0;
+  box-sizing: content-box;
+  height: 1px;
+  margin: 0;
+}
+
+label {
+  color: inherit;
+  display: inline-block;
+  font: inherit;
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
+  width: auto;
+}
+
+legend {
+  border: 0;
+  display: inline-block;
+  padding: 0 .25em;
+}
+
+ol,
+ul {
+  margin: 0 0 .5em;
+  padding-left: 1.5em;
+}
+
+p {
+  margin: 0 0 .5em;
+}
+
+pre {
+  display: block;
+  overflow: auto;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+q {
+  quotes: '\201C' '\201D' '\2018' '\2019';
+}
+
+small {
+  font-size: .75em;
+}
+
+sub,
+sup {
+  font-size: .75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -.5em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+svg {
+  height: auto;
+  max-width: 100%;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+td,
+th {
+  padding: 0;
+}

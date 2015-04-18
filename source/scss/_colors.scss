@@ -1,0 +1,32 @@
+$color: unquote('{color:Color}');
+$color-bg: unquote('{color:Background}');
+
+$color-headings: unquote('{color:Headings}');
+
+$color-primary: unquote('{color:Primary}');
+$color-primary-hover: unquote('{color:PrimaryHover}');
+
+$color-link: unquote('{color:Primary}');
+$color-link-hover: unquote('{color:PrimaryHover}');
+
+$color-border: unquote('{color:Border}');
+
+// $color-btn: $color-bg;
+// $color-btn-bg: $color-primary;
+// $color-btn-hover: inherit;
+// $color-btn-hover-bg: darken($color-btn-bg, $amount);
+
+$color-header: unquote('{color:Header}');
+$color-header-bg: unquote('{color:HeaderBackground}');
+
+$color-footer: unquote('{color:Footer}');
+$color-footer-bg: unquote('{color:FooterBackground}');
+
+$color-sidebar: #fff;
+$color-sidebar-bg: #121212;
+
+$color-input: $color;
+$color-input-bg: #f5f5f5;
+
+$color-post-bg: unquote('{color:PostBackground}');
+$color-post-footer: #bcbcbc;

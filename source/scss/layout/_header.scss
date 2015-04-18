@@ -1,0 +1,39 @@
+.header {
+  background-position: 50% 50%;
+  background-size: cover;
+  color: $color-bg;
+  padding: $margin-elements-bottom 0;
+
+  p {
+    display: inline-block;
+    max-width: 32em;
+    width: auto;
+  }
+
+}
+
+.avatar {
+  margin-bottom: 1em;
+  text-align: center;
+
+  img {
+    display: inline-block;
+  }
+
+}
+
+.avatar-circle {
+
+  img {
+    border-radius: 50%;
+  }
+
+}
+
+.avatar-square {
+
+  img {
+    border-radius: 4px;
+  }
+
+}

@@ -1,0 +1,51 @@
+@media print {
+
+  * {
+    background: transparent;
+    box-shadow: none;
+    color: #000;
+    text-shadow: none;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  p,
+  img,
+  blockquote,
+  pre,
+  tr {
+    page-break-inside: avoid;
+  }
+
+  blockquote {
+    border-left: 3px solid #000;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  select {
+    background: #fff;
+  }
+
+  .inside {
+    width: auto;
+  }
+
+}
