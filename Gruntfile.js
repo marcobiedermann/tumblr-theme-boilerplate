@@ -1,6 +1,6 @@
-module.exports = function (grunt) {
+'use strict';
 
-  'use strict';
+module.exports = function (grunt) {
 
   require('jit-grunt')(grunt, {
     cmq: 'grunt-combine-media-queries'
@@ -11,7 +11,8 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
     config: {
       source: 'source',
-      build: 'build'
+      build: 'dist',
+      tmp: '.tmp'
     },
 
     autoprefixer: {
@@ -222,7 +223,11 @@ module.exports = function (grunt) {
 
   });
 
-  grunt.registerTask('default', ['sass', 'watch']);
+  grunt.registerTask('default', [
+    'sass',
+    'watch'
+  ]);
+
   grunt.registerTask('test', [
     'sass',
     'jshint'
