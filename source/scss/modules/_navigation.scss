@@ -1,7 +1,7 @@
 nav {
 
   ul {
-    @include clear();
+    @include clearfix();
     @include list-unstyled();
   }
 

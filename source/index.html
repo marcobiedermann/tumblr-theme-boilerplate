@@ -229,17 +229,11 @@
   </div>
 
 {/block:NoSearchResults}
-
-<!-- TAG-PAGE -->
-
 {block:TagPage}
 
   <h2>{Tag}</h2>
 
 {/block:TagPage}
-
-<!-- DAY-PAGE -->
-
 {block:DayPage}
 
   {Year}.{MonthNumberWithZero}.{DayOfMonthWithZero}
@@ -420,9 +414,9 @@
         </main>
       
       {/block:Link}
-      <main>
+      {block:Panorama}
       
-        {block:Panorama}
+        <main>
       
           {LinkOpenTag}
       
@@ -436,9 +430,9 @@
       
           {/block:Caption}
       
-        {/block:Panorama}
+        </main>
       
-      </main>
+      {/block:Panorama}
       {block:Photo}
       
         <main>

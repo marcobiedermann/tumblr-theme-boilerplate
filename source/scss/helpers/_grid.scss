@@ -1,5 +1,5 @@
 .container {
-  @include clear();
+  @include clearfix();
   margin: 0 auto;
   max-width: 796px;
   width: 90%;

@@ -1,5 +1,5 @@
 .social {
-  @include clear();
+  @include clearfix();
   @include list-unstyled();
 
   li {

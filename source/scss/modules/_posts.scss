@@ -10,7 +10,7 @@
   }
 
   footer {
-    @include clear();
+    @include clearfix();
     border-top: 1px solid $color-border;
     font-size: .875em;
     margin-top: 2em;
@@ -30,8 +30,8 @@
 }
 
 .tags {
+  @include clearfix();
   @include list-unstyled();
-  @include clear();
 
   li {
     float: left;
@@ -73,8 +73,8 @@
   }
 
   &-photoset {
+    @include clearfix();
     @include list-unstyled();
-    @include clear();
 
     li {
       float: left;
@@ -98,7 +98,7 @@
 }
 
 .post-controls {
-  @include clear();
+  @include clearfix();
   @include list-unstyled();
   float: right;
 
@@ -178,7 +178,7 @@
 }
 
 .date-and-notes {
-  @include clear();
+  @include clearfix();
   @include list-unstyled();
   float: left;
 
@@ -205,7 +205,7 @@
   margin-bottom: $margin-elements-bottom;
 
   li {
-    @include clear();
+    @include clearfix();
   }
 
 }
