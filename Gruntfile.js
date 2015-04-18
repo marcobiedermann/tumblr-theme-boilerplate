@@ -126,6 +126,15 @@ module.exports = function (grunt) {
       files: ['<%= config.source %>/js/script.js']
     },
 
+    processhtml: {
+      files: {
+        expand: true,
+        cwd: '<%= config.source %>',
+        dest: '<%= config.build %>',
+        src: '**/*.html'
+      }
+    },
+
     uglify: {
       options: {
         compress: true,
@@ -229,6 +238,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-svgmin');
   grunt.loadNpmTasks('grunt-svgstore');
 
@@ -246,6 +256,7 @@ module.exports = function (grunt) {
     'autoprefixer',
     'cmq',
     'cssmin',
+    'processhtml',
     'concat',
     'uglify',
     'svgmin',
