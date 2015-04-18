@@ -29,6 +29,7 @@
     "grunt-scss-lint": "^0.3.6",
     "grunt-svgmin": "^2.0.1",
     "grunt-svgstore": "0.5.0",
-    "grunt-usemin": "^3.0.0"
+    "grunt-usemin": "^3.0.0",
+    "jit-grunt": "^0.9.1"
   }
 }
