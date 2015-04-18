@@ -1,0 +1,71 @@
+{block:Photo}
+
+  <main>
+
+    <figure>
+
+      {block:IndexPage}
+
+        <a href="{Permalink}" title="{lang:Link post} {PhotoAlt}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"></a>
+
+      {/block:IndexPage}
+
+      {block:PermalinkPage}
+
+        {LinkOpenTag}
+
+          <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">
+
+        {LinkCloseTag}
+
+      {/block:PermalinkPage}
+
+      <figcaption class="caption">
+
+        {block:Caption}
+
+          {Caption}
+
+        {/block:Caption}
+
+        {block:PermalinkPage}
+
+          {block:Exif}
+
+            {block:Camera}
+
+              {Camera}
+
+            {/block:Camera}
+
+            {block:Aperture}
+
+              {Aperture}
+
+            {/block:Aperture}
+
+            {block:Exposure}
+
+              {Exposure}
+
+            {/block:Exposure}
+
+            {block:FocalLength}
+
+              {FocalLength}
+
+            {/block:FocalLength}
+
+          {/block:Exif}
+
+        {/block:PermalinkPage}
+
+      </figcaption>
+
+    </figure>
+
+    <!-- ## Render Exif Data -->
+
+  </main>
+
+{/block:Photo}

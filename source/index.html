@@ -256,381 +256,352 @@
 
     <article id="post-{PostID}" class="post post-{PostType} {block:Odd}post-odd{/block:Odd}{block:Even}post-even{/block:Even}" role="article">
 
-      <!-- POST-TEXT -->
-
-      {block:Text}
-
-        <header>
-
-          {block:IndexPage}
-
-            {block:Title}
-
-              <h2 class="post-title"><a href="{Permalink}" title="{lang:Link post} {Title}">{Title}</a></h2>
-
-            {/block:Title}
-
-          {/block:IndexPage}
-
-          {block:PermalinkPage}
-
-          {block:Title}
-
-            <h1 class="post-title">{Title}</h1>
-
-          {/block:Title}
-
-        {/block:PermalinkPage}
-
-        </header>
-
-        <main>
-
-          {Body}
-
-          {block:More}
-
-            <p><a href="{Permalink}" class="more">{lang:Read more}</a></p>
-
-          {/block:More}
-
-        </main>
-
-      {/block:Text}
-
-      <!-- POST-PHOTO -->
-
-      {block:Photo}
-
-        <main>
-
-          <figure>
-
-            {block:IndexPage}
-
-              <a href="{Permalink}" title="{lang:Link post} {PhotoAlt}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"></a>
-
-            {/block:IndexPage}
-
-            {block:PermalinkPage}
-
-              {LinkOpenTag}
-
-                <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">
-
-              {LinkCloseTag}
-
-            {/block:PermalinkPage}
-
-            <figcaption class="caption">
-
-              {block:Caption}
-
-                {Caption}
-
-              {/block:Caption}
-
-              {block:PermalinkPage}
-
-                {block:Exif}
-
-                  {block:Camera}
-
-                    {Camera}
-
-                  {/block:Camera}
-
-                  {block:Aperture}
-
-                    {Aperture}
-
-                  {/block:Aperture}
-
-                  {block:Exposure}
-
-                    {Exposure}
-
-                  {/block:Exposure}
-
-                  {block:FocalLength}
-
-                    {FocalLength}
-
-                  {/block:FocalLength}
-
-                {/block:Exif}
-
-              {/block:PermalinkPage}
-
-            </figcaption>
-
-          </figure>
-
-          <!-- ## Render Exif Data -->
-
-        </main>
-
-      {/block:Photo}
-
-      <!-- POST-PANORAMA -->
-
-      <main>
-
-        {block:Panorama}
-
-          {LinkOpenTag}
-
-            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}">
-
-          {LinkCloseTag}
-
-          {block:Caption}
-
-            {Caption}
-
-          {/block:Caption}
-
-        {/block:Panorama}
-
-      </main>
-
-      <!-- POST-PHOTOSET -->
-
-      {block:Photoset}
-
-        <main>
-
-          {Photoset}
-
-          {block:Caption}
-
-            {Caption}
-
-          {/block:Caption}
-
-        </main>
-
-      {/block:Photoset}
-
-      <!-- POST-QUOTE -->
-
-      {block:Quote}
-
-        <main>
-
-          <blockquote class="blockquote-{Length}">
-
-            {Quote}
-
-            {block:Source}
-
-              <cite>{Source}</cite>
-
-            {/block:Source}
-
-          </blockquote>
-
-        </main>
-
-      {/block:Quote}
-
-      <!-- POST-LINK -->
-
-      {block:Link}
-
-        <header>
-
-          <h2 class="post-title"><a href="{URL}" {Target}>{Name}</a></h2>
-
-        </header>
-
-        <main>
-
-          {block:Thumbnail}
-
-            {Thumbnail}
-
-          {/block:Thumbnail}
-
-          {block:Description}
-
-            {Description}
-
-          {/block:Description}
-
-        </main>
-
-      {/block:Link}
-
-      <!-- POST-CHAT -->
-
-      {block:Chat}
-
-        <header>
-
-          {block:IndexPage}
-
-            {block:Title}
-
-              <h2 class="post-title"><a href="{Permalink}">{Title}</a></h2>
-
-            {/block:Title}
-
-          {/block:IndexPage}
-
-          {block:PermalinkPage}
-
-            {block:Title}
-
-              <h1 class="post-title">{Title}</h1>
-
-            {/block:Title}
-
-          {/block:PermalinkPage}
-
-        </header>
-
-        <main>
-
-          <ul class="chat">
-
-            {block:Lines}
-
-              <li class="{Alt}">
-
-                {block:Label}
-
-                  <span class="label">{Label}</span>
-
-                {/block:Label}
-
-                {Line}
-
-              </li>
-
-            {/block:Lines}
-
-          </ul>
-
-        </main>
-
-      {/block:Chat}
-
-      <!-- POST-AUDIO -->
-
-      {block:Audio}
-
-        <main>
-
-          <figure class="media">
-
-            {block:AudioPlayer}
-
-              {block:AlbumArt}
-
-                <img src="{AlbumArtURL}" alt="" class="audio-art media-obj-left">
-
-              {/block:AlbumArt}
-
-              <div class="media-body">
-
-                {block:Artist}
-
-                  <h3>{Artist}</h3>
-
-                {/block:Artist}
-
-                {block:Album}
-
-                  <p>{Album}</p>
-
-                {/block:Album}
-
-                {block:TrackName}
-
-                  <p>{TrackName}</p>
-
-                {/block:TrackName}
-
-                {AudioPlayerGrey}
-
-              </div>
-
-              {block:ExternalAudio}
-
-                <p><a href="{ExternalAudioURL}">{lang:Download this track}</a></p>
-
-              {/block:ExternalAudio}
-
-              {block:PlayCount}
-
-                <p>{PlayCountWithLabel}</p>
-
-              {/block:PlayCount}
-
-            {/block:AudioPlayer}
-
-            {block:AudioEmbed}
-
-              {AudioEmbed-640}
-
-            {/block:AudioEmbed}
-
-            {block:Caption}
-
-              <figcaption>
-
-                {Caption}
-
-              </figcaption>
-
-            {/block:Caption}
-
-          </figure>
-
-        </main>
-
-      {/block:Audio}
-
-      <!-- POST-VIDEO -->
-
-      {block:Video}
-
-        <main>
-
-          {Video-700}
-
-          {block:Caption}
-
-            {Caption}
-
-          {/block:Caption}
-
-        </main>
-
-      {/block:Video}
-
-      <!-- POST-ANSWER -->
-
       {block:Answer}
-
+      
         <main>
-
+      
           <h3>{Asker} asked:</h3>
-
+      
           {Question}
-
+      
         {/block:Answer}
-
+      
         {block:Answerer}
-
+      
           <h3>{Answerer} asked:</h3>
-
+      
           {Answer}
-
+      
         </main>
-
+      
       {/block:Answerer}
+      {block:Audio}
+      
+        <main>
+      
+          <figure class="media">
+      
+            {block:AudioPlayer}
+      
+              {block:AlbumArt}
+      
+                <img src="{AlbumArtURL}" alt="" class="audio-art media-obj-left">
+      
+              {/block:AlbumArt}
+      
+              <div class="media-body">
+      
+                {block:Artist}
+      
+                  <h3>{Artist}</h3>
+      
+                {/block:Artist}
+      
+                {block:Album}
+      
+                  <p>{Album}</p>
+      
+                {/block:Album}
+      
+                {block:TrackName}
+      
+                  <p>{TrackName}</p>
+      
+                {/block:TrackName}
+      
+                {AudioPlayerGrey}
+      
+              </div>
+      
+              {block:ExternalAudio}
+      
+                <p><a href="{ExternalAudioURL}">{lang:Download this track}</a></p>
+      
+              {/block:ExternalAudio}
+      
+              {block:PlayCount}
+      
+                <p>{PlayCountWithLabel}</p>
+      
+              {/block:PlayCount}
+      
+            {/block:AudioPlayer}
+      
+            {block:AudioEmbed}
+      
+              {AudioEmbed-640}
+      
+            {/block:AudioEmbed}
+      
+            {block:Caption}
+      
+              <figcaption>
+      
+                {Caption}
+      
+              </figcaption>
+      
+            {/block:Caption}
+      
+          </figure>
+      
+        </main>
+      
+      {/block:Audio}
+      {block:Chat}
+      
+        <header>
+      
+          {block:IndexPage}
+      
+            {block:Title}
+      
+              <h2 class="post-title"><a href="{Permalink}">{Title}</a></h2>
+      
+            {/block:Title}
+      
+          {/block:IndexPage}
+      
+          {block:PermalinkPage}
+      
+            {block:Title}
+      
+              <h1 class="post-title">{Title}</h1>
+      
+            {/block:Title}
+      
+          {/block:PermalinkPage}
+      
+        </header>
+      
+        <main>
+      
+          <ul class="chat">
+      
+            {block:Lines}
+      
+              <li class="{Alt}">
+      
+                {block:Label}
+      
+                  <span class="label">{Label}</span>
+      
+                {/block:Label}
+      
+                {Line}
+      
+              </li>
+      
+            {/block:Lines}
+      
+          </ul>
+      
+        </main>
+      
+      {/block:Chat}
+      {block:Link}
+      
+        <header>
+      
+          <h2 class="post-title"><a href="{URL}" {Target}>{Name}</a></h2>
+      
+        </header>
+      
+        <main>
+      
+          {block:Thumbnail}
+      
+            {Thumbnail}
+      
+          {/block:Thumbnail}
+      
+          {block:Description}
+      
+            {Description}
+      
+          {/block:Description}
+      
+        </main>
+      
+      {/block:Link}
+      <main>
+      
+        {block:Panorama}
+      
+          {LinkOpenTag}
+      
+            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}">
+      
+          {LinkCloseTag}
+      
+          {block:Caption}
+      
+            {Caption}
+      
+          {/block:Caption}
+      
+        {/block:Panorama}
+      
+      </main>
+      {block:Photo}
+      
+        <main>
+      
+          <figure>
+      
+            {block:IndexPage}
+      
+              <a href="{Permalink}" title="{lang:Link post} {PhotoAlt}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"></a>
+      
+            {/block:IndexPage}
+      
+            {block:PermalinkPage}
+      
+              {LinkOpenTag}
+      
+                <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">
+      
+              {LinkCloseTag}
+      
+            {/block:PermalinkPage}
+      
+            <figcaption class="caption">
+      
+              {block:Caption}
+      
+                {Caption}
+      
+              {/block:Caption}
+      
+              {block:PermalinkPage}
+      
+                {block:Exif}
+      
+                  {block:Camera}
+      
+                    {Camera}
+      
+                  {/block:Camera}
+      
+                  {block:Aperture}
+      
+                    {Aperture}
+      
+                  {/block:Aperture}
+      
+                  {block:Exposure}
+      
+                    {Exposure}
+      
+                  {/block:Exposure}
+      
+                  {block:FocalLength}
+      
+                    {FocalLength}
+      
+                  {/block:FocalLength}
+      
+                {/block:Exif}
+      
+              {/block:PermalinkPage}
+      
+            </figcaption>
+      
+          </figure>
+      
+          <!-- ## Render Exif Data -->
+      
+        </main>
+      
+      {/block:Photo}
+      {block:Photoset}
+      
+        <main>
+      
+          {Photoset}
+      
+          {block:Caption}
+      
+            {Caption}
+      
+          {/block:Caption}
+      
+        </main>
+      
+      {/block:Photoset}
+      {block:Quote}
+      
+        <main>
+      
+          <blockquote class="blockquote-{Length}">
+      
+            {Quote}
+      
+            {block:Source}
+      
+              <cite>{Source}</cite>
+      
+            {/block:Source}
+      
+          </blockquote>
+      
+        </main>
+      
+      {/block:Quote}
+      {block:Text}
+      
+        <header>
+      
+          {block:IndexPage}
+      
+            {block:Title}
+      
+              <h2 class="post-title"><a href="{Permalink}" title="{lang:Link post} {Title}">{Title}</a></h2>
+      
+            {/block:Title}
+      
+          {/block:IndexPage}
+      
+          {block:PermalinkPage}
+      
+          {block:Title}
+      
+            <h1 class="post-title">{Title}</h1>
+      
+          {/block:Title}
+      
+        {/block:PermalinkPage}
+      
+        </header>
+      
+        <main>
+      
+          {Body}
+      
+          {block:More}
+      
+            <p><a href="{Permalink}" class="more">{lang:Read more}</a></p>
+      
+          {/block:More}
+      
+        </main>
+      
+      {/block:Text}
+      {block:Video}
+      
+        <main>
+      
+          {Video-700}
+      
+          {block:Caption}
+      
+            {Caption}
+      
+          {/block:Caption}
+      
+        </main>
+      
+      {/block:Video}
 
       <!-- POST-FOOTER -->
 

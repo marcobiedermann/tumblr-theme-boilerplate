@@ -1,0 +1,51 @@
+{block:Chat}
+
+  <header>
+
+    {block:IndexPage}
+
+      {block:Title}
+
+        <h2 class="post-title"><a href="{Permalink}">{Title}</a></h2>
+
+      {/block:Title}
+
+    {/block:IndexPage}
+
+    {block:PermalinkPage}
+
+      {block:Title}
+
+        <h1 class="post-title">{Title}</h1>
+
+      {/block:Title}
+
+    {/block:PermalinkPage}
+
+  </header>
+
+  <main>
+
+    <ul class="chat">
+
+      {block:Lines}
+
+        <li class="{Alt}">
+
+          {block:Label}
+
+            <span class="label">{Label}</span>
+
+          {/block:Label}
+
+          {Line}
+
+        </li>
+
+      {/block:Lines}
+
+    </ul>
+
+  </main>
+
+{/block:Chat}
