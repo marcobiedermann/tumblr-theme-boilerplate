@@ -2,7 +2,7 @@
 
   <div class="autopagerize_page_element">
 
-    <article id="post-{PostID}" class="post post-{PostType} {block:Odd}post-odd{/block:Odd}{block:Even}post-even{/block:Even}" role="article">
+    <article id="post-{PostID}" class="post post-{PostType} {block:Odd}post-odd{/block:Odd}{block:Even}post-even{/block:Even}" role="article" itemscope="" itemtype="http://schema.org/BlogPosting">
 
       {{> answer }}
       {{> audio }}
@@ -25,7 +25,7 @@
 
           {block:Date}
 
-            <li><a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/"><time datetime="{Timestamp}"><span class="month">{Month}</span> <span class="day">{DayOfMonth}</span>, <span class="year">{Year}</span></time></a></li>
+            <li><a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/"><time datetime="{Timestamp}" itemprop="datePublished"><span class="month">{Month}</span> <span class="day">{DayOfMonth}</span>, <span class="year">{Year}</span></time></a></li>
 
           {/block:Date}
 
@@ -76,7 +76,7 @@
 
             {block:Tags}
 
-              <li><a href="{TagURL}">{Tag}</a></li>
+              <li><a href="{TagURL}" itemprop="about keywords">{Tag}</a></li>
 
             {block:Tags}
 
