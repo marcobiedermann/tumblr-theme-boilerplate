@@ -164,31 +164,31 @@
   
         <ul>
   
-          <li><a href="/" itemprop="url"><span itemprop="name">{lang:Home}</span></a></li>
+          <li><a href="/" itemprop="url" title="{lang:Home}"><span itemprop="name">{lang:Home}</span></a></li>
   
           {block:HasPages}
   
             {block:Pages}
   
-              <li><a href="{URL}" itemprop="url"><span itemprop="name">{Label}</span></a></li>
+              <li><a href="{URL}" itemprop="url" title="{Label}"><span itemprop="name">{Label}</span></a></li>
   
             {/block:Pages}
   
           {/block:HasPages}
   
-          <li><a href="/random" itemprop="url"><span itemprop="name">{lang:Random post}</span></a></li>
+          <li><a href="/random" itemprop="url" title="{lang:Random post}"><span itemprop="name">{lang:Random post}</span></a></li>
   
-          <li><a href="/archive" itemprop="url"><span itemprop="name">{lang:Archive}</span></a></li>
+          <li><a href="/archive" itemprop="url" title="{lang:Archive}"><span itemprop="name">{lang:Archive}</span></a></li>
   
           {block:AskEnabled}
   
-            <li><a href="/ask" itemprop="url"><span itemprop="name">{AskLabel}</span></a></li>
+            <li><a href="/ask" itemprop="url" title="{AskLabel}"><span itemprop="name">{AskLabel}</span></a></li>
   
           {/block:AskEnabled}
   
           {block:SubmissionsEnabled}
   
-            <li><a href="/submit" itemprop="url"><span itemprop="name">{SubmitLabel}</span></a></li>
+            <li><a href="/submit" itemprop="url" title="{SubmitLabel}"><span itemprop="name">{SubmitLabel}</span></a></li>
   
           {/block:SubmissionsEnabled}
   
@@ -247,7 +247,7 @@
 
   <div class="autopagerize_page_element">
 
-    <article id="post-{PostID}" class="post post-{PostType} {block:Odd}post-odd{/block:Odd}{block:Even}post-even{/block:Even}" role="article" itemscope="" itemtype="http://schema.org/BlogPosting">
+    <article id="post-{PostID}" class="post post-{PostType} {block:Odd}post-odd{/block:Odd}{block:Even}post-even{/block:Even}" role="article" itemscope="itemscope" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 
       {block:Answer}
       
