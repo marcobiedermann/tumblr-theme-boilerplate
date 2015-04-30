@@ -61,19 +61,8 @@ Note: Images, Audio Files and Videos are not included in project files
 * Ajax Search
 * Sidebar
 
-## Files
-* HTML File
-* CSS File
-* 3 differnent color scheme presets
-* Screenshots
-
 ## Credits
 * [Google Fonts](http://www.google.com/fonts)
 * [Disqus](http://disqus.com)
 * [HTML5 Shiv](https://github.com/aFarkas/html5shiv)
 * [Unsplash](https://unsplash.com/)
-
-## Changelog
-
-## Support
-If you have any issues with our theme please email us. In most cases we will respond within 24 hours.
