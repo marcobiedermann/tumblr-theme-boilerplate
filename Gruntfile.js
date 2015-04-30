@@ -42,7 +42,9 @@ module.exports = function (grunt) {
     },
 
     clean: {
-      folder: ['<%= config.build %>']
+      dist: ['<%= config.build %>'],
+      tmp: ['<%= config.tmp %>'],
+      sass: ['.sass-cache']
     },
 
     htmlmin: {
@@ -176,12 +178,14 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'clean',
+    'clean:dist',
     'sass',
     'autoprefixer',
     'assemble',
     'processhtml',
-    'svgmin'
+    'svgmin',
+    'clean:tmp',
+    'clean:sass'
   ]);
 
 };
