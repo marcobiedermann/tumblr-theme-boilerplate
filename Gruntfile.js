@@ -24,7 +24,7 @@ module.exports = function (grunt) {
       files: {
         expand: true,
         cwd: '<%= config.source %>/templates/pages',
-        dest: '<%= config.source %>',
+        dest: '<%= config.tmp %>',
         src: '**/*.html'
       }
     },
@@ -35,62 +35,14 @@ module.exports = function (grunt) {
       },
       files: {
         expand: true,
-        cwd: '<%= config.source %>/css',
-        dest: '<%= config.build %>/css',
+        cwd: '<%= config.tmp %>/css',
+        dest: '<%= config.tmp %>/css',
         src: '**/*.css'
       }
     },
 
     clean: {
       folder: ['<%= config.build %>']
-    },
-
-    cmq: {
-      files: {
-        expand: true,
-        cwd: '<%= config.build %>/css',
-        dest: '<%= config.build %>/css',
-        src: '**/*.css'
-      }
-    },
-
-    concat: {
-      files: {
-        src: [
-          '<%= config.source %>/js/script.js'
-        ],
-        dest: '<%= config.build %>/js/main.js',
-      }
-    },
-
-    copy: {
-      favicons: {
-        expand: true,
-        cwd: '<%= config.source %>',
-        dest: '<%= config.build %>',
-        src: '*{ico,jpg,png}'
-      },
-      fonts: {
-        expand: true,
-        cwd: '<%= config.source %>/fonts',
-        dest: '<%= config.build %>/fonts',
-        src: '**/*'
-      },
-      html: {
-        expand: true,
-        cwd: '<%= config.source %>',
-        dest: '<%= config.build %>',
-        src: '*.html'
-      }
-    },
-
-    cssmin: {
-      files: {
-        expand: true,
-        cwd: '<%= config.build %>/css',
-        dest: '<%= config.build %>/css',
-        src: '**/*.css'
-      }
     },
 
     htmlmin: {
@@ -114,20 +66,9 @@ module.exports = function (grunt) {
       },
       files: {
         expand: true,
-        cwd: '<%= config.source %>',
+        cwd: '<%= config.tmp %>',
         dest: '<%= config.build %>',
         src: '**/*.html'
-      }
-    },
-
-    imagemin: {
-      files: {
-        files: [{
-          expand: true,
-          cwd: '<%= config.source %>/img',
-          src: '**/*.{gif,jpeg,jpg,png}',
-          dest: '<%= config.build %>/img'
-        }]
       }
     },
 
@@ -141,24 +82,10 @@ module.exports = function (grunt) {
     processhtml: {
       files: {
         expand: true,
-        cwd: '<%= config.source %>',
+        cwd: '<%= config.tmp %>',
         dest: '<%= config.build %>',
         src: '*.html'
       }
-    },
-
-    uglify: {
-      options: {
-        compress: true,
-        mangle: true,
-        preserveComments: 'some'
-      },
-      traget: {
-        files: {
-          '<%= config.build %>/js/main.js': ['<%= config.build %>/js/main.js']
-        }
-      }
-
     },
 
     sass: {
@@ -168,7 +95,7 @@ module.exports = function (grunt) {
       files: {
         expand: true,
         cwd: '<%= config.source %>/scss',
-        dest: '<%= config.source %>/css',
+        dest: '<%= config.tmp %>/css',
         src: ['**/*.scss'],
         ext: '.css'
       }
@@ -181,7 +108,7 @@ module.exports = function (grunt) {
       files: {
         expand: true,
         cwd: '<%= config.source %>/img',
-        dest: '<%= config.build %>/img',
+        dest: '<%= config.tmp %>/img',
         ext: '.svg',
         src: ['**/*.svg']
       }
@@ -197,7 +124,7 @@ module.exports = function (grunt) {
       },
       default: {
         files: {
-          '<%= config.build %>/img/icons.svg': ['<%= config.build %>/img/icons/*.svg'],
+          '<%= config.tmp %>/img/icons.svg': ['<%= config.tmp %>/img/icons/*.svg'],
         }
       }
     },
@@ -216,11 +143,6 @@ module.exports = function (grunt) {
       html: {
         files: ['<%= config.source %>/templates/**/*.html'],
         tasks: ['assemble']
-      },
-
-      img: {
-        files: ['<%= config.source %>/img/**/*.{gif,jpeg,jpg,png}'],
-        tasks: []
       },
 
       js: {
@@ -255,17 +177,11 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean',
-    'copy',
     'sass',
     'autoprefixer',
-    'cmq',
-    'cssmin',
     'assemble',
     'processhtml',
-    'concat',
-    'uglify',
-    'svgmin',
-    'imagemin'
+    'svgmin'
   ]);
 
 };
