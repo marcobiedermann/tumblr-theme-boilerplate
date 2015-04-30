@@ -1,6 +1,6 @@
 .container {
   @include clearfix();
   margin: 0 auto;
-  max-width: 796px;
-  width: 90%;
+  max-width: $grid-container;
+  width: 95%;
 }

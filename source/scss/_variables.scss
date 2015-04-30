@@ -8,12 +8,12 @@ $font-weight: unquote('{text:FontWeight}');
 $line-height: unquote('{text:LineHeight}');
 
 $font-family-headings: inherit;
-$font-size-h1: 2.5em;
-$font-size-h2: 2em;
-$font-size-h3: 1.5em;
-$font-size-h4: 1em;
-$font-size-h5: .875em;
-$font-size-h6: .75em;
+$font-size-h1: 2.5rem;
+$font-size-h2: 2rem;
+$font-size-h3: 1.5rem;
+$font-size-h4: 1rem;
+$font-size-h5: .875rem;
+$font-size-h6: .75rem;
 $font-weight-headings: 700;
 
 $font-size-headings: (
@@ -33,7 +33,7 @@ $amount: 10%;
 
 // Layout
 
-$margin-elements-bottom: 3em;
+$margin-elements-bottom: 3rem;
 
 // Layers
 
@@ -42,17 +42,11 @@ $z-index-submenu: 999;
 // Grid
 
 $grid-columns: 12;
-$grid-gutter: 20px;
-$grid-gutter-large: 30px;
-$grid-container: 960px;
-$grid-container-large: 1200px;
-$grid-container-tablet: 744px;
+$grid-gutter: 2%;
+$grid-container: 48rem;
 
-$media-large: 1200px;
-$media-tablet: 767px;
-$media-desktop: 979px;
-$media-mobile: 480px;
-
-// Paths
-
-$path-img: '../img';
+$media-micro: 20rem; // 320
+$media-tiny: 30rem; // 480
+$media-small: 40rem; // 640
+$media-medium: 60rem; // 960
+$media-large: 80rem; // 1280
