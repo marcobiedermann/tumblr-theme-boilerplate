@@ -31,11 +31,6 @@ nbproject
 
 # Folders to ignore
 .sass-cache
+.tmp
 bower_components
-dist
 node_modules
-
-# Theme Files
-
-source/css/styles.css
-source/js/main.js
