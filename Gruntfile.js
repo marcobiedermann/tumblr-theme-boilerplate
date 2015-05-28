@@ -144,7 +144,7 @@ module.exports = function (grunt) {
 
       html: {
         files: ['<%= config.source %>/templates/**/*.html'],
-        tasks: ['assemble']
+        tasks: ['assemble', 'processhtml']
       },
 
       js: {
@@ -154,7 +154,7 @@ module.exports = function (grunt) {
 
       sass: {
         files: ['<%= config.source %>/scss/**/*.scss'],
-        tasks: ['sass']
+        tasks: ['sass', 'autoprefixer', 'processhtml']
       },
 
       svg: {
@@ -168,13 +168,11 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'sass',
+    'autoprefixer',
     'assemble',
+    'processhtml',
+    'svgmin',
     'watch'
-  ]);
-
-  grunt.registerTask('test', [
-    'sass',
-    'jshint'
   ]);
 
   grunt.registerTask('build', [
