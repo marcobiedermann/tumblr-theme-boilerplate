@@ -136,7 +136,7 @@
       display: block;
     }
 
-    &:before {
+    &::before {
       border-color: $color-bg;
       border-style: solid;
       border-width: 8px 8px 0;
