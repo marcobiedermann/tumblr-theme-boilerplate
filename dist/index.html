@@ -119,11 +119,10 @@
 
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family={font:Headings}">
   <style>
-* {
-  box-sizing: border-box;
-}
-*::before, *::after {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 ::-webkit-input-placeholder {
@@ -166,6 +165,7 @@ template {
 }
 
 html {
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
