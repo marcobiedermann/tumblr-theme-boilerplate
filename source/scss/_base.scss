@@ -90,9 +90,13 @@ dfn {
   font-style: italic;
 }
 
-audio:not([controls]) {
-  display: none;
-  height: 0;
+audio {
+
+  &:not([controls]) {
+    display: none;
+    height: 0;
+  }
+
 }
 
 b,
@@ -127,15 +131,16 @@ button {
   outline-color: $color-link;
   overflow: visible;
   text-transform: none;
-}
 
-button::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
 
-button[disabled] {
-  cursor: default;
+  &[disabled] {
+    cursor: default;
+  }
+
 }
 
 optgroup {
@@ -277,10 +282,11 @@ sub {
 svg {
   height: auto;
   max-width: 100%;
-}
 
-svg:not(:root) {
-  overflow: hidden;
+  &:not(:root) {
+    overflow: hidden;
+  }
+
 }
 
 table {
