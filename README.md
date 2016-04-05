@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/marcobiedermann/tumblr-theme-boilerplate.svg?branch=master)](https://travis-ci.org/marcobiedermann/tumblr-theme-boilerplate)
 [![devDependency Status](https://david-dm.org/marcobiedermann/tumblr-theme-boilerplate/dev-status.svg)](https://david-dm.org/marcobiedermann/tumblr-theme-boilerplate#info=devDependencies)
 
 # Tumblr Theme Template

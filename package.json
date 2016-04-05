@@ -11,6 +11,10 @@
   "bugs": {
     "url": "https://github.com/marcobiedermann/tumblr-theme-template/issues"
   },
+  "scripts": {
+    "dev": "grunt",
+    "build": "grunt build"
+  },
   "devDependencies": {
     "grunt": "^1.0.0",
     "grunt-assemble": "^0.4.0",
