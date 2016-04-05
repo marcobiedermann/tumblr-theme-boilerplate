@@ -1,7 +1,9 @@
+$header-bgcolor: unquote('{color:HeaderBackground}');
+$header-color: unquote('{color:Header}');
+
 .header {
-  background-position: 50% 50%;
-  background-size: cover;
-  color: $color-bg;
+  background-color: $header-bgcolor;
+  color: $header-color;
   padding: $margin-elements-bottom 0;
 
   p {

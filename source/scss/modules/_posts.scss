@@ -1,5 +1,9 @@
+$post-bgcolor: unquote('{color:PostBackground}');
+
+$post-footer-color: #bcbcbc;
+
 .post {
-  background-color: $color-post-bg;
+  background-color: $post-bgcolor;
   border: 1px solid $color-border;
   border-radius: .25rem;
   margin-bottom: $margin-elements-bottom;
@@ -17,7 +21,7 @@
     padding-top: 1rem;
 
     a {
-      color: $color-post-footer;
+      color: $post-footer-color;
     }
 
   }
@@ -155,7 +159,7 @@
 
       &:hover {
         background-color: $color-link-hover;
-        color: $color-post-bg;
+        color: $post-bgcolor;
       }
 
     }
