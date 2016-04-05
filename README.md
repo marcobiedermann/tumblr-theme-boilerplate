@@ -1,4 +1,4 @@
-[![devDependency Status](https://david-dm.org/marcobiedermann/tumblr-theme-template/dev-status.svg)](https://david-dm.org/marcobiedermann/tumblr-theme-template#info=devDependencies)
+[![devDependency Status](https://david-dm.org/marcobiedermann/tumblr-theme-boilerplate/dev-status.svg)](https://david-dm.org/marcobiedermann/tumblr-theme-boilerplate#info=devDependencies)
 
 # Tumblr Theme Template
 
