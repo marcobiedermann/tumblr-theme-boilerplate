@@ -808,17 +808,11 @@ nav a {
   top: -9999px;
 }
 
-.container {
-  margin: 0 auto;
+.grid {
+  margin-left: auto;
+  margin-right: auto;
   max-width: 48rem;
   width: 95%;
-}
-.container::before, .container::after {
-  content: ' ';
-  display: table;
-}
-.container::after {
-  clear: both;
 }
 
 @media print {
@@ -904,7 +898,7 @@ nav a {
 
   <header class="header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
   
-    <div class="container">
+    <div class="grid">
   
       <nav class="nav nav-horizontal" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
   
@@ -955,7 +949,7 @@ nav a {
 
   <main class="main" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
 
-    <div class="container">
+    <div class="grid">
 
       
 
@@ -1545,7 +1539,7 @@ nav a {
 
   <footer class="footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
   
-    <div class="container">
+    <div class="grid">
   
       <p>Copyright <span itemprop="copyrightYear">{CopyrightYears}</span> | <a href="{BlogURL}" title="{Title}">{Title}</a></p>
   
