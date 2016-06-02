@@ -39,11 +39,7 @@
 
   {{> google-analytics }}
 
-  {block:IfDisqusShortname}
-    <!-- build:js inline -->
-    <script src="../source/js/disqus.js"></script>
-    <!-- /build -->
-  {/block:IfDisqusShortname}
+  {{> disqus }}
 
   <!-- build:js inline -->
   <script src="../source/js/script.js"></script>
