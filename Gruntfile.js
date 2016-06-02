@@ -3,7 +3,6 @@
 module.exports = function (grunt) {
 
   require('jit-grunt')(grunt, {
-    cmq: 'grunt-combine-media-queries'
   });
 
   grunt.initConfig({
