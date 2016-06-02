@@ -33,17 +33,14 @@
 
   {{> footer }}
 
-  {block:IfInfiniteScrolling}
-    <script src="http://codysherman.tumblr.com/tools/infinite-scrolling/code"></script>
-  {/block:IfInfiniteScrolling}
-
+  {{> infinite-scrolling }}
   {{> google-analytics }}
-
   {{> disqus }}
 
   <!-- build:js inline -->
   <script src="../source/js/script.js"></script>
   <!-- /build -->
+
 
 </body>
 
