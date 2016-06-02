@@ -126,7 +126,7 @@ $post-footer-color: #bcbcbc;
 
   ul {
     @include list-unstyled();
-    background-color: $color-bg;
+    background-color: unquote('{color:Background}');
     border: 1px solid $color-border;
     border-radius: .25rem;
     bottom: 100%;
@@ -141,7 +141,7 @@ $post-footer-color: #bcbcbc;
     }
 
     &::before {
-      border-color: $color-bg;
+      border-color: unquote('{color:Background}');
       border-style: solid;
       border-width: 8px 8px 0;
       content: '';

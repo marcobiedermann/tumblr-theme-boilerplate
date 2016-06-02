@@ -1,3 +1,13 @@
+$html-font-size: 100%;
+
+$body-background-color: unquote('{color:Background}');
+$body-color: unquote('{color:Color}');
+$body-font-family: unquote('{font:Body}');
+$body-font-family-fallback: unquote('{select:FontBody}');
+$body-font-size: unquote('{text:FontSize}');
+$body-font-weight: unquote('{text:FontWeight}');
+$body-line-height: unquote('{text:LineHeight}');
+
 *,
 *::before,
 *::after {
@@ -6,8 +16,8 @@
 
 -moz-::selection,
 ::selection {
-  background: $color;
-  color: $color-bg;
+  background-color: $body-color;
+  color: $body-background-color;
   text-shadow: none;
 }
 
@@ -17,15 +27,18 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  font-size: 100%;
+  font-size: $html-font-size;
   height: 100%;
   text-rendering: optimizeLegibility;
 }
 
 body {
-  background: $color-bg;
-  color: $color;
-  font: $font-weight #{$font-size}/#{$line-height} $font-family, $font-family-fallback;
+  background-color: $body-background-color;
+  color: $body-color;
+  font-family: $body-font-family, $body-font-family-fallback;
+  font-size: $body-font-size;
+  font-weight: $body-font-weight;
+  line-height: $body-line-height;
   margin: 0;
   min-height: 100%;
   position: relative;

@@ -127,14 +127,14 @@
 
 -moz-::-moz-selection,
 ::-moz-selection {
-  background: {color:Color};
+  background-color: {color:Color};
   color: {color:Background};
   text-shadow: none;
 }
 
 -moz-::selection,
 ::selection {
-  background: {color:Color};
+  background-color: {color:Color};
   color: {color:Background};
   text-shadow: none;
 }
@@ -151,9 +151,12 @@ html {
 }
 
 body {
-  background: {color:Background};
+  background-color: {color:Background};
   color: {color:Color};
-  font: {text:FontWeight} {text:FontSize}/{text:LineHeight} {font:Body}, {select:FontBody};
+  font-family: {font:Body}, {select:FontBody};
+  font-size: {text:FontSize};
+  font-weight: {text:FontWeight};
+  line-height: {text:LineHeight};
   margin: 0;
   min-height: 100%;
   position: relative;
@@ -379,7 +382,7 @@ optgroup {
 
 h1, h2, h3, h4, h5, h6 {
   color: {color:Headings};
-  font-family: inherit, {select:FontBody};
+  font-family: inherit, inherit;
   font-weight: 700;
 }
 

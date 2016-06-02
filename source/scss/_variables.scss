@@ -1,12 +1,3 @@
-// Typography
-
-$font-family: unquote('{font:Body}');
-$font-family-fallback: unquote('{select:FontBody}');
-$font-size: unquote('{text:FontSize}');
-$font-weight: unquote('{text:FontWeight}');
-
-$line-height: unquote('{text:LineHeight}');
-
 // Visual
 
 $amount: 10%;
@@ -20,9 +11,6 @@ $media-tiny: 30rem; // 480
 $media-small: 40rem; // 640
 $media-medium: 60rem; // 960
 $media-large: 80rem; // 1280
-
-$color: unquote('{color:Color}');
-$color-bg: unquote('{color:Background}');
 
 $color-headings: unquote('{color:Headings}');
 
@@ -38,6 +26,3 @@ $color-border: unquote('{color:Border}');
 // $color-btn-bg: $color-primary;
 // $color-btn-hover: inherit;
 // $color-btn-hover-bg: darken($color-btn-bg, $amount);
-
-$color-input: $color;
-$color-input-bg: #f5f5f5;

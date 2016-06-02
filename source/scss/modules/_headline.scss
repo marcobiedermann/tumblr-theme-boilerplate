@@ -1,4 +1,5 @@
 $font-family-headings: inherit;
+$font-family-fallback-headings: inherit;
 $font-size-h1: 2.5rem;
 $font-size-h2: 2rem;
 $font-size-h3: 1.5rem;
@@ -18,7 +19,7 @@ $font-size-headings: (
 
 %headings {
   color: $color-headings;
-  font-family: $font-family-headings, $font-family-fallback;
+  font-family: $font-family-headings, $font-family-fallback-headings;
   font-weight: $font-weight-headings;
 }
 
