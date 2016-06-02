@@ -1,4 +1,4 @@
-$footer-bgcolor: unquote('{color:FooterBackground}');
+$footer-background-color: unquote('{color:FooterBackground}');
 $footer-color: unquote('{color:Footer}');
 
 footer {
@@ -8,7 +8,7 @@ footer {
 }
 
 .footer {
-  background-color: $footer-bgcolor;
+  background-color: $footer-background-color;
   color: $footer-color;
   font-size: .875rem;
   padding: 2rem 0;

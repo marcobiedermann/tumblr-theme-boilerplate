@@ -1,4 +1,4 @@
-$header-bgcolor: unquote('{color:HeaderBackground}');
+$header-background-color: unquote('{color:HeaderBackground}');
 $header-color: unquote('{color:Header}');
 
 header {
@@ -7,7 +7,7 @@ header {
 }
 
 .header {
-  background-color: $header-bgcolor;
+  background-color: $header-background-color;
   color: $header-color;
   padding: $margin-elements-bottom 0;
 
