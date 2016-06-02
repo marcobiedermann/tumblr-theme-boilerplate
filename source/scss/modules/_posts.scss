@@ -15,6 +15,7 @@ $post-footer-color: #bcbcbc;
 
   footer {
     @include clearfix();
+
     border-top: 1px solid $color-border;
     font-size: .875rem;
     margin-top: 2rem;
@@ -104,6 +105,7 @@ $post-footer-color: #bcbcbc;
 .post-controls {
   @include clearfix();
   @include list-unstyled();
+
   float: right;
 
   li {
@@ -126,6 +128,7 @@ $post-footer-color: #bcbcbc;
 
   ul {
     @include list-unstyled();
+
     background-color: unquote('{color:Background}');
     border: 1px solid $color-border;
     border-radius: .25rem;
@@ -184,6 +187,7 @@ $post-footer-color: #bcbcbc;
 .date-and-notes {
   @include clearfix();
   @include list-unstyled();
+
   float: left;
 
   li {
@@ -204,6 +208,7 @@ $post-footer-color: #bcbcbc;
 
 .notes {
   @include list-unstyled();
+
   font-size: .875rem;
   line-height: 1.5rem;
   margin-bottom: $margin-elements-bottom;
