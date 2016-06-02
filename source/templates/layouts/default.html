@@ -37,11 +37,7 @@
     <script src="http://codysherman.tumblr.com/tools/infinite-scrolling/code"></script>
   {/block:IfInfiniteScrolling}
 
-  {block:IfGoogleAnalytics}
-    <!-- build:js inline -->
-    <script src="../source/js/google-analytics.js"></script>
-    <!-- /build -->
-  {/block:IfGoogleAnalytics}
+  {{> google-analytics }}
 
   {block:IfDisqusShortname}
     <!-- build:js inline -->
