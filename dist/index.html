@@ -1690,8 +1690,7 @@ video {
   {/block:IfDisqusShortname}
 
   <script>
-(function() {
-
+(function(window, document) {
   'use strict';
 
   // prev / next Post on Keypress
@@ -1729,7 +1728,7 @@ video {
 
   });
 
-})();
+})(window, document);
   </script>
 
 </body>

@@ -1,5 +1,4 @@
-(function() {
-
+(function(window, document) {
   'use strict';
 
   // prev / next Post on Keypress
@@ -37,4 +36,4 @@
 
   });
 
-})();
+})(window, document);
