@@ -125,26 +125,6 @@
   box-sizing: inherit;
 }
 
-::-webkit-input-placeholder {
-  color: {color:Border};
-  font-style: italic;
-}
-
-::-moz-placeholder {
-  color: {color:Border};
-  font-style: italic;
-}
-
-:-moz-placeholder {
-  color: {color:Border};
-  font-style: italic;
-}
-
-:-ms-input-placeholder {
-  color: {color:Border};
-  font-style: italic;
-}
-
 -moz-::-moz-selection,
 ::-moz-selection {
   background: {color:Color};
@@ -157,11 +137,6 @@
   background: {color:Color};
   color: {color:Background};
   text-shadow: none;
-}
-
-[hidden],
-template {
-  display: none;
 }
 
 html {
@@ -184,27 +159,74 @@ body {
   position: relative;
 }
 
-article,
-aside,
-details,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
+footer {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  background-color: {color:FooterBackground};
+  color: {color:Footer};
+  font-size: .875rem;
+  padding: 2rem 0;
+}
+
+.copyright {
+  float: left;
+}
+
+.scroll-top {
+  float: right;
+}
+
+header {
+  display: block;
+  margin: 0;
+}
+
+.header {
+  background-color: {color:HeaderBackground};
+  color: {color:Header};
+  padding: 3rem 0;
+}
+.header p {
+  display: inline-block;
+  max-width: 32rem;
+  width: auto;
+}
+
+.avatar {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.avatar img {
+  display: inline-block;
+}
+
+.avatar-circle img {
+  border-radius: 50%;
+}
+
+.avatar-square img {
+  border-radius: .25rem;
+}
+
+main {
   display: block;
 }
 
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-  vertical-align: baseline;
+.main {
+  padding: 3rem 0;
+}
+
+section {
+  display: block;
+  margin: 0;
+}
+
+aside {
+  display: block;
 }
 
 a {
@@ -221,20 +243,17 @@ a:hover {
   color: {color:PrimaryHover};
 }
 
-address,
-em,
-dfn {
-  font-style: italic;
+article {
+  display: block;
 }
 
+audio {
+  display: inline-block;
+  vertical-align: baseline;
+}
 audio:not([controls]) {
   display: none;
   height: 0;
-}
-
-b,
-strong {
-  font-weight: bold;
 }
 
 blockquote {
@@ -267,11 +286,9 @@ button[disabled] {
   cursor: default;
 }
 
-optgroup {
-  color: inherit;
-  font: inherit;
-  font-weight: bold;
-  margin: 0;
+canvas {
+  display: inline-block;
+  vertical-align: baseline;
 }
 
 code,
@@ -282,6 +299,21 @@ samp {
   font-size: 1rem;
 }
 
+pre {
+  display: block;
+  overflow: auto;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: block;
+}
+
 embed,
 iframe,
 object {
@@ -290,22 +322,59 @@ object {
   outline: 0;
 }
 
+figure,
+figcaption {
+  display: block;
+  margin: 0;
+}
+
+::-webkit-input-placeholder {
+  color: {color:Border};
+  font-style: italic;
+}
+
+::-moz-placeholder {
+  color: {color:Border};
+  font-style: italic;
+}
+
+:-moz-placeholder {
+  color: {color:Border};
+  font-style: italic;
+}
+
+:-ms-input-placeholder {
+  color: {color:Border};
+  font-style: italic;
+}
+
 fieldset {
   border: 1px solid {color:Border};
   margin: 0;
   padding: .5rem;
 }
 
-figure,
-figcaption,
-header,
-section {
+label {
+  color: inherit;
+  display: inline-block;
+  font: inherit;
   margin: 0;
+  max-width: 100%;
+  padding: 0;
+  width: auto;
 }
 
-footer {
+legend {
+  border: 0;
+  display: inline-block;
+  padding: 0 .25rem;
+}
+
+optgroup {
+  color: inherit;
+  font: inherit;
+  font-weight: bold;
   margin: 0;
-  padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -368,142 +437,12 @@ h6 a {
   color: {color:Headings};
 }
 
-img {
-  border: 0;
-  display: block;
-  height: auto;
-  max-width: 100%;
-  width: auto;
-}
-
 hr {
   background-color: {color:Border};
   border: 0;
   box-sizing: content-box;
   height: 1px;
   margin: 0;
-}
-
-label {
-  color: inherit;
-  display: inline-block;
-  font: inherit;
-  margin: 0;
-  max-width: 100%;
-  padding: 0;
-  width: auto;
-}
-
-legend {
-  border: 0;
-  display: inline-block;
-  padding: 0 .25rem;
-}
-
-ol,
-ul {
-  margin: 0 0 .5rem;
-  padding-left: 1.5rem;
-}
-
-p {
-  margin: 0 0 .5rem;
-}
-
-pre {
-  display: block;
-  overflow: auto;
-  word-break: break-all;
-  word-wrap: break-word;
-}
-
-q {
-  quotes: '\201C' '\201D' '\2018' '\2019';
-}
-
-small {
-  font-size: .75rem;
-}
-
-sub,
-sup {
-  font-size: .75rem;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -.5rem;
-}
-
-sub {
-  bottom: -.25rem;
-}
-
-svg {
-  height: auto;
-  max-width: 100%;
-}
-svg:not(:root) {
-  overflow: hidden;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-}
-
-td,
-th {
-  padding: 0;
-}
-
-.header {
-  background-color: {color:HeaderBackground};
-  color: {color:Header};
-  padding: 3rem 0;
-}
-.header p {
-  display: inline-block;
-  max-width: 32rem;
-  width: auto;
-}
-
-.avatar {
-  margin-bottom: 1rem;
-  text-align: center;
-}
-.avatar img {
-  display: inline-block;
-}
-
-.avatar-circle img {
-  border-radius: 50%;
-}
-
-.avatar-square img {
-  border-radius: .25rem;
-}
-
-.main {
-  padding: 3rem 0;
-}
-
-.footer {
-  background-color: {color:FooterBackground};
-  color: {color:Footer};
-  font-size: .875rem;
-  padding: 2rem 0;
-}
-
-.copyright {
-  float: left;
-}
-
-.scroll-top {
-  float: right;
 }
 
 .social {
@@ -528,6 +467,28 @@ th {
   width: 1.5rem;
 }
 
+img {
+  border: 0;
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: auto;
+}
+
+svg {
+  height: auto;
+  max-width: 100%;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+
+ol,
+ul {
+  margin: 0 0 .5rem;
+  padding-left: 1.5rem;
+}
+
 .media::before, .media::after {
   content: ' ';
   display: table;
@@ -550,6 +511,9 @@ th {
   overflow: hidden;
 }
 
+nav {
+  display: block;
+}
 nav ul {
   list-style: none;
   margin: 0;
@@ -783,6 +747,71 @@ nav a {
 
 .post-audio .audio-art {
   max-width: 160px;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+address,
+em,
+dfn {
+  font-style: italic;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+p {
+  margin: 0 0 .5rem;
+}
+
+q {
+  quotes: '\201C' '\201D' '\2018' '\2019';
+}
+
+small {
+  font-size: .75rem;
+}
+
+sub,
+sup {
+  font-size: .75rem;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -.5rem;
+}
+
+sub {
+  bottom: -.25rem;
+}
+
+video {
+  display: inline-block;
+  vertical-align: baseline;
 }
 
 .center-block {

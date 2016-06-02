@@ -1,0 +1,19 @@
+a {
+  background-color: transparent;
+  border: 0;
+  color: $color-link;
+  text-decoration: none;
+
+  &:active,
+  &:focus,
+  &:hover,
+  &:visited {
+    border: 0;
+    outline: 0;
+  }
+
+  &:hover {
+    color: $color-link-hover;
+  }
+
+}

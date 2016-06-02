@@ -1,0 +1,15 @@
+blockquote {
+  border-left: 3px solid $color-border;
+  font-style: italic;
+  margin: 0;
+  padding-left: 1rem;
+
+  cite {
+
+    &::before {
+      content: '- ';
+    }
+
+  }
+
+}

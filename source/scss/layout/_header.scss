@@ -1,6 +1,11 @@
 $header-bgcolor: unquote('{color:HeaderBackground}');
 $header-color: unquote('{color:Header}');
 
+header {
+  display: block;
+  margin: 0;
+}
+
 .header {
   background-color: $header-bgcolor;
   color: $header-color;

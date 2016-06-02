@@ -1,0 +1,16 @@
+$font-family-code: monospace;
+
+code,
+kdb,
+pre,
+samp {
+  font-family: $font-family-code;
+  font-size: 1rem;
+}
+
+pre {
+  display: block;
+  overflow: auto;
+  word-break: break-all;
+  word-wrap: break-word;
+}

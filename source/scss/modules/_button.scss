@@ -1,0 +1,22 @@
+button {
+  -webkit-appearance: button;
+  border: 1px solid transparent;
+  border-radius: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  margin: 0;
+  outline-color: $color-link;
+  overflow: visible;
+  text-transform: none;
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  &[disabled] {
+    cursor: default;
+  }
+
+}

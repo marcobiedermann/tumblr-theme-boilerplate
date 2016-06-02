@@ -1,0 +1,33 @@
+@include placeholder {
+  color: $color-border;
+  font-style: italic;
+}
+
+fieldset {
+  border: 1px solid $color-border;
+  margin: 0;
+  padding: .5rem;
+}
+
+label {
+  color: inherit;
+  display: inline-block;
+  font: inherit;
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
+  width: auto;
+}
+
+legend {
+  border: 0;
+  display: inline-block;
+  padding: 0 .25rem;
+}
+
+optgroup {
+  color: inherit;
+  font: inherit;
+  font-weight: bold;
+  margin: 0;
+}
