@@ -46,13 +46,6 @@ module.exports = function (grunt) {
       sass: ['.sass-cache']
     },
 
-    jshint: {
-      options: {
-        jshintrc: true
-      },
-      files: ['<%= config.source %>/js/script.js']
-    },
-
     processhtml: {
       files: {
         expand: true,
@@ -117,11 +110,6 @@ module.exports = function (grunt) {
       html: {
         files: ['<%= config.source %>/templates/**/*.html'],
         tasks: ['assemble', 'processhtml']
-      },
-
-      js: {
-        files: ['<%= config.source %>/js/**/*.js'],
-        tasks: ['jshint']
       },
 
       sass: {
