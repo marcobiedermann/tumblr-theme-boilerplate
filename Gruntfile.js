@@ -46,33 +46,6 @@ module.exports = function (grunt) {
       sass: ['.sass-cache']
     },
 
-    htmlmin: {
-      options: {
-        removeComments: true,
-        removeCommentsFromCDATA: true,
-        removeCDATASectionsFromCDATA: true,
-        collapseWhitespace: true,
-        collapseBooleanAttributes: true,
-        removeAttributeQuotes: true,
-        removeRedundantAttributes: true,
-        useShortDoctype: true,
-        removeEmptyAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        removeOptionalTags: true,
-        caseSensitive: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true
-      },
-      files: {
-        expand: true,
-        cwd: '<%= config.tmp %>',
-        dest: '<%= config.build %>',
-        src: '**/*.html'
-      }
-    },
-
     jshint: {
       options: {
         jshintrc: true
