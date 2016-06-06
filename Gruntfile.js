@@ -34,8 +34,8 @@ module.exports = function (grunt) {
       },
       files: {
         expand: true,
-        cwd: '<%= config.tmp %>/css',
-        dest: '<%= config.tmp %>/css',
+        cwd: '<%= config.tmp %>/assets/css',
+        dest: '<%= config.tmp %>/assets/css',
         src: '**/*.css'
       }
     },
@@ -61,8 +61,8 @@ module.exports = function (grunt) {
       },
       files: {
         expand: true,
-        cwd: '<%= config.source %>/scss',
-        dest: '<%= config.tmp %>/css',
+        cwd: '<%= config.source %>/assets/scss',
+        dest: '<%= config.tmp %>/assets/css',
         src: ['**/*.scss'],
         ext: '.css'
       }
@@ -74,8 +74,8 @@ module.exports = function (grunt) {
       },
       files: {
         expand: true,
-        cwd: '<%= config.source %>/img',
-        dest: '<%= config.tmp %>/img',
+        cwd: '<%= config.source %>/assets/img',
+        dest: '<%= config.tmp %>/assets/img',
         ext: '.svg',
         src: ['**/*.svg']
       }
@@ -91,7 +91,7 @@ module.exports = function (grunt) {
       },
       default: {
         files: {
-          '<%= config.tmp %>/img/icons.svg': ['<%= config.tmp %>/img/icons/*.svg'],
+          '<%= config.tmp %>/assets/img/icons.svg': ['<%= config.tmp %>/assets/img/icons/*.svg'],
         }
       }
     },
@@ -99,7 +99,7 @@ module.exports = function (grunt) {
     watch: {
 
       css: {
-        files: ['<%= config.source %>/css/**/*.css'],
+        files: ['<%= config.source %>/assets/css/**/*.css'],
         tasks: []
       },
 
@@ -113,12 +113,12 @@ module.exports = function (grunt) {
       },
 
       sass: {
-        files: ['<%= config.source %>/scss/**/*.scss'],
+        files: ['<%= config.source %>/assets/scss/**/*.scss'],
         tasks: ['sass', 'autoprefixer', 'processhtml']
       },
 
       svg: {
-        files: ['<%= config.source %>/img/**/*.svg'],
+        files: ['<%= config.source %>/assets/img/**/*.svg'],
         tasks: []
       }
 
