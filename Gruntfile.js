@@ -28,9 +28,19 @@ module.exports = function (grunt) {
       }
     },
 
-    autoprefixer: {
+    clean: {
+      dist: ['<%= config.build %>'],
+      tmp: ['<%= config.tmp %>'],
+      sass: ['.sass-cache']
+    },
+
+    postcss: {
       options: {
-        browsers: ['last 3 versions']
+        processors: [
+          require('autoprefixer')({
+            browsers: ['last 3 versions']
+          })
+        ]
       },
       files: {
         expand: true,
@@ -38,12 +48,6 @@ module.exports = function (grunt) {
         dest: '<%= config.tmp %>/assets/css',
         src: '**/*.css'
       }
-    },
-
-    clean: {
-      dist: ['<%= config.build %>'],
-      tmp: ['<%= config.tmp %>'],
-      sass: ['.sass-cache']
     },
 
     processhtml: {
@@ -114,7 +118,7 @@ module.exports = function (grunt) {
 
       sass: {
         files: ['<%= config.source %>/assets/scss/**/*.scss'],
-        tasks: ['sass', 'autoprefixer', 'processhtml']
+        tasks: ['sass', 'postcss', 'processhtml']
       },
 
       svg: {
@@ -128,7 +132,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'sass',
-    'autoprefixer',
+    'postcss',
     'assemble',
     'processhtml',
     'svgmin',
@@ -138,7 +142,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'sass',
-    'autoprefixer',
+    'postcss',
     'assemble',
     'processhtml',
     'svgmin',
