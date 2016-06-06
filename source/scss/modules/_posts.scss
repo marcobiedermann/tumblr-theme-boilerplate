@@ -14,12 +14,20 @@ $post-footer-color: #bcbcbc;
   }
 
   footer {
-    @include clearfix();
-
     border-top: 1px solid $color-border;
     font-size: .875rem;
     margin-top: 2rem;
     padding-top: 1rem;
+
+    &::before,
+    &::after {
+      content: ' ';
+      display: table;
+    }
+
+    &::after {
+      clear: both;
+    }
 
     a {
       color: $post-footer-color;
@@ -35,8 +43,19 @@ $post-footer-color: #bcbcbc;
 }
 
 .tags {
-  @include clearfix();
-  @include list-unstyled();
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
 
   li {
     float: left;
@@ -55,7 +74,9 @@ $post-footer-color: #bcbcbc;
   &-chat {
 
     .chat {
-      @include list-unstyled;
+      list-style: none;
+      margin: 0;
+      padding: 0;
 
       .even {
         margin-left: 1.5rem;
@@ -78,8 +99,19 @@ $post-footer-color: #bcbcbc;
   }
 
   &-photoset {
-    @include clearfix();
-    @include list-unstyled();
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &::before,
+    &::after {
+      content: ' ';
+      display: table;
+    }
+
+    &::after {
+      clear: both;
+    }
 
     li {
       float: left;
@@ -103,10 +135,20 @@ $post-footer-color: #bcbcbc;
 }
 
 .post-controls {
-  @include clearfix();
-  @include list-unstyled();
-
   float: right;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
 
   li {
     float: left;margin: 0 .5rem;
@@ -127,15 +169,15 @@ $post-footer-color: #bcbcbc;
   position: relative;
 
   ul {
-    @include list-unstyled();
-
     background-color: unquote('{color:Background}');
-    border: 1px solid $color-border;
     border-radius: .25rem;
+    border: 1px solid $color-border;
     bottom: 100%;
     display: none;
     left: 50%;
+    list-style: none;
     margin: 0 0 10px -80px;
+    padding: 0;
     position: absolute;
     width: 160px;
 
@@ -185,10 +227,20 @@ $post-footer-color: #bcbcbc;
 }
 
 .date-and-notes {
-  @include clearfix();
-  @include list-unstyled();
-
   float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
 
   li {
     float: left;
@@ -207,14 +259,25 @@ $post-footer-color: #bcbcbc;
 }
 
 .notes {
-  @include list-unstyled();
-
   font-size: .875rem;
   line-height: 1.5rem;
+  list-style: none;
+  margin: 0;
   margin-bottom: $margin-elements-bottom;
+  padding: 0;
 
   li {
-    @include clearfix();
+
+    &::before,
+    &::after {
+      content: ' ';
+      display: table;
+    }
+
+    &::after {
+      clear: both;
+    }
+
   }
 
 }

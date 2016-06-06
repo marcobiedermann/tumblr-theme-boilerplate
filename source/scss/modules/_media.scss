@@ -1,5 +1,15 @@
 .media {
-  @include clearfix();
+
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+
 }
 
 .media-obj-left {

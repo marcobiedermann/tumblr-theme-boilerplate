@@ -341,12 +341,12 @@ figcaption {
   font-style: italic;
 }
 
-:-moz-placeholder {
+:-ms-input-placeholder {
   color: {color:Border};
   font-style: italic;
 }
 
-:-ms-input-placeholder {
+::placeholder {
   color: {color:Border};
   font-style: italic;
 }
@@ -543,9 +543,8 @@ nav a {
 
 .pagination {
   list-style: none;
-  margin: 0;
-  padding: 0;
   margin: 0 -.25rem;
+  padding: 0;
   text-align: center;
 }
 .pagination li {
@@ -635,10 +634,10 @@ nav a {
 }
 
 .post-controls {
+  float: right;
   list-style: none;
   margin: 0;
   padding: 0;
-  float: right;
 }
 .post-controls::before, .post-controls::after {
   content: ' ';
@@ -662,16 +661,15 @@ nav a {
   position: relative;
 }
 .share-control ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   background-color: {color:Background};
-  border: 1px solid {color:Border};
   border-radius: .25rem;
+  border: 1px solid {color:Border};
   bottom: 100%;
   display: none;
   left: 50%;
+  list-style: none;
   margin: 0 0 10px -80px;
+  padding: 0;
   position: absolute;
   width: 160px;
 }
@@ -704,10 +702,10 @@ nav a {
 }
 
 .date-and-notes {
+  float: left;
   list-style: none;
   margin: 0;
   padding: 0;
-  float: left;
 }
 .date-and-notes::before, .date-and-notes::after {
   content: ' ';
@@ -728,12 +726,12 @@ nav a {
 }
 
 .notes {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   font-size: .875rem;
   line-height: 1.5rem;
+  list-style: none;
+  margin: 0;
   margin-bottom: 3rem;
+  padding: 0;
 }
 .notes li::before, .notes li::after {
   content: ' ';
