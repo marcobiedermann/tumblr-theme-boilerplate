@@ -3,5 +3,6 @@ main {
 }
 
 .main {
-  padding: $margin-elements-bottom 0;
+  padding-bottom: $margin-elements-bottom;
+  padding-top: $margin-elements-bottom;
 }

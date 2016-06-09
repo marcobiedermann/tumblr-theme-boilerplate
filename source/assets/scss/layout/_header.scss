@@ -9,7 +9,8 @@ header {
 .header {
   background-color: $header-background-color;
   color: $header-color;
-  padding: $margin-elements-bottom 0;
+  padding-bottom: $margin-elements-bottom;
+  padding-top: $margin-elements-bottom;
 
   p {
     display: inline-block;
