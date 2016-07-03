@@ -1,7 +1,17 @@
 [![Build Status](https://travis-ci.org/marcobiedermann/tumblr-theme-boilerplate.svg?branch=master)](https://travis-ci.org/marcobiedermann/tumblr-theme-boilerplate)
 [![devDependency Status](https://david-dm.org/marcobiedermann/tumblr-theme-boilerplate/dev-status.svg)](https://david-dm.org/marcobiedermann/tumblr-theme-boilerplate#info=devDependencies)
 
-# Tumblr Theme Template
+# Tumblr Theme Boilerplate
+
+Modular [Tumblr](https://www.tumblr.com) theme boilerplate with some basic styles in [Scss](http://sass-lang.com/) to get you right started.
+
+## Installation
+
+1. Log into Tumblr and click the *cog icon* and select your blog.
+1. Click the *Edit appearance option*.
+1. Click *Edit theme*.
+1. Copy all the code from `./dist/index.html` and past it in.
+1. Click *Save* and *Update Preview*
 
 ## Features:
 
@@ -45,25 +55,7 @@
 * Like & Reblog buttons
 * Share post on Facebook, Twitter, Google+, Pinterest, LinkedIn & Email
 * Social icons (Behance, Codepen, dribbble, Email, Facebook, Flickr, GitHub, Google+, Instagram, LinkedIn, Pinterest, Reddit, RSS, Skype, SoundCloud, Twitter, Vimeo, Xing, YouTube)
-* Free updates
 
-Note: Images, Audio Files and Videos are not included in project files
+## License
 
-
-## TODO
-* Print Sheet
-* DISQUS commenting integration
-* Twitter Stream integration
-* dribbbble Stream integration
-* Flickr Stream integration
-* Instagram Stream integration
-* MailChimp Newsletter integration
-* Photoset Slider
-* Ajax Search
-* Sidebar
-
-## Credits
-* [Google Fonts](http://www.google.com/fonts)
-* [Disqus](http://disqus.com)
-* [HTML5 Shiv](https://github.com/aFarkas/html5shiv)
-* [Unsplash](https://unsplash.com/)
+Tumblr Theme Boilerplate is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT) © [Marco Biedermann](https://www.marcobiedermann.com).
