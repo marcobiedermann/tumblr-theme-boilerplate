@@ -1,93 +1,101 @@
-{block:Posts}
+{block:IfMasonryLayout}
+<div class="masonry js-masonry">
+{/block:IfMasonryLayout}
 
-  <div class="autopagerize_page_element">
+  {block:Posts}
 
-    <article id="post-{PostID}" class="post post-{PostType} {block:Odd}post-odd{/block:Odd}{block:Even}post-even{/block:Even}" role="article" itemscope="itemscope" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+    <div class="autopagerize_page_element {block:IfMasonryLayout}masonry-item js-masonry-item{/block:IfMasonryLayout}">
 
-      {{> answer }}
-      {{> audio }}
-      {{> chat }}
-      {{> link }}
-      {{> panorama }}
-      {{> photo }}
-      {{> photoset }}
-      {{> quote }}
-      {{> text }}
-      {{> video }}
+      <article id="post-{PostID}" class="post post-{PostType} {block:Odd}post-odd{/block:Odd}{block:Even}post-even{/block:Even}" role="article" itemscope="itemscope" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 
-      <!-- POST-FOOTER -->
+        {{> answer }}
+        {{> audio }}
+        {{> chat }}
+        {{> link }}
+        {{> panorama }}
+        {{> photo }}
+        {{> photoset }}
+        {{> quote }}
+        {{> text }}
+        {{> video }}
 
-      <footer>
+        <!-- POST-FOOTER -->
 
-        <!-- POST-META -->
+        <footer>
 
-        <ul class="post-meta">
+          <!-- POST-META -->
 
-          {block:Date}
+          <ul class="post-meta">
 
-            <li><a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/"><time datetime="{Timestamp}" itemprop="datePublished"><span class="month">{Month}</span> <span class="day">{DayOfMonth}</span>, <span class="year">{Year}</span></time></a></li>
+            {block:Date}
 
-          {/block:Date}
+              <li><a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/"><time datetime="{Timestamp}" itemprop="datePublished"><span class="month">{Month}</span> <span class="day">{DayOfMonth}</span>, <span class="year">{Year}</span></time></a></li>
 
-            {block:IndexPage}
+            {/block:Date}
 
-            {block:NoteCount}
+              {block:IndexPage}
 
-              <li><a href="{Permalink}">{NoteCountWithLabel}</a></li>
+              {block:NoteCount}
 
-            {/block:NoteCount}
+                <li><a href="{Permalink}">{NoteCountWithLabel}</a></li>
 
-            {block:IfDisqusShortname}
+              {/block:NoteCount}
 
-              <li><a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a></li>
+              {block:IfDisqusShortname}
 
-            {/block:IfDisqusShortname}
+                <li><a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a></li>
 
-          {/block:IndexPage}
+              {/block:IfDisqusShortname}
 
-        </ul>
-
-        <ul class="share">
-
-          <li>{LikeButton color="grey" size="14"}</li>
-          <li>{ReblogButton color="grey" size="14"}</li>
-          <li>Share
-
-            <ul>
-
-              <li><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></li>
-              <li><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></li>
-              <li><a href="https://plus.google.com/share?url={Permalink}" target="_blank">Google+</a></li>
-              <li><a href="http://www.linkedin.com/shareArticle?mini=true&url={Permalink}{block:Title}&title={PlaintextTitle}{/block:Title}{block:PostSummary}&summary={PlaintextPostSummary}{/block:PostSummary}">LinkedIn</a></li>
-              <li><a href="http://pinterest.com/pin/create/button/?url={Permalink}&media={PhotoURL-HighRes}&description=" target="_blank">Pinterest</a></li>
-              <li><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}" alt="{lang:Send email}">E-Mail</a></li>
-
-            </ul>
-
-          </li>
-
-        </ul>
-
-        <!-- TAGS -->
-
-        {block:HasTags}
-
-          <ul class="tags">
-
-            {block:Tags}
-
-              <li><a href="{TagURL}" itemprop="about keywords">{Tag}</a></li>
-
-            {block:Tags}
+            {/block:IndexPage}
 
           </ul>
 
-        {/block:HasTags}
+          <ul class="share">
 
-      </footer>
+            <li>{LikeButton color="grey" size="14"}</li>
+            <li>{ReblogButton color="grey" size="14"}</li>
+            <li>Share
 
-    </article>
+              <ul>
 
-  </div>
+                <li><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></li>
+                <li><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></li>
+                <li><a href="https://plus.google.com/share?url={Permalink}" target="_blank">Google+</a></li>
+                <li><a href="http://www.linkedin.com/shareArticle?mini=true&url={Permalink}{block:Title}&title={PlaintextTitle}{/block:Title}{block:PostSummary}&summary={PlaintextPostSummary}{/block:PostSummary}">LinkedIn</a></li>
+                <li><a href="http://pinterest.com/pin/create/button/?url={Permalink}&media={PhotoURL-HighRes}&description=" target="_blank">Pinterest</a></li>
+                <li><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}" alt="{lang:Send email}">E-Mail</a></li>
 
-{/block:Posts}
+              </ul>
+
+            </li>
+
+          </ul>
+
+          <!-- TAGS -->
+
+          {block:HasTags}
+
+            <ul class="tags">
+
+              {block:Tags}
+
+                <li><a href="{TagURL}" itemprop="about keywords">{Tag}</a></li>
+
+              {block:Tags}
+
+            </ul>
+
+          {/block:HasTags}
+
+        </footer>
+
+      </article>
+
+    </div>
+
+  {/block:Posts}
+
+{block:IfMasonryLayout}
+</div>
+{/block:IfMasonryLayout}

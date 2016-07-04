@@ -1,0 +1,26 @@
+{block:IfMasonryLayout}
+
+<style>
+  .grid {
+    max-width: 72rem;
+  }
+</style>
+
+<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+<script src="https://npmcdn.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+
+<script>
+  (function(document) {
+
+    var masonry = document.querySelector('.js-masonry');
+
+    imagesLoaded(masonry, function() {
+      new Masonry(masonry, {
+        itemSelector: '.js-masonry-item'
+      });
+    });
+
+  })(document);
+</script>
+
+{/block:IfMasonryLayout}

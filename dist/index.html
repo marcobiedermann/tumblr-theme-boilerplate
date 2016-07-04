@@ -69,6 +69,8 @@
   <meta name="color:Footer" content="#fafafa">
   <meta name="color:FooterBackground" content="#282828">
 
+  <meta name="if:Masonry Layout" content="0">
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -567,8 +569,7 @@ nav a {
   background-color: {color:PostBackground};
   border: 1px solid {color:Border};
   border-radius: .25rem;
-  margin-bottom: 3rem;
-  padding: 3rem;
+  padding: 5%;
 }
 .post footer {
   border-top: 1px solid {color:Border};
@@ -827,6 +828,35 @@ video {
   vertical-align: baseline;
 }
 
+.masonry {
+  margin-bottom: 2rem;
+  margin-left: -1%;
+  margin-right: -1%;
+  margin-top: -1%;
+}
+
+.masonry-item {
+  margin-bottom: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 1%;
+}
+@media (min-width: 30rem) {
+  .masonry-item {
+    width: 48%;
+  }
+}
+@media (min-width: 40rem) {
+  .masonry-item {
+    width: 31.33333%;
+  }
+}
+@media (min-width: 60rem) {
+  .masonry-item {
+    width: 23%;
+  }
+}
+
 .center-block {
   display: block;
   margin-left: auto;
@@ -1022,435 +1052,443 @@ video {
 
 {/block:DayPage}
 
-{block:Posts}
+{block:IfMasonryLayout}
+<div class="masonry js-masonry">
+{/block:IfMasonryLayout}
 
-  <div class="autopagerize_page_element">
+  {block:Posts}
 
-    <article id="post-{PostID}" class="post post-{PostType} {block:Odd}post-odd{/block:Odd}{block:Even}post-even{/block:Even}" role="article" itemscope="itemscope" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+    <div class="autopagerize_page_element {block:IfMasonryLayout}masonry-item js-masonry-item{/block:IfMasonryLayout}">
 
-      {block:Answer}
-      
-        <main itemprop="articleBody description">
-      
-          <h3>{Asker} asked:</h3>
-      
-          {Question}
-      
-        {/block:Answer}
-      
-        {block:Answerer}
-      
-          <h3>{Answerer} asked:</h3>
-      
-          {Answer}
-      
-        </main>
-      
-      {/block:Answerer}
-      {block:Audio}
-      
-        <main itemprop="articleBody">
-      
-          <figure class="media">
-      
-            {block:AudioPlayer}
-      
-              {block:AlbumArt}
-      
-                <img src="{AlbumArtURL}" alt="" class="audio-art media-obj-left" itemprop="image thumbnailUrl" content="{AlbumArtURL}">
-      
-              {/block:AlbumArt}
-      
-              <div class="media-body">
-      
-                {block:Artist}
-      
-                  <h3>{Artist}</h3>
-      
-                {/block:Artist}
-      
-                {block:Album}
-      
-                  <p>{Album}</p>
-      
-                {/block:Album}
-      
-                {block:TrackName}
-      
-                  <p>{TrackName}</p>
-      
-                {/block:TrackName}
-      
-                {AudioPlayerGrey}
-      
-              </div>
-      
-              {block:ExternalAudio}
-      
-                <p><a href="{ExternalAudioURL}">{lang:Download this track}</a></p>
-      
-              {/block:ExternalAudio}
-      
-              {block:PlayCount}
-      
-                <p>{PlayCountWithLabel}</p>
-      
-              {/block:PlayCount}
-      
-            {/block:AudioPlayer}
-      
-            {block:AudioEmbed}
-      
-              {AudioEmbed-640}
-      
-            {/block:AudioEmbed}
-      
-            {block:Caption}
-      
-              <figcaption>
-      
-                {Caption}
-      
-              </figcaption>
-      
-            {/block:Caption}
-      
-          </figure>
-      
-        </main>
-      
-      {/block:Audio}
-      {block:Chat}
-      
-        <header>
-      
-          {block:IndexPage}
-      
-            {block:Title}
-      
-              <h2 class="post-title" itemprop="name headline"><a href="{Permalink}" itemprop="url">{Title}</a></h2>
-      
-            {/block:Title}
-      
-          {/block:IndexPage}
-      
-          {block:PermalinkPage}
-      
-            {block:Title}
-      
-              <h1 class="post-title" itemprop="name headline">{Title}</h1>
-      
-            {/block:Title}
-      
-          {/block:PermalinkPage}
-      
-        </header>
-      
-        <main itemprop="articleBody description">
-      
-          <ul class="chat">
-      
-            {block:Lines}
-      
-              <li class="{Alt}">
-      
-                {block:Label}
-      
-                  <span class="label">{Label}</span>
-      
-                {/block:Label}
-      
-                {Line}
-      
-              </li>
-      
-            {/block:Lines}
-      
-          </ul>
-      
-        </main>
-      
-      {/block:Chat}
-      {block:Link}
-      
-        <header>
-      
-          <h2 class="post-title" itemprop="name headline"><a href="{URL}" {Target} itemprop="url">{Name}</a></h2>
-      
-        </header>
-      
-        <main itemprop="articleBody description">
-      
-          {block:Thumbnail}
-      
-            {Thumbnail}
-      
-          {/block:Thumbnail}
-      
-          {block:Description}
-      
-            {Description}
-      
-          {/block:Description}
-      
-        </main>
-      
-      {/block:Link}
-      {block:Panorama}
-      
-        <main itemprop="articleBody">
-      
-          {LinkOpenTag}
-      
-            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}">
-      
-          {LinkCloseTag}
-      
-          {block:Caption}
-      
-            {Caption}
-      
-          {/block:Caption}
-      
-        </main>
-      
-      {/block:Panorama}
-      {block:Photo}
-      
-        <main itemprop="articleBody">
-      
-          <figure>
-      
-            {block:IndexPage}
-      
-              <a href="{Permalink}" title="{lang:Link post} {PhotoAlt}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"></a>
-      
-            {/block:IndexPage}
-      
-            {block:PermalinkPage}
-      
-              {LinkOpenTag}
-      
-                <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">
-      
-              {LinkCloseTag}
-      
-            {/block:PermalinkPage}
-      
-            <figcaption class="caption">
-      
+      <article id="post-{PostID}" class="post post-{PostType} {block:Odd}post-odd{/block:Odd}{block:Even}post-even{/block:Even}" role="article" itemscope="itemscope" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+
+        {block:Answer}
+        
+          <main itemprop="articleBody description">
+        
+            <h3>{Asker} asked:</h3>
+        
+            {Question}
+        
+          {/block:Answer}
+        
+          {block:Answerer}
+        
+            <h3>{Answerer} asked:</h3>
+        
+            {Answer}
+        
+          </main>
+        
+        {/block:Answerer}
+        {block:Audio}
+        
+          <main itemprop="articleBody">
+        
+            <figure class="media">
+        
+              {block:AudioPlayer}
+        
+                {block:AlbumArt}
+        
+                  <img src="{AlbumArtURL}" alt="" class="audio-art media-obj-left" itemprop="image thumbnailUrl" content="{AlbumArtURL}">
+        
+                {/block:AlbumArt}
+        
+                <div class="media-body">
+        
+                  {block:Artist}
+        
+                    <h3>{Artist}</h3>
+        
+                  {/block:Artist}
+        
+                  {block:Album}
+        
+                    <p>{Album}</p>
+        
+                  {/block:Album}
+        
+                  {block:TrackName}
+        
+                    <p>{TrackName}</p>
+        
+                  {/block:TrackName}
+        
+                  {AudioPlayerGrey}
+        
+                </div>
+        
+                {block:ExternalAudio}
+        
+                  <p><a href="{ExternalAudioURL}">{lang:Download this track}</a></p>
+        
+                {/block:ExternalAudio}
+        
+                {block:PlayCount}
+        
+                  <p>{PlayCountWithLabel}</p>
+        
+                {/block:PlayCount}
+        
+              {/block:AudioPlayer}
+        
+              {block:AudioEmbed}
+        
+                {AudioEmbed-640}
+        
+              {/block:AudioEmbed}
+        
               {block:Caption}
-      
-                {Caption}
-      
+        
+                <figcaption>
+        
+                  {Caption}
+        
+                </figcaption>
+        
               {/block:Caption}
-      
-              {block:PermalinkPage}
-      
-                {block:Exif}
-      
-                  {block:Camera}
-      
-                    {Camera}
-      
-                  {/block:Camera}
-      
-                  {block:Aperture}
-      
-                    {Aperture}
-      
-                  {/block:Aperture}
-      
-                  {block:Exposure}
-      
-                    {Exposure}
-      
-                  {/block:Exposure}
-      
-                  {block:FocalLength}
-      
-                    {FocalLength}
-      
-                  {/block:FocalLength}
-      
-                {/block:Exif}
-      
-              {/block:PermalinkPage}
-      
-            </figcaption>
-      
-          </figure>
-      
-          <!-- ## Render Exif Data -->
-      
-        </main>
-      
-      {/block:Photo}
-      {block:Photoset}
-      
-        <main itemprop="articleBody">
-      
-          {Photoset}
-      
-          {block:Caption}
-      
-            {Caption}
-      
-          {/block:Caption}
-      
-        </main>
-      
-      {/block:Photoset}
-      {block:Quote}
-      
-        <main itemprop="articleBody description">
-      
-          <blockquote class="blockquote-{Length}">
-      
-            {Quote}
-      
-            {block:Source}
-      
-              <cite>{Source}</cite>
-      
-            {/block:Source}
-      
-          </blockquote>
-      
-        </main>
-      
-      {/block:Quote}
-      {block:Text}
-      
-        <header>
-      
-          {block:IndexPage}
-      
-            {block:Title}
-      
-              <h2 class="post-title" itemprop="name headline"><a href="{Permalink}" title="{lang:Link post} {Title}" itemprop="url">{Title}</a></h2>
-      
-            {/block:Title}
-      
-          {/block:IndexPage}
-      
-          {block:PermalinkPage}
-      
-          {block:Title}
-      
-            <h1 class="post-title" itemprop="name headline">{Title}</h1>
-      
-          {/block:Title}
-      
-        {/block:PermalinkPage}
-      
-        </header>
-      
-        <main itemprop="articleBody description">
-      
-          {Body}
-      
-          {block:More}
-      
-            <p><a href="{Permalink}" class="more" itemprop="url">{lang:Read more}</a></p>
-      
-          {/block:More}
-      
-        </main>
-      
-      {/block:Text}
-      {block:Video}
-      
-        <main itemprop="articleBody description">
-      
-          {Video-700}
-      
-          {block:Caption}
-      
-            {Caption}
-      
-          {/block:Caption}
-      
-        </main>
-      
-      {/block:Video}
-
-      <!-- POST-FOOTER -->
-
-      <footer>
-
-        <!-- POST-META -->
-
-        <ul class="post-meta">
-
-          {block:Date}
-
-            <li><a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/"><time datetime="{Timestamp}" itemprop="datePublished"><span class="month">{Month}</span> <span class="day">{DayOfMonth}</span>, <span class="year">{Year}</span></time></a></li>
-
-          {/block:Date}
-
+        
+            </figure>
+        
+          </main>
+        
+        {/block:Audio}
+        {block:Chat}
+        
+          <header>
+        
             {block:IndexPage}
+        
+              {block:Title}
+        
+                <h2 class="post-title" itemprop="name headline"><a href="{Permalink}" itemprop="url">{Title}</a></h2>
+        
+              {/block:Title}
+        
+            {/block:IndexPage}
+        
+            {block:PermalinkPage}
+        
+              {block:Title}
+        
+                <h1 class="post-title" itemprop="name headline">{Title}</h1>
+        
+              {/block:Title}
+        
+            {/block:PermalinkPage}
+        
+          </header>
+        
+          <main itemprop="articleBody description">
+        
+            <ul class="chat">
+        
+              {block:Lines}
+        
+                <li class="{Alt}">
+        
+                  {block:Label}
+        
+                    <span class="label">{Label}</span>
+        
+                  {/block:Label}
+        
+                  {Line}
+        
+                </li>
+        
+              {/block:Lines}
+        
+            </ul>
+        
+          </main>
+        
+        {/block:Chat}
+        {block:Link}
+        
+          <header>
+        
+            <h2 class="post-title" itemprop="name headline"><a href="{URL}" {Target} itemprop="url">{Name}</a></h2>
+        
+          </header>
+        
+          <main itemprop="articleBody description">
+        
+            {block:Thumbnail}
+        
+              {Thumbnail}
+        
+            {/block:Thumbnail}
+        
+            {block:Description}
+        
+              {Description}
+        
+            {/block:Description}
+        
+          </main>
+        
+        {/block:Link}
+        {block:Panorama}
+        
+          <main itemprop="articleBody">
+        
+            {LinkOpenTag}
+        
+              <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}">
+        
+            {LinkCloseTag}
+        
+            {block:Caption}
+        
+              {Caption}
+        
+            {/block:Caption}
+        
+          </main>
+        
+        {/block:Panorama}
+        {block:Photo}
+        
+          <main itemprop="articleBody">
+        
+            <figure>
+        
+              {block:IndexPage}
+        
+                <a href="{Permalink}" title="{lang:Link post} {PhotoAlt}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"></a>
+        
+              {/block:IndexPage}
+        
+              {block:PermalinkPage}
+        
+                {LinkOpenTag}
+        
+                  <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">
+        
+                {LinkCloseTag}
+        
+              {/block:PermalinkPage}
+        
+              <figcaption class="caption">
+        
+                {block:Caption}
+        
+                  {Caption}
+        
+                {/block:Caption}
+        
+                {block:PermalinkPage}
+        
+                  {block:Exif}
+        
+                    {block:Camera}
+        
+                      {Camera}
+        
+                    {/block:Camera}
+        
+                    {block:Aperture}
+        
+                      {Aperture}
+        
+                    {/block:Aperture}
+        
+                    {block:Exposure}
+        
+                      {Exposure}
+        
+                    {/block:Exposure}
+        
+                    {block:FocalLength}
+        
+                      {FocalLength}
+        
+                    {/block:FocalLength}
+        
+                  {/block:Exif}
+        
+                {/block:PermalinkPage}
+        
+              </figcaption>
+        
+            </figure>
+        
+            <!-- ## Render Exif Data -->
+        
+          </main>
+        
+        {/block:Photo}
+        {block:Photoset}
+        
+          <main itemprop="articleBody">
+        
+            {Photoset}
+        
+            {block:Caption}
+        
+              {Caption}
+        
+            {/block:Caption}
+        
+          </main>
+        
+        {/block:Photoset}
+        {block:Quote}
+        
+          <main itemprop="articleBody description">
+        
+            <blockquote class="blockquote-{Length}">
+        
+              {Quote}
+        
+              {block:Source}
+        
+                <cite>{Source}</cite>
+        
+              {/block:Source}
+        
+            </blockquote>
+        
+          </main>
+        
+        {/block:Quote}
+        {block:Text}
+        
+          <header>
+        
+            {block:IndexPage}
+        
+              {block:Title}
+        
+                <h2 class="post-title" itemprop="name headline"><a href="{Permalink}" title="{lang:Link post} {Title}" itemprop="url">{Title}</a></h2>
+        
+              {/block:Title}
+        
+            {/block:IndexPage}
+        
+            {block:PermalinkPage}
+        
+            {block:Title}
+        
+              <h1 class="post-title" itemprop="name headline">{Title}</h1>
+        
+            {/block:Title}
+        
+          {/block:PermalinkPage}
+        
+          </header>
+        
+          <main itemprop="articleBody description">
+        
+            {Body}
+        
+            {block:More}
+        
+              <p><a href="{Permalink}" class="more" itemprop="url">{lang:Read more}</a></p>
+        
+            {/block:More}
+        
+          </main>
+        
+        {/block:Text}
+        {block:Video}
+        
+          <main itemprop="articleBody description">
+        
+            {Video-700}
+        
+            {block:Caption}
+        
+              {Caption}
+        
+            {/block:Caption}
+        
+          </main>
+        
+        {/block:Video}
 
-            {block:NoteCount}
+        <!-- POST-FOOTER -->
 
-              <li><a href="{Permalink}">{NoteCountWithLabel}</a></li>
+        <footer>
 
-            {/block:NoteCount}
+          <!-- POST-META -->
 
-            {block:IfDisqusShortname}
+          <ul class="post-meta">
 
-              <li><a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a></li>
+            {block:Date}
 
-            {/block:IfDisqusShortname}
+              <li><a href="/day/{Year}/{MonthNumberWithZero}/{DayOfMonthWithZero}/"><time datetime="{Timestamp}" itemprop="datePublished"><span class="month">{Month}</span> <span class="day">{DayOfMonth}</span>, <span class="year">{Year}</span></time></a></li>
 
-          {/block:IndexPage}
+            {/block:Date}
 
-        </ul>
+              {block:IndexPage}
 
-        <ul class="share">
+              {block:NoteCount}
 
-          <li>{LikeButton color="grey" size="14"}</li>
-          <li>{ReblogButton color="grey" size="14"}</li>
-          <li>Share
+                <li><a href="{Permalink}">{NoteCountWithLabel}</a></li>
 
-            <ul>
+              {/block:NoteCount}
 
-              <li><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></li>
-              <li><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></li>
-              <li><a href="https://plus.google.com/share?url={Permalink}" target="_blank">Google+</a></li>
-              <li><a href="http://www.linkedin.com/shareArticle?mini=true&url={Permalink}{block:Title}&title={PlaintextTitle}{/block:Title}{block:PostSummary}&summary={PlaintextPostSummary}{/block:PostSummary}">LinkedIn</a></li>
-              <li><a href="http://pinterest.com/pin/create/button/?url={Permalink}&media={PhotoURL-HighRes}&description=" target="_blank">Pinterest</a></li>
-              <li><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}" alt="{lang:Send email}">E-Mail</a></li>
+              {block:IfDisqusShortname}
+
+                <li><a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a></li>
+
+              {/block:IfDisqusShortname}
+
+            {/block:IndexPage}
+
+          </ul>
+
+          <ul class="share">
+
+            <li>{LikeButton color="grey" size="14"}</li>
+            <li>{ReblogButton color="grey" size="14"}</li>
+            <li>Share
+
+              <ul>
+
+                <li><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" target="_blank">Facebook</a></li>
+                <li><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" target="_blank">Twitter</a></li>
+                <li><a href="https://plus.google.com/share?url={Permalink}" target="_blank">Google+</a></li>
+                <li><a href="http://www.linkedin.com/shareArticle?mini=true&url={Permalink}{block:Title}&title={PlaintextTitle}{/block:Title}{block:PostSummary}&summary={PlaintextPostSummary}{/block:PostSummary}">LinkedIn</a></li>
+                <li><a href="http://pinterest.com/pin/create/button/?url={Permalink}&media={PhotoURL-HighRes}&description=" target="_blank">Pinterest</a></li>
+                <li><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}" alt="{lang:Send email}">E-Mail</a></li>
+
+              </ul>
+
+            </li>
+
+          </ul>
+
+          <!-- TAGS -->
+
+          {block:HasTags}
+
+            <ul class="tags">
+
+              {block:Tags}
+
+                <li><a href="{TagURL}" itemprop="about keywords">{Tag}</a></li>
+
+              {block:Tags}
 
             </ul>
 
-          </li>
+          {/block:HasTags}
 
-        </ul>
+        </footer>
 
-        <!-- TAGS -->
+      </article>
 
-        {block:HasTags}
+    </div>
 
-          <ul class="tags">
+  {/block:Posts}
 
-            {block:Tags}
-
-              <li><a href="{TagURL}" itemprop="about keywords">{Tag}</a></li>
-
-            {block:Tags}
-
-          </ul>
-
-        {/block:HasTags}
-
-      </footer>
-
-    </article>
-
-  </div>
-
-{/block:Posts}
+{block:IfMasonryLayout}
+</div>
+{/block:IfMasonryLayout}
 {block:PostNotes}
 
   {block:NoteCount}
@@ -1714,6 +1752,32 @@ video {
   </script>
   
   {/block:IfInfiniteScrolling}
+  {block:IfMasonryLayout}
+  
+  <style>
+    .grid {
+      max-width: 72rem;
+    }
+  </style>
+  
+  <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+  <script src="https://npmcdn.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+  
+  <script>
+    (function(document) {
+  
+      var masonry = document.querySelector('.js-masonry');
+  
+      imagesLoaded(masonry, function() {
+        new Masonry(masonry, {
+          itemSelector: '.js-masonry-item'
+        });
+      });
+  
+    })(document);
+  </script>
+  
+  {/block:IfMasonryLayout}
   {block:IfGoogleAnalytics}
   
   <script>
