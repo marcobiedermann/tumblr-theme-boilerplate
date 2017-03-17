@@ -22,6 +22,7 @@
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-sass": "1.0.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-ejs": "^0.3.0",
     "grunt-postcss": "^0.8.0",
     "grunt-processhtml": "^0.4.0",
     "grunt-svgmin": "^4.0.0",

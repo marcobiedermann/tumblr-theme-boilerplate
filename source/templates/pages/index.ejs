@@ -15,28 +15,35 @@
   {block:Turkish}tr{/block:Turkish}
 ">
 
-{{> head }}
+<%- include('../partials/layouts/head'); %>
 
 <body itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
-  {{> header }}
+  <%- include('../partials/layouts/header'); %>
 
   <main class="main" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
 
     <div class="grid">
 
-      {{> body }}
+      <%- include('../partials/pages/search'); %>
+      <%- include('../partials/pages/tags'); %>
+      <%- include('../partials/pages/days'); %>
+
+      <%- include('../partials/modules/posts'); %>
+      <%- include('../partials/modules/notes'); %>
+      <%- include('../partials/modules/comments'); %>
+      <%- include('../partials/modules/pagination'); %>
 
     </div>
 
   </main>
 
-  {{> footer }}
+  <%- include('../partials/layouts/footer'); %>
 
-  {{> infinite-scrolling }}
-  {{> masonry }}
-  {{> google-analytics }}
-  {{> disqus }}
+  <%- include('../partials/scripts/infinite-scrolling'); %>
+  <%- include('../partials/scripts/masonry'); %>
+  <%- include('../partials/scripts/google-analytics'); %>
+  <%- include('../partials/scripts/disqus'); %>
 
   <!-- build:js inline -->
   <script src="../source/assets/js/script.js"></script>

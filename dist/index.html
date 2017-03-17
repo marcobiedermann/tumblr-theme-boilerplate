@@ -963,66 +963,66 @@ video {
 
 </head>
 
+
 <body itemscope="itemscope" itemtype="http://schema.org/WebPage">
 
   <header class="header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-  
-    <div class="grid">
-  
-      <nav class="nav nav-horizontal" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-  
-        <ul>
-  
-          <li><a href="/" itemprop="url" title="{lang:Home}"><span itemprop="name">{lang:Home}</span></a></li>
-  
-          {block:HasPages}
-  
-            {block:Pages}
-  
-              <li><a href="{URL}" itemprop="url" title="{Label}"><span itemprop="name">{Label}</span></a></li>
-  
-            {/block:Pages}
-  
-          {/block:HasPages}
-  
-          <li><a href="/random" itemprop="url" title="{lang:Random post}"><span itemprop="name">{lang:Random post}</span></a></li>
-  
-          <li><a href="/archive" itemprop="url" title="{lang:Archive}"><span itemprop="name">{lang:Archive}</span></a></li>
-  
-          {block:AskEnabled}
-  
-            <li><a href="/ask" itemprop="url" title="{AskLabel}"><span itemprop="name">{AskLabel}</span></a></li>
-  
-          {/block:AskEnabled}
-  
-          {block:SubmissionsEnabled}
-  
-            <li><a href="/submit" itemprop="url" title="{SubmitLabel}"><span itemprop="name">{SubmitLabel}</span></a></li>
-  
-          {/block:SubmissionsEnabled}
-  
-        </ul>
-  
-      </nav>
-  
-      <form action="/search" method="get" class="search" role="search">
-  
-        <input type="search" name="q" value="{SearchQuery}" placeholder="{lang:Search}…">
-        <input type="submit" value="{lang:Search}">
-  
-      </form>
-  
-    </div>
-  
-  </header>
+
+  <div class="grid">
+
+    <nav class="nav nav-horizontal" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+
+      <ul>
+
+        <li><a href="/" itemprop="url" title="{lang:Home}"><span itemprop="name">{lang:Home}</span></a></li>
+
+        {block:HasPages}
+
+          {block:Pages}
+
+            <li><a href="{URL}" itemprop="url" title="{Label}"><span itemprop="name">{Label}</span></a></li>
+
+          {/block:Pages}
+
+        {/block:HasPages}
+
+        <li><a href="/random" itemprop="url" title="{lang:Random post}"><span itemprop="name">{lang:Random post}</span></a></li>
+
+        <li><a href="/archive" itemprop="url" title="{lang:Archive}"><span itemprop="name">{lang:Archive}</span></a></li>
+
+        {block:AskEnabled}
+
+          <li><a href="/ask" itemprop="url" title="{AskLabel}"><span itemprop="name">{AskLabel}</span></a></li>
+
+        {/block:AskEnabled}
+
+        {block:SubmissionsEnabled}
+
+          <li><a href="/submit" itemprop="url" title="{SubmitLabel}"><span itemprop="name">{SubmitLabel}</span></a></li>
+
+        {/block:SubmissionsEnabled}
+
+      </ul>
+
+    </nav>
+
+    <form action="/search" method="get" class="search" role="search">
+
+      <input type="search" name="q" value="{SearchQuery}" placeholder="{lang:Search}…">
+      <input type="submit" value="{lang:Search}">
+
+    </form>
+
+  </div>
+
+</header>
+
 
   <main class="main" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
 
     <div class="grid">
 
-      
-
-{block:SearchPage}
+      {block:SearchPage}
 
   <div class="search-results">
 
@@ -1041,18 +1041,21 @@ video {
   </div>
 
 {/block:NoSearchResults}
-{block:TagPage}
+
+      {block:TagPage}
 
   <h2>{Tag}</h2>
 
 {/block:TagPage}
-{block:DayPage}
+
+      {block:DayPage}
 
   <h2>{Year}.{MonthNumberWithZero}.{DayOfMonthWithZero}</h2>
 
 {/block:DayPage}
 
-{block:IfMasonryLayout}
+
+      {block:IfMasonryLayout}
 <div class="masonry js-masonry">
 {/block:IfMasonryLayout}
 
@@ -1063,351 +1066,361 @@ video {
       <article id="post-{PostID}" class="post post-{PostType} {block:Odd}post-odd{/block:Odd}{block:Even}post-even{/block:Even}" role="article" itemscope="itemscope" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 
         {block:Answer}
-        
-          <main itemprop="articleBody description">
-        
-            <h3>{Asker} asked:</h3>
-        
-            {Question}
-        
-          {/block:Answer}
-        
-          {block:Answerer}
-        
-            <h3>{Answerer} asked:</h3>
-        
-            {Answer}
-        
-          </main>
-        
-        {/block:Answerer}
+
+  <main itemprop="articleBody description">
+
+    <h3>{Asker} asked:</h3>
+
+    {Question}
+
+  {/block:Answer}
+
+  {block:Answerer}
+
+    <h3>{Answerer} asked:</h3>
+
+    {Answer}
+
+  </main>
+
+{/block:Answerer}
+
         {block:Audio}
-        
-          <main itemprop="articleBody">
-        
-            <figure class="media">
-        
-              {block:AudioPlayer}
-        
-                {block:AlbumArt}
-        
-                  <img src="{AlbumArtURL}" alt="" class="audio-art media-obj-left" itemprop="image thumbnailUrl" content="{AlbumArtURL}">
-        
-                {/block:AlbumArt}
-        
-                <div class="media-body">
-        
-                  {block:Artist}
-        
-                    <h3>{Artist}</h3>
-        
-                  {/block:Artist}
-        
-                  {block:Album}
-        
-                    <p>{Album}</p>
-        
-                  {/block:Album}
-        
-                  {block:TrackName}
-        
-                    <p>{TrackName}</p>
-        
-                  {/block:TrackName}
-        
-                  {AudioPlayerGrey}
-        
-                </div>
-        
-                {block:ExternalAudio}
-        
-                  <p><a href="{ExternalAudioURL}">{lang:Download this track}</a></p>
-        
-                {/block:ExternalAudio}
-        
-                {block:PlayCount}
-        
-                  <p>{PlayCountWithLabel}</p>
-        
-                {/block:PlayCount}
-        
-              {/block:AudioPlayer}
-        
-              {block:AudioEmbed}
-        
-                {AudioEmbed-640}
-        
-              {/block:AudioEmbed}
-        
-              {block:Caption}
-        
-                <figcaption>
-        
-                  {Caption}
-        
-                </figcaption>
-        
-              {/block:Caption}
-        
-            </figure>
-        
-          </main>
-        
-        {/block:Audio}
+
+  <main itemprop="articleBody">
+
+    <figure class="media">
+
+      {block:AudioPlayer}
+
+        {block:AlbumArt}
+
+          <img src="{AlbumArtURL}" alt="" class="audio-art media-obj-left" itemprop="image thumbnailUrl" content="{AlbumArtURL}">
+
+        {/block:AlbumArt}
+
+        <div class="media-body">
+
+          {block:Artist}
+
+            <h3>{Artist}</h3>
+
+          {/block:Artist}
+
+          {block:Album}
+
+            <p>{Album}</p>
+
+          {/block:Album}
+
+          {block:TrackName}
+
+            <p>{TrackName}</p>
+
+          {/block:TrackName}
+
+          {AudioPlayerGrey}
+
+        </div>
+
+        {block:ExternalAudio}
+
+          <p><a href="{ExternalAudioURL}">{lang:Download this track}</a></p>
+
+        {/block:ExternalAudio}
+
+        {block:PlayCount}
+
+          <p>{PlayCountWithLabel}</p>
+
+        {/block:PlayCount}
+
+      {/block:AudioPlayer}
+
+      {block:AudioEmbed}
+
+        {AudioEmbed-640}
+
+      {/block:AudioEmbed}
+
+      {block:Caption}
+
+        <figcaption>
+
+          {Caption}
+
+        </figcaption>
+
+      {/block:Caption}
+
+    </figure>
+
+  </main>
+
+{/block:Audio}
+
         {block:Chat}
-        
-          <header>
-        
-            {block:IndexPage}
-        
-              {block:Title}
-        
-                <h2 class="post-title" itemprop="name headline"><a href="{Permalink}" itemprop="url">{Title}</a></h2>
-        
-              {/block:Title}
-        
-            {/block:IndexPage}
-        
-            {block:PermalinkPage}
-        
-              {block:Title}
-        
-                <h1 class="post-title" itemprop="name headline">{Title}</h1>
-        
-              {/block:Title}
-        
-            {/block:PermalinkPage}
-        
-          </header>
-        
-          <main itemprop="articleBody description">
-        
-            <ul class="chat">
-        
-              {block:Lines}
-        
-                <li class="{Alt}">
-        
-                  {block:Label}
-        
-                    <span class="label">{Label}</span>
-        
-                  {/block:Label}
-        
-                  {Line}
-        
-                </li>
-        
-              {/block:Lines}
-        
-            </ul>
-        
-          </main>
-        
-        {/block:Chat}
+
+  <header>
+
+    {block:IndexPage}
+
+      {block:Title}
+
+        <h2 class="post-title" itemprop="name headline"><a href="{Permalink}" itemprop="url">{Title}</a></h2>
+
+      {/block:Title}
+
+    {/block:IndexPage}
+
+    {block:PermalinkPage}
+
+      {block:Title}
+
+        <h1 class="post-title" itemprop="name headline">{Title}</h1>
+
+      {/block:Title}
+
+    {/block:PermalinkPage}
+
+  </header>
+
+  <main itemprop="articleBody description">
+
+    <ul class="chat">
+
+      {block:Lines}
+
+        <li class="{Alt}">
+
+          {block:Label}
+
+            <span class="label">{Label}</span>
+
+          {/block:Label}
+
+          {Line}
+
+        </li>
+
+      {/block:Lines}
+
+    </ul>
+
+  </main>
+
+{/block:Chat}
+
         {block:Link}
-        
-          <header>
-        
-            <h2 class="post-title" itemprop="name headline"><a href="{URL}" {Target} itemprop="url">{Name}</a></h2>
-        
-          </header>
-        
-          <main itemprop="articleBody description">
-        
-            {block:Thumbnail}
-        
-              {Thumbnail}
-        
-            {/block:Thumbnail}
-        
-            {block:Description}
-        
-              {Description}
-        
-            {/block:Description}
-        
-          </main>
-        
-        {/block:Link}
+
+  <header>
+
+    <h2 class="post-title" itemprop="name headline"><a href="{URL}" {Target} itemprop="url">{Name}</a></h2>
+
+  </header>
+
+  <main itemprop="articleBody description">
+
+    {block:Thumbnail}
+
+      {Thumbnail}
+
+    {/block:Thumbnail}
+
+    {block:Description}
+
+      {Description}
+
+    {/block:Description}
+
+  </main>
+
+{/block:Link}
+
         {block:Panorama}
-        
-          <main itemprop="articleBody">
-        
-            {LinkOpenTag}
-        
-              <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}">
-        
-            {LinkCloseTag}
-        
-            {block:Caption}
-        
-              {Caption}
-        
-            {/block:Caption}
-        
-          </main>
-        
-        {/block:Panorama}
+
+  <main itemprop="articleBody">
+
+    {LinkOpenTag}
+
+      <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}">
+
+    {LinkCloseTag}
+
+    {block:Caption}
+
+      {Caption}
+
+    {/block:Caption}
+
+  </main>
+
+{/block:Panorama}
+
         {block:Photo}
-        
-          <main itemprop="articleBody">
-        
-            <figure>
-        
-              {block:IndexPage}
-        
-                <a href="{Permalink}" title="{lang:Link post} {PhotoAlt}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"></a>
-        
-              {/block:IndexPage}
-        
-              {block:PermalinkPage}
-        
-                {LinkOpenTag}
-        
-                  <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">
-        
-                {LinkCloseTag}
-        
-              {/block:PermalinkPage}
-        
-              <figcaption class="caption">
-        
-                {block:Caption}
-        
-                  {Caption}
-        
-                {/block:Caption}
-        
-                {block:PermalinkPage}
-        
-                  {block:Exif}
-        
-                    {block:Camera}
-        
-                      {Camera}
-        
-                    {/block:Camera}
-        
-                    {block:Aperture}
-        
-                      {Aperture}
-        
-                    {/block:Aperture}
-        
-                    {block:Exposure}
-        
-                      {Exposure}
-        
-                    {/block:Exposure}
-        
-                    {block:FocalLength}
-        
-                      {FocalLength}
-        
-                    {/block:FocalLength}
-        
-                  {/block:Exif}
-        
-                {/block:PermalinkPage}
-        
-              </figcaption>
-        
-            </figure>
-        
-            <!-- ## Render Exif Data -->
-        
-          </main>
-        
-        {/block:Photo}
+
+  <main itemprop="articleBody">
+
+    <figure>
+
+      {block:IndexPage}
+
+        <a href="{Permalink}" title="{lang:Link post} {PhotoAlt}"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}"></a>
+
+      {/block:IndexPage}
+
+      {block:PermalinkPage}
+
+        {LinkOpenTag}
+
+          <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">
+
+        {LinkCloseTag}
+
+      {/block:PermalinkPage}
+
+      <figcaption class="caption">
+
+        {block:Caption}
+
+          {Caption}
+
+        {/block:Caption}
+
+        {block:PermalinkPage}
+
+          {block:Exif}
+
+            {block:Camera}
+
+              {Camera}
+
+            {/block:Camera}
+
+            {block:Aperture}
+
+              {Aperture}
+
+            {/block:Aperture}
+
+            {block:Exposure}
+
+              {Exposure}
+
+            {/block:Exposure}
+
+            {block:FocalLength}
+
+              {FocalLength}
+
+            {/block:FocalLength}
+
+          {/block:Exif}
+
+        {/block:PermalinkPage}
+
+      </figcaption>
+
+    </figure>
+
+    <!-- ## Render Exif Data -->
+
+  </main>
+
+{/block:Photo}
+
         {block:Photoset}
-        
-          <main itemprop="articleBody">
-        
-            {Photoset}
-        
-            {block:Caption}
-        
-              {Caption}
-        
-            {/block:Caption}
-        
-          </main>
-        
-        {/block:Photoset}
+
+  <main itemprop="articleBody">
+
+    {Photoset}
+
+    {block:Caption}
+
+      {Caption}
+
+    {/block:Caption}
+
+  </main>
+
+{/block:Photoset}
+
         {block:Quote}
-        
-          <main itemprop="articleBody description">
-        
-            <blockquote class="blockquote-{Length}">
-        
-              {Quote}
-        
-              {block:Source}
-        
-                <cite>{Source}</cite>
-        
-              {/block:Source}
-        
-            </blockquote>
-        
-          </main>
-        
-        {/block:Quote}
+
+  <main itemprop="articleBody description">
+
+    <blockquote class="blockquote-{Length}">
+
+      {Quote}
+
+      {block:Source}
+
+        <cite>{Source}</cite>
+
+      {/block:Source}
+
+    </blockquote>
+
+  </main>
+
+{/block:Quote}
+
         {block:Text}
-        
-          <header>
-        
-            {block:IndexPage}
-        
-              {block:Title}
-        
-                <h2 class="post-title" itemprop="name headline"><a href="{Permalink}" title="{lang:Link post} {Title}" itemprop="url">{Title}</a></h2>
-        
-              {/block:Title}
-        
-            {/block:IndexPage}
-        
-            {block:PermalinkPage}
-        
-            {block:Title}
-        
-              <h1 class="post-title" itemprop="name headline">{Title}</h1>
-        
-            {/block:Title}
-        
-          {/block:PermalinkPage}
-        
-          </header>
-        
-          <main itemprop="articleBody description">
-        
-            {Body}
-        
-            {block:More}
-        
-              <p><a href="{Permalink}" class="more" itemprop="url">{lang:Read more}</a></p>
-        
-            {/block:More}
-        
-          </main>
-        
-        {/block:Text}
+
+  <header>
+
+    {block:IndexPage}
+
+      {block:Title}
+
+        <h2 class="post-title" itemprop="name headline"><a href="{Permalink}" title="{lang:Link post} {Title}" itemprop="url">{Title}</a></h2>
+
+      {/block:Title}
+
+    {/block:IndexPage}
+
+    {block:PermalinkPage}
+
+    {block:Title}
+
+      <h1 class="post-title" itemprop="name headline">{Title}</h1>
+
+    {/block:Title}
+
+  {/block:PermalinkPage}
+
+  </header>
+
+  <main itemprop="articleBody description">
+
+    {Body}
+
+    {block:More}
+
+      <p><a href="{Permalink}" class="more" itemprop="url">{lang:Read more}</a></p>
+
+    {/block:More}
+
+  </main>
+
+{/block:Text}
+
         {block:Video}
-        
-          <main itemprop="articleBody description">
-        
-            {Video-700}
-        
-            {block:Caption}
-        
-              {Caption}
-        
-            {/block:Caption}
-        
-          </main>
-        
-        {/block:Video}
+
+  <main itemprop="articleBody description">
+
+    {Video-700}
+
+    {block:Caption}
+
+      {Caption}
+
+    {/block:Caption}
+
+  </main>
+
+{/block:Video}
+
 
         <!-- POST-FOOTER -->
 
@@ -1489,7 +1502,8 @@ video {
 {block:IfMasonryLayout}
 </div>
 {/block:IfMasonryLayout}
-{block:PostNotes}
+
+      {block:PostNotes}
 
   {block:NoteCount}
 
@@ -1502,7 +1516,8 @@ video {
   {PostNotes}
 
 {/block:PostNotes}
-{block:PermalinkPage}
+
+      {block:PermalinkPage}
 
   {block:IfDisqusShortname}
 
@@ -1513,7 +1528,8 @@ video {
   {/block:IfDisqusShortname}
 
 {/block:PermalinkPage}
-{block:IfNotInfiniteScrolling}
+
+      {block:IfNotInfiniteScrolling}
 
   {block:IndexPage}
 
@@ -1615,193 +1631,198 @@ video {
   </main>
 
   <footer class="footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
-  
-    <div class="grid">
-  
-      <p>Copyright <span itemprop="copyrightYear">{CopyrightYears}</span> | <a href="{BlogURL}" title="{Title}">{Title}</a></p>
-  
-      {block:ifShowSocial}
-  
-        <ul class="social">
-  
-          {block:ifShowRSS}
-          <li><a href="{RSS}">RSS</a></li>
-          {/block:ifShowRSS}
-  
-          {block:ifEmail}
-          <li><a href="mailto:{text:Email}" alt="{lang:Send email}">Email</a></li>
-          {/block:ifEmail}
-  
-          {block:ifBehance}
-          <li><a href="//behance.net/{text:Behance}" alt="Behance profile" target="_blank">Behance</a></li>
-          {/block:ifBehance}
-  
-          {block:ifCodepen}
-          <li><a href="//codepen.io/{text:Codepen}" alt="Codepen Profile" target="_blank">Codepen</a></li>
-          {/block:ifCodepen}
-  
-          {block:ifDribbble}
-          <li><a href="//dribbble.com/{text:Dribbble}" alt="dribbble Profile" target="_blank">dribbble</a></li>
-          {/block:ifDribbble}
-  
-          {block:ifFacebook}
-          <li><a href="//facebook.com/{text:Facebook}" alt="Facebook Profile" target="_blank">Facebook</a></li>
-          {/block:ifFacebook}
-  
-          {block:ifFlickr}
-          <li><a href="{text:Flickr}" alt="Flickr Profile" target="_blank">Flickr</a></li>
-          {/block:ifFlickr}
-  
-          {block:ifGithub}
-          <li><a href="//github.com/{text:Github}" alt="GitHub Profile" target="_blank">GitHub</a></li>
-          {/block:ifGithub}
-  
-          {block:ifGooglePlus}
-          <li><a href="//plus.google.com/u/0/{text:Google Plus}" alt="Google Plus Profile" target="_blank">Google+</a></li>
-          {/block:ifGooglePlus}
-  
-          {block:ifInstagram}
-          <li><a href="//instagram.com/{text:Instagram}" alt="Instagram Profile" target="_blank">Instagram</a></li>
-          {/block:ifInstagram}
-  
-          {block:ifLinkedIn}
-          <li><a href="//linkedin.com/in/{text:LinkedIn}" alt="LinkedIn Profile" target="_blank">LinkedIn</a></li>
-          {/block:ifLinkedIn}
-  
-          {block:ifPinterest}
-          <li><a href="//pinterest.com/{text:Pinterest}" alt="Pinterest Profile" target="_blank">Pinterest</a></li>
-          {/block:ifPinterest}
-  
-          {block:ifReddit}
-          <li><a href="//reddit.com/user/{text:Reddit}" alt="Reddit Profile" target="_blank">Reddit</a></li>
-          {/block:ifReddit}
-  
-          {block:ifSkype}
-          <li><a href="skype:{text:Skype}?userinfo" alt="Skype Profile" target="_blank">Skype</a></li>
-          {/block:ifSkype}
-  
-          {block:ifSoundcloud}
-          <li><a href="//soundcloud.com/{text:Soundcloud}" alt="SoundCloud Profile" target="_blank">Soundcloud</a></li>
-          {/block:ifSoundcloud}
-  
-          {block:ifTwitter}
-          <li><a href="//twitter.com/{text:Twitter}" alt="Twitter Profile" target="_blank">Twitter</a></li>
-          {/block:ifTwitter}
-  
-          {block:ifVimeo}
-          <li><a href="//vimeo.com/{text:Vimeo}" alt="Vimeo Profile" target="_blank">Vimeo</a></li>
-          {/block:ifVimeo}
-  
-          {block:ifXing}
-          <li><a href="//xing.com/profile/{text:Xing}" alt="Xing Profile" target="_blank">Xing</a></li>
-          {/block:ifXing}
-  
-          {block:ifYouTube}
-          <li><a href="//youtube.com/user/{text:YouTube}" alt="YouTube Profile" target="_blank">YouTube</a></li>
-          {/block:ifYouTube}
-  
-        </ul>
-  
-      {/block:ifShowSocial}
-  
-    </div>
-  
-  </footer>
+
+  <div class="grid">
+
+    <p>Copyright <span itemprop="copyrightYear">{CopyrightYears}</span> | <a href="{BlogURL}" title="{Title}">{Title}</a></p>
+
+    {block:ifShowSocial}
+
+      <ul class="social">
+
+        {block:ifShowRSS}
+        <li><a href="{RSS}">RSS</a></li>
+        {/block:ifShowRSS}
+
+        {block:ifEmail}
+        <li><a href="mailto:{text:Email}" alt="{lang:Send email}">Email</a></li>
+        {/block:ifEmail}
+
+        {block:ifBehance}
+        <li><a href="//behance.net/{text:Behance}" alt="Behance profile" target="_blank">Behance</a></li>
+        {/block:ifBehance}
+
+        {block:ifCodepen}
+        <li><a href="//codepen.io/{text:Codepen}" alt="Codepen Profile" target="_blank">Codepen</a></li>
+        {/block:ifCodepen}
+
+        {block:ifDribbble}
+        <li><a href="//dribbble.com/{text:Dribbble}" alt="dribbble Profile" target="_blank">dribbble</a></li>
+        {/block:ifDribbble}
+
+        {block:ifFacebook}
+        <li><a href="//facebook.com/{text:Facebook}" alt="Facebook Profile" target="_blank">Facebook</a></li>
+        {/block:ifFacebook}
+
+        {block:ifFlickr}
+        <li><a href="{text:Flickr}" alt="Flickr Profile" target="_blank">Flickr</a></li>
+        {/block:ifFlickr}
+
+        {block:ifGithub}
+        <li><a href="//github.com/{text:Github}" alt="GitHub Profile" target="_blank">GitHub</a></li>
+        {/block:ifGithub}
+
+        {block:ifGooglePlus}
+        <li><a href="//plus.google.com/u/0/{text:Google Plus}" alt="Google Plus Profile" target="_blank">Google+</a></li>
+        {/block:ifGooglePlus}
+
+        {block:ifInstagram}
+        <li><a href="//instagram.com/{text:Instagram}" alt="Instagram Profile" target="_blank">Instagram</a></li>
+        {/block:ifInstagram}
+
+        {block:ifLinkedIn}
+        <li><a href="//linkedin.com/in/{text:LinkedIn}" alt="LinkedIn Profile" target="_blank">LinkedIn</a></li>
+        {/block:ifLinkedIn}
+
+        {block:ifPinterest}
+        <li><a href="//pinterest.com/{text:Pinterest}" alt="Pinterest Profile" target="_blank">Pinterest</a></li>
+        {/block:ifPinterest}
+
+        {block:ifReddit}
+        <li><a href="//reddit.com/user/{text:Reddit}" alt="Reddit Profile" target="_blank">Reddit</a></li>
+        {/block:ifReddit}
+
+        {block:ifSkype}
+        <li><a href="skype:{text:Skype}?userinfo" alt="Skype Profile" target="_blank">Skype</a></li>
+        {/block:ifSkype}
+
+        {block:ifSoundcloud}
+        <li><a href="//soundcloud.com/{text:Soundcloud}" alt="SoundCloud Profile" target="_blank">Soundcloud</a></li>
+        {/block:ifSoundcloud}
+
+        {block:ifTwitter}
+        <li><a href="//twitter.com/{text:Twitter}" alt="Twitter Profile" target="_blank">Twitter</a></li>
+        {/block:ifTwitter}
+
+        {block:ifVimeo}
+        <li><a href="//vimeo.com/{text:Vimeo}" alt="Vimeo Profile" target="_blank">Vimeo</a></li>
+        {/block:ifVimeo}
+
+        {block:ifXing}
+        <li><a href="//xing.com/profile/{text:Xing}" alt="Xing Profile" target="_blank">Xing</a></li>
+        {/block:ifXing}
+
+        {block:ifYouTube}
+        <li><a href="//youtube.com/user/{text:YouTube}" alt="YouTube Profile" target="_blank">YouTube</a></li>
+        {/block:ifYouTube}
+
+      </ul>
+
+    {/block:ifShowSocial}
+
+  </div>
+
+</footer>
+
 
   {block:IfInfiniteScrolling}
-  
-  <script src="http://codysherman.tumblr.com/tools/infinite-scrolling/code"></script>
-  <script>
-    var tumblrAutoPager={url:"http://proto.jp/",ver:"0.1.7",rF:true,gP:{},pp:null,ppId:"",LN:location.hostname,init:function(){if($("autopagerize_icon")||navigator.userAgent.indexOf('iPhone')!=-1)return;var tAP=tumblrAutoPager;var p=1;var lh=location.href;var lhp=lh.lastIndexOf("/page/");var lht=lh.lastIndexOf("/tagged/");if(lhp!=-1){p=parseInt(lh.slice(lhp+6));tAP.LN=lh.slice(7,lhp);}else if(lht!=-1){tAP.LN=lh.slice(7);if(tAP.LN.slice(tAP.LN.length-1)=="/")tAP.LN=tAP.LN.slice(0,tAP.LN.length-1);}else if("http://"+tAP.LN+"/"!=lh){return;};var gPFncs=[];gPFncs[0]=function(aE){var r=[];for(var i=0,l=aE.length;i<l;i++){if(aE[i].className=="autopagerize_page_element"){r=gCE(aE[i]);break;}}
-    return r;};gPFncs[1]=function(aE){var r=[];for(var i=0,l=aE.length;i<l;i++){var arr=aE[i].className?aE[i].className.split(" "):null;if(arr){for(var j=0;j<arr.length;j++){arr[j]=="post"?r.push(aE[i]):null;}}}
-    return r;};gPFncs[2]=function(aE){var r=[];var tmpId=tAP.ppId?[tAP.ppId]:["posts","main","container","content","apDiv2","wrapper","projects"];for(var i=0,l=aE.length;i<l;i++){for(var j=0;j<tmpId.length;j++){if(aE[i].id==tmpId[j]){r=gCE(aE[i]);tAP.ppId=aE[i].id;break;}}}
-    return r;};for(var i=0;i<gPFncs.length;i++){var getElems=gPFncs[i](document.body.getElementsByTagName('*'));if(getElems.length){tAP.gP=gPFncs[i];tAP.pp=getElems[0].parentNode;break;}}
-    function gCE(pElem){var r=[];for(var i=0,l=pElem.childNodes.length;i<l;i++){r.push(pElem.childNodes.item(i))}
-    return r;}
-    if(!tAP.pp){return;}
-    sendRequest.README={license:'Public Domain',url:'http://jsgt.org/lib/ajax/ref.htm',version:0.516,author:'Toshiro Takahashi'};function chkAjaBrowser(){var A,B=navigator.userAgent;this.bw={safari:((A=B.split('AppleWebKit/')[1])?A.split('(')[0].split('.')[0]:0)>=124,konqueror:((A=B.split('Konqueror/')[1])?A.split(';')[0]:0)>=3.3,mozes:((A=B.split('Gecko/')[1])?A.split(' ')[0]:0)>=20011128,opera:(!!window.opera)&&((typeof XMLHttpRequest)=='function'),msie:(!!window.ActiveXObject)?(!!createHttpRequest()):false};return(this.bw.safari||this.bw.konqueror||this.bw.mozes||this.bw.opera||this.bw.msie)}
-    function createHttpRequest(){if(window.XMLHttpRequest){return new XMLHttpRequest()}else{if(window.ActiveXObject){try{return new ActiveXObject('Msxml2.XMLHTTP')}catch(B){try{return new ActiveXObject('Microsoft.XMLHTTP')}catch(A){return null}}}else{return null}}};function sendRequest(E,R,C,D,F,G,S,A){var Q=C.toUpperCase()=='GET',H=createHttpRequest();if(H==null){return null}
-    if((G)?G:false){D+=((D.indexOf('?')==-1)?'?':'&')+'t='+(new Date()).getTime()}
-    var P=new chkAjaBrowser(),L=P.bw.opera,I=P.bw.safari,N=P.bw.konqueror,M=P.bw.mozes;if(typeof E=='object'){var J=E.onload;var O=E.onbeforsetheader}else{var J=E;var O=null}
-    if(L||I||M){H.onload=function(){J(H);H.abort()}}else{H.onreadystatechange=function(){if(H.readyState==4){J(H);H.abort()}}}
-    R=K(R,D);if(Q){D+=((D.indexOf('?')==-1)?'?':(R=='')?'':'&')+R}
-    H.open(C,D,F,S,A);if(!!O){O(H)}
-    B(H);H.send(R);function B(T){if(!L||typeof T.setRequestHeader=='function'){T.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset=UTF-8')}
-    return T}
-    function K(X,V){var Z=[];if(typeof X=='object'){for(var W in X){Y(W,X[W])}}else{if(typeof X=='string'){if(X==''){return''}
-    if(X.charAt(0)=='&'){X=X.substring(1,X.length)}
-    var T=X.split('&');for(var W=0;W<T.length;W++){var U=T[W].split('=');Y(U[0],U[1])}}}
-    function Y(b,a){Z.push(encodeURIComponent(b)+'='+encodeURIComponent(a))}
-    return Z.join('&')}
-    return H}
-    function addNextPage(oj){if(oj.status==404){tAP.remainFlg=false;return;}
-    var d=document.createElement("div");d.innerHTML=oj.responseText;var posts=tAP.gP(d.getElementsByTagName("*"));if(posts.length<2){tAP.rF=false;return;}
-    d=document.createElement("div");d.className="tumblrAutoPager_page_info";tAP.pp.appendChild(d);for(var i=0;i<posts.length;i++){tAP.pp.appendChild(posts[i]);}
-    var footer=$("footer");footer?footer.parentNode.appendChild(footer):null;tAP.rF=true;}
-    watch_scroll();function watch_scroll(){var d=document.compatMode=="BackCompat"?document.body:document.documentElement;var r=d.scrollHeight-d.clientHeight-(d.scrollTop||document.body.scrollTop);if(r<d.clientHeight*2&&tAP.rF){tAP.rF=false;p++;
-  
-        addNextPageWithLikes = function(oj) {
-            addNextPage(oj);
-            Tumblr.LikeButton.get_status_by_page(p);
-        }
-  
-        sendRequest(addNextPageWithLikes,"","GET","http://"+tAP.LN+"/page/"+p,true);
-  
-    }
-    setTimeout(arguments.callee,200);};function $(id){return document.getElementById(id)};},switchAutoPage:function(){this.rF=!this.rF;var aE=document.getElementsByTagName('*');for(var i=0,l=aE.length;i<l;i++){if(aE[i].className=="tAP_switch"){aE[i].firstChild.nodeValue=this.rF?"AutoPage[OFF]":"AutoPage[ON]";}}}};window.addEventListener?window.addEventListener('load',tumblrAutoPager.init,false):window.attachEvent?window.attachEvent("onload",tumblrAutoPager.init):window.onload=tumblrAutoPager.init;
-  </script>
-  
-  {/block:IfInfiniteScrolling}
+
+<script src="http://codysherman.tumblr.com/tools/infinite-scrolling/code"></script>
+<script>
+  var tumblrAutoPager={url:"http://proto.jp/",ver:"0.1.7",rF:true,gP:{},pp:null,ppId:"",LN:location.hostname,init:function(){if($("autopagerize_icon")||navigator.userAgent.indexOf('iPhone')!=-1)return;var tAP=tumblrAutoPager;var p=1;var lh=location.href;var lhp=lh.lastIndexOf("/page/");var lht=lh.lastIndexOf("/tagged/");if(lhp!=-1){p=parseInt(lh.slice(lhp+6));tAP.LN=lh.slice(7,lhp);}else if(lht!=-1){tAP.LN=lh.slice(7);if(tAP.LN.slice(tAP.LN.length-1)=="/")tAP.LN=tAP.LN.slice(0,tAP.LN.length-1);}else if("http://"+tAP.LN+"/"!=lh){return;};var gPFncs=[];gPFncs[0]=function(aE){var r=[];for(var i=0,l=aE.length;i<l;i++){if(aE[i].className=="autopagerize_page_element"){r=gCE(aE[i]);break;}}
+  return r;};gPFncs[1]=function(aE){var r=[];for(var i=0,l=aE.length;i<l;i++){var arr=aE[i].className?aE[i].className.split(" "):null;if(arr){for(var j=0;j<arr.length;j++){arr[j]=="post"?r.push(aE[i]):null;}}}
+  return r;};gPFncs[2]=function(aE){var r=[];var tmpId=tAP.ppId?[tAP.ppId]:["posts","main","container","content","apDiv2","wrapper","projects"];for(var i=0,l=aE.length;i<l;i++){for(var j=0;j<tmpId.length;j++){if(aE[i].id==tmpId[j]){r=gCE(aE[i]);tAP.ppId=aE[i].id;break;}}}
+  return r;};for(var i=0;i<gPFncs.length;i++){var getElems=gPFncs[i](document.body.getElementsByTagName('*'));if(getElems.length){tAP.gP=gPFncs[i];tAP.pp=getElems[0].parentNode;break;}}
+  function gCE(pElem){var r=[];for(var i=0,l=pElem.childNodes.length;i<l;i++){r.push(pElem.childNodes.item(i))}
+  return r;}
+  if(!tAP.pp){return;}
+  sendRequest.README={license:'Public Domain',url:'http://jsgt.org/lib/ajax/ref.htm',version:0.516,author:'Toshiro Takahashi'};function chkAjaBrowser(){var A,B=navigator.userAgent;this.bw={safari:((A=B.split('AppleWebKit/')[1])?A.split('(')[0].split('.')[0]:0)>=124,konqueror:((A=B.split('Konqueror/')[1])?A.split(';')[0]:0)>=3.3,mozes:((A=B.split('Gecko/')[1])?A.split(' ')[0]:0)>=20011128,opera:(!!window.opera)&&((typeof XMLHttpRequest)=='function'),msie:(!!window.ActiveXObject)?(!!createHttpRequest()):false};return(this.bw.safari||this.bw.konqueror||this.bw.mozes||this.bw.opera||this.bw.msie)}
+  function createHttpRequest(){if(window.XMLHttpRequest){return new XMLHttpRequest()}else{if(window.ActiveXObject){try{return new ActiveXObject('Msxml2.XMLHTTP')}catch(B){try{return new ActiveXObject('Microsoft.XMLHTTP')}catch(A){return null}}}else{return null}}};function sendRequest(E,R,C,D,F,G,S,A){var Q=C.toUpperCase()=='GET',H=createHttpRequest();if(H==null){return null}
+  if((G)?G:false){D+=((D.indexOf('?')==-1)?'?':'&')+'t='+(new Date()).getTime()}
+  var P=new chkAjaBrowser(),L=P.bw.opera,I=P.bw.safari,N=P.bw.konqueror,M=P.bw.mozes;if(typeof E=='object'){var J=E.onload;var O=E.onbeforsetheader}else{var J=E;var O=null}
+  if(L||I||M){H.onload=function(){J(H);H.abort()}}else{H.onreadystatechange=function(){if(H.readyState==4){J(H);H.abort()}}}
+  R=K(R,D);if(Q){D+=((D.indexOf('?')==-1)?'?':(R=='')?'':'&')+R}
+  H.open(C,D,F,S,A);if(!!O){O(H)}
+  B(H);H.send(R);function B(T){if(!L||typeof T.setRequestHeader=='function'){T.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset=UTF-8')}
+  return T}
+  function K(X,V){var Z=[];if(typeof X=='object'){for(var W in X){Y(W,X[W])}}else{if(typeof X=='string'){if(X==''){return''}
+  if(X.charAt(0)=='&'){X=X.substring(1,X.length)}
+  var T=X.split('&');for(var W=0;W<T.length;W++){var U=T[W].split('=');Y(U[0],U[1])}}}
+  function Y(b,a){Z.push(encodeURIComponent(b)+'='+encodeURIComponent(a))}
+  return Z.join('&')}
+  return H}
+  function addNextPage(oj){if(oj.status==404){tAP.remainFlg=false;return;}
+  var d=document.createElement("div");d.innerHTML=oj.responseText;var posts=tAP.gP(d.getElementsByTagName("*"));if(posts.length<2){tAP.rF=false;return;}
+  d=document.createElement("div");d.className="tumblrAutoPager_page_info";tAP.pp.appendChild(d);for(var i=0;i<posts.length;i++){tAP.pp.appendChild(posts[i]);}
+  var footer=$("footer");footer?footer.parentNode.appendChild(footer):null;tAP.rF=true;}
+  watch_scroll();function watch_scroll(){var d=document.compatMode=="BackCompat"?document.body:document.documentElement;var r=d.scrollHeight-d.clientHeight-(d.scrollTop||document.body.scrollTop);if(r<d.clientHeight*2&&tAP.rF){tAP.rF=false;p++;
+
+      addNextPageWithLikes = function(oj) {
+          addNextPage(oj);
+          Tumblr.LikeButton.get_status_by_page(p);
+      }
+
+      sendRequest(addNextPageWithLikes,"","GET","http://"+tAP.LN+"/page/"+p,true);
+
+  }
+  setTimeout(arguments.callee,200);};function $(id){return document.getElementById(id)};},switchAutoPage:function(){this.rF=!this.rF;var aE=document.getElementsByTagName('*');for(var i=0,l=aE.length;i<l;i++){if(aE[i].className=="tAP_switch"){aE[i].firstChild.nodeValue=this.rF?"AutoPage[OFF]":"AutoPage[ON]";}}}};window.addEventListener?window.addEventListener('load',tumblrAutoPager.init,false):window.attachEvent?window.attachEvent("onload",tumblrAutoPager.init):window.onload=tumblrAutoPager.init;
+</script>
+
+{/block:IfInfiniteScrolling}
+
   {block:IfMasonryLayout}
-  
-  <style>
-    .grid {
-      max-width: 72rem;
-    }
-  </style>
-  
-  <script src="https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
-  <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
-  
-  <script>
-    (function(document) {
-  
-      var masonry = document.querySelector('.js-masonry');
-  
-      imagesLoaded(masonry, function() {
-        new Masonry(masonry, {
-          itemSelector: '.js-masonry-item'
-        });
+
+<style>
+  .grid {
+    max-width: 72rem;
+  }
+</style>
+
+<script src="https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
+
+<script>
+  (function(document) {
+
+    var masonry = document.querySelector('.js-masonry');
+
+    imagesLoaded(masonry, function() {
+      new Masonry(masonry, {
+        itemSelector: '.js-masonry-item'
       });
-  
-    })(document);
-  </script>
-  
-  {/block:IfMasonryLayout}
+    });
+
+  })(document);
+</script>
+
+{/block:IfMasonryLayout}
+
   {block:IfGoogleAnalytics}
-  
-  <script>
-    window.ga = window.ga || function() {
-      (ga.q = ga.q || []).push(arguments)
-    };
-    ga.l = +new Date;
-    ga('create', '{text:GoogleAnalyticsID}', 'auto');
-    ga('send', 'pageview');
-  </script>
-  
-  <script async src='//www.google-analytics.com/analytics.js'></script>
-  
-  {/block:IfGoogleAnalytics}
+
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  };
+  ga.l = +new Date;
+  ga('create', '{text:GoogleAnalyticsID}', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+{/block:IfGoogleAnalytics}
+
   {block:IfDisqusShortname}
-  
-  <script>
-    var disqus_shortname = '{text:Disqus Shortname}';
-    var disqus_url = '{Permalink}';
-  </script>
-  
-  <script async src='//{text:Disqus Shortname}.disqus.com/embed.js'></script>
-  
-  {/block:IfDisqusShortname}
+
+<script>
+  var disqus_shortname = '{text:Disqus Shortname}';
+  var disqus_url = '{Permalink}';
+</script>
+
+<script async src='//{text:Disqus Shortname}.disqus.com/embed.js'></script>
+
+{/block:IfDisqusShortname}
+
 
   <script>
 (function(window, document) {

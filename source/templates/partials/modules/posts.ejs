@@ -8,16 +8,16 @@
 
       <article id="post-{PostID}" class="post post-{PostType} {block:Odd}post-odd{/block:Odd}{block:Even}post-even{/block:Even}" role="article" itemscope="itemscope" itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 
-        {{> answer }}
-        {{> audio }}
-        {{> chat }}
-        {{> link }}
-        {{> panorama }}
-        {{> photo }}
-        {{> photoset }}
-        {{> quote }}
-        {{> text }}
-        {{> video }}
+        <%- include('../posts/answer'); %>
+        <%- include('../posts/audio'); %>
+        <%- include('../posts/chat'); %>
+        <%- include('../posts/link'); %>
+        <%- include('../posts/panorama'); %>
+        <%- include('../posts/photo'); %>
+        <%- include('../posts/photoset'); %>
+        <%- include('../posts/quote'); %>
+        <%- include('../posts/text'); %>
+        <%- include('../posts/video'); %>
 
         <!-- POST-FOOTER -->
 

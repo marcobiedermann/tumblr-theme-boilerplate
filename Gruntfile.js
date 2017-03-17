@@ -14,17 +14,13 @@ module.exports = function (grunt) {
       tmp: '.tmp'
     },
 
-    assemble: {
-      options: {
-        layout: 'default.html',
-        layoutdir: '<%= config.source %>/templates/layouts',
-        partials: '<%= config.source %>/templates/partials/**/*.html'
-      },
+    ejs: {
       files: {
         expand: true,
         cwd: '<%= config.source %>/templates/pages',
         dest: '<%= config.tmp %>',
-        src: '**/*.html'
+        src: '**/*.ejs',
+        ext: '.html'
       }
     },
 
@@ -113,7 +109,7 @@ module.exports = function (grunt) {
 
       html: {
         files: ['<%= config.source %>/templates/**/*.html'],
-        tasks: ['assemble', 'processhtml']
+        tasks: ['ejs', 'processhtml']
       },
 
       sass: {
@@ -133,7 +129,7 @@ module.exports = function (grunt) {
   grunt.registerTask('default', [
     'sass',
     'postcss',
-    'assemble',
+    'ejs',
     'processhtml',
     'svgmin',
     'watch'
@@ -143,7 +139,7 @@ module.exports = function (grunt) {
     'clean:dist',
     'sass',
     'postcss',
-    'assemble',
+    'ejs',
     'processhtml',
     'svgmin',
     'clean:tmp',
