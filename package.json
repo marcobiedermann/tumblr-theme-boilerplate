@@ -12,20 +12,17 @@
     "url": "https://github.com/marcobiedermann/tumblr-theme-template/issues"
   },
   "scripts": {
-    "dev": "grunt",
-    "build": "grunt build"
+    "dev": "gulp",
+    "build": "gulp build; rm -rf .tmp"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",
-    "grunt": "^1.0.1",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-sass": "1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-ejs": "^0.3.0",
-    "grunt-postcss": "^0.8.0",
-    "grunt-processhtml": "^0.4.1",
-    "grunt-svgmin": "^4.0.0",
-    "grunt-svgstore": "1.0.0",
-    "jit-grunt": "^0.10.0"
+    "babel-preset-latest": "^6.24.0",
+    "babel-register": "^6.24.0",
+    "gulp": "^3.9.1",
+    "gulp-ejs": "^3.0.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-processhtml": "^1.1.0",
+    "gulp-sass": "^3.1.0"
   }
 }
