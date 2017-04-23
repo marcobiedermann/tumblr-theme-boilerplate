@@ -4,6 +4,8 @@
 
 # Tumblr Theme Boilerplate
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/marcobiedermann/tumblr-theme-boilerplate.svg)](https://greenkeeper.io/)
+
 Modular [Tumblr](https://www.tumblr.com) theme boilerplate with some basic styles in [Scss](http://sass-lang.com/) to get you right started.
 
 ## Installation
