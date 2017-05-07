@@ -124,7 +124,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: inherit; }
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
 
 -moz-::-moz-selection,
 ::-moz-selection {
@@ -139,7 +140,8 @@
   text-shadow: none; }
 
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -386,7 +388,8 @@ h6 {
 hr {
   background-color: {color:Border};
   border: 0;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 1px;
   margin: 0; }
 
@@ -736,7 +739,8 @@ video {
 @media print {
   * {
     background: transparent;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     color: #000;
     text-shadow: none; }
   a,
