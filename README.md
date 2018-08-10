@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/marcobiedermann/tumblr-theme-boilerplate.svg?branch=master)](https://travis-ci.org/marcobiedermann/tumblr-theme-boilerplate)
 [![devDependency Status](https://david-dm.org/marcobiedermann/tumblr-theme-boilerplate/dev-status.svg)](https://david-dm.org/marcobiedermann/tumblr-theme-boilerplate#info=devDependencies)
-[![Known Vulnerabilities](https://snyk.io/test/github/marcobiedermann/tumblr-theme-boilerplate/badge.svg)](https://snyk.io/test/github/marcobiedermann/tumblr-theme-boilerplate)
+[![Known Vulnerabilities](https://snyk.io/test/github/marcobiedermann/tumblr-theme-boilerplate/badge.svg)](https://snyk.io/test/github/marcobiedermann/tumblr-theme-boilerplate) [![Greenkeeper badge](https://badges.greenkeeper.io/marcobiedermann/tumblr-theme-boilerplate.svg)](https://greenkeeper.io/)
 
 # Tumblr Theme Boilerplate
 
