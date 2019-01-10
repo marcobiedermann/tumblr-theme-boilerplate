@@ -124,8 +124,7 @@
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit; }
+  box-sizing: inherit; }
 
 -moz-::-moz-selection,
 ::-moz-selection {
@@ -140,8 +139,7 @@
   text-shadow: none; }
 
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -308,6 +306,10 @@ figcaption {
   color: {color:Border};
   font-style: italic; }
 
+::-ms-input-placeholder {
+  color: {color:Border};
+  font-style: italic; }
+
 ::placeholder {
   color: {color:Border};
   font-style: italic; }
@@ -388,8 +390,7 @@ h6 {
 hr {
   background-color: {color:Border};
   border: 0;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 1px;
   margin: 0; }
 
@@ -739,8 +740,7 @@ video {
 @media print {
   * {
     background: transparent;
-    -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
     color: #000;
     text-shadow: none; }
   a,

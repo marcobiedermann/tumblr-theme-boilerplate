@@ -16,13 +16,13 @@
     "build": "gulp build; rm -rf .tmp"
   },
   "devDependencies": {
-    "autoprefixer": "^9.1.0",
-    "babel-preset-env": "^1.6.0",
-    "babel-register": "^6.24.1",
-    "gulp": "^3.9.1",
-    "gulp-ejs": "^3.0.1",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "autoprefixer": "^9.4.4",
+    "gulp": "^4.0.0",
+    "gulp-ejs": "^3.3.0",
     "gulp-postcss": "^8.0.0",
-    "gulp-processhtml": "^1.1.0",
-    "gulp-sass": "^4.0.1"
+    "gulp-processhtml": "^1.2.0",
+    "gulp-sass": "^4.0.2"
   }
 }
