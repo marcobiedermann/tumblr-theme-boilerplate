@@ -16,9 +16,9 @@
     "build": "gulp build; rm -rf .tmp"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.2.3",
-    "autoprefixer": "^9.4.4",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "autoprefixer": "^9.5.1",
     "gulp": "^4.0.0",
     "gulp-ejs": "^4.0.0",
     "gulp-postcss": "^8.0.0",
