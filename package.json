@@ -19,7 +19,7 @@
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "autoprefixer": "^9.5.1",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-ejs": "^4.0.0",
     "gulp-postcss": "^8.0.0",
     "gulp-processhtml": "^1.2.0",
