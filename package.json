@@ -16,7 +16,7 @@
     "build": "gulp build; rm -rf .tmp"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.3",
+    "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.3",
     "autoprefixer": "^9.5.1",
     "gulp": "^4.0.0",
