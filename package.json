@@ -23,6 +23,6 @@
     "gulp-ejs": "^5.0.0",
     "gulp-postcss": "^8.0.0",
     "gulp-processhtml": "^1.2.0",
-    "gulp-sass": "^4.0.2"
+    "gulp-sass": "^4.1.0"
   }
 }
